@@ -1,0 +1,25 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "assets/images"
+public_folder: "/assets/images"
+
+collections:
+  - name: "articles"
+    label: "المقالات"
+    files:
+      - name: "articles-list"
+        label: "قائمة المقالات"
+        file: "articles.json"
+        fields:
+          - label: "قائمة المقالات"
+            name: "items"
+            widget: "list"
+            summary: "{{fields.title}} ({{fields.category}})"
+            fields:
+              - { label: "عنوان المقال", name: "title", widget: "string" }
+              - { label: "التصنيف", name: "category", widget: "select", options: ["مقالات ورؤى", "أهل البيت", "وعي مجتمعي", "رؤى وحلول", "قضايا معاصرة", "حوارات ومقابلات", "شبهات وردود", "التوجيهات الأخلاقية"] }
+              - { label: "التاريخ", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false }
+              - { label: "اسم الكاتب", name: "author", widget: "string" }
+              - { label: "المقتطف", name: "excerpt", widget: "text" }
