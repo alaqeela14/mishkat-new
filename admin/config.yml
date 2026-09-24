@@ -1,6 +1,9 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: alaqeela14/mishkat-new
   branch: main
+  base_url: https://sveltia-cms-auth.alaqeelafoundation.workers.dev
+  auth_endpoint: auth
 
 media_folder: "assets/images"
 public_folder: "/assets/images"
