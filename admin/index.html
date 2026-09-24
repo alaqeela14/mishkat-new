@@ -3,28 +3,10 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex" />
   <title>لوحة إدارة منصة مشكاة</title>
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
-  <script>
-    if (window.netlifyIdentity) window.netlifyIdentity.init();
-    (function() {
-      let script = document.createElement('script');
-      script.src = 'https://unpkg.com/decap-cms@latest/dist/decap-cms.js';
-      document.head.appendChild(script);
-    })();
-  </script>
-  <style>
-    body { background: #1a2b4a; display: flex; justify-content: center; align-items: center; height: 100vh; font-family: 'Tajawal', sans-serif; color: white; margin:0; }
-    .box { text-align: center; background: #0f1e3d; padding: 50px; border-radius: 12px; border-top: 5px solid #c9a961; }
-    .box h1 { color: #c9a961; font-size: 2.2rem; margin: 0 0 10px; }
-    .box p { color: #b8c4d6; }
-  </style>
-  <div class="box">
-    <h1>مِشْكَاة</h1>
-    <p>لوحة إدارة المحتوى</p>
-    <p style="font-size:0.8rem; color:#8896b0;">جاري التحميل...</p>
-  </div>
+  <script src="https://unpkg.com/@sveltia/cms/dist/sveltia-cms.js" type="module"></script>
 </body>
 </html>
