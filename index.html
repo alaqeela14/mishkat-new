@@ -1,0 +1,1188 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>منصة مشكاة | للنور والوعي</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        :root{--primary-navy:#1a2b4a;--primary-navy-dark:#0f1e3d;--secondary-blue:#2c4a7c;--very-light-blue:#f5f8fc;--gold-accent:#c9a961;--gold-light:#f5edd6;--text-dark:#1a1a1a;--text-muted:#6B7280;--white:#fff;--border-color:#e0e6ed;--breaking-red:#b91c1c}
+        *{box-sizing:border-box;margin:0;padding:0}
+        body{font-family:'Tajawal',sans-serif;background:var(--very-light-blue);color:var(--text-dark);line-height:1.7}
+        a{text-decoration:none}
+        .hidden-section{display:none!important}
+        .extras-hidden .hero-compact,.extras-hidden .breaking-bar{display:none!important}
+        .top-bar{background:var(--primary-navy-dark);color:#b8c4d6;padding:6px 0;border-bottom:2px solid var(--gold-accent);font-size:12px}
+        .top-bar .container{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+        .top-bar .contact-info{display:flex;align-items:center;gap:6px}
+        .top-bar .contact-info i{color:var(--gold-accent)}
+        .top-bar .right{display:flex;gap:5px;align-items:center}
+        .top-bar .lang-btn{background:transparent;border:1px solid #3a4a6a;color:#b8c4d6;padding:2px 10px;border-radius:3px;cursor:pointer;font-size:11px;font-weight:500;transition:.3s;font-family:'Tajawal',sans-serif}
+        .top-bar .lang-btn:hover,.top-bar .lang-btn.active{border-color:var(--gold-accent);color:var(--gold-accent)}
+        .top-bar .social-icons{display:flex;gap:10px;margin-left:15px}
+        .top-bar .social-icons a{color:#b8c4d6;transition:.3s}
+        .top-bar .social-icons a:hover{color:var(--gold-accent)}
+        .main-header{background:var(--white);padding:12px 0;border-bottom:1px solid var(--border-color)}
+        .main-header .container{display:flex;justify-content:space-between;align-items:center;gap:15px}
+        .main-header .brand{display:flex;align-items:center;gap:12px;cursor:pointer}
+        .main-header .brand .logo-mark{width:55px;height:55px;background:linear-gradient(135deg,var(--primary-navy),var(--secondary-blue));border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--gold-accent);font-size:24px;border:2px solid var(--gold-accent);flex-shrink:0}
+        .main-header .brand-text{display:flex;flex-direction:column;line-height:1.15}
+        .main-header .brand-text .main{font-size:1.6rem;color:var(--primary-navy);font-weight:800;letter-spacing:1px}
+        .main-header .brand-text .sub{font-size:12px;color:var(--text-muted);font-weight:500}
+        .main-header .header-clock{display:flex;flex-direction:column;align-items:flex-end;gap:3px;font-size:11.5px}
+        .main-header .header-clock .time-row{display:flex;align-items:center;gap:5px;color:var(--primary-navy);font-weight:700;font-size:14px}
+        .main-header .header-clock .time-row i{color:var(--gold-accent)}
+        .main-header .header-clock .date-row{display:flex;align-items:center;gap:8px;color:var(--text-muted);font-size:11px}
+        .main-header .header-clock .date-row i{color:var(--secondary-blue)}
+        .mobile-menu-btn{display:none;background:var(--primary-navy);color:var(--gold-accent);border:none;width:42px;height:42px;border-radius:6px;font-size:20px;cursor:pointer}
+        .main-nav{background:var(--primary-navy);border-bottom:3px solid var(--gold-accent);box-shadow:0 2px 8px rgba(0,0,0,.15)}
+        .main-nav .container{display:flex;align-items:center;padding:0}
+        .main-nav .nav-list{display:flex;list-style:none;margin:0;padding:0;flex-wrap:wrap}
+        .main-nav .nav-list li a{display:block;color:#d0d8e6;padding:13px 16px;font-size:13.5px;font-weight:500;border-bottom:3px solid transparent;margin-bottom:-3px;transition:.3s;cursor:pointer}
+        .main-nav .nav-list li a:hover,.main-nav .nav-list li a.active{color:var(--gold-accent);background:rgba(201,169,97,.08);border-bottom-color:var(--gold-accent)}
+        .main-nav .nav-list .dropdown-menu{border:1px solid var(--border-color);border-radius:3px;box-shadow:0 6px 20px rgba(0,0,0,.1);padding:0}
+        .main-nav .nav-list .dropdown-item{font-size:13px;padding:9px 20px;color:var(--text-dark);cursor:pointer}
+        .main-nav .nav-list .dropdown-item:hover{background:var(--very-light-blue);color:var(--primary-navy)}
+        .main-nav .search-mini{display:flex;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:3px;margin-right:auto;overflow:hidden}
+        .main-nav .search-mini input{background:transparent;border:none;padding:8px 14px;color:#fff;font-family:'Tajawal',sans-serif;font-size:13px;outline:none;width:160px}
+        .main-nav .search-mini input::placeholder{color:#8896b0}
+        .main-nav .search-mini button{background:var(--gold-accent);border:none;padding:8px 14px;color:var(--primary-navy);cursor:pointer}
+        .mobile-clock-bar,.mobile-search-bar{display:none}
+        .breaking-bar{background:#fff;border:1px solid var(--border-color);border-radius:4px;padding:10px 15px;display:flex;align-items:center;margin-bottom:20px}
+        .breaking-bar .container{display:flex;align-items:center;gap:12px;overflow:hidden;width:100%;padding:0}
+        .breaking-label{background:var(--breaking-red);color:#fff;padding:5px 14px;border-radius:3px;font-size:12px;font-weight:700;white-space:nowrap;display:flex;align-items:center;gap:6px;flex-shrink:0}
+        .breaking-label i{animation:pulse 1.5s infinite}
+        @keyframes pulse{0%,100%{opacity:1}50%{opacity:.5}}
+        .breaking-ticker{flex:1;overflow:hidden;height:24px}
+        .breaking-ticker marquee{font-size:13.5px}
+        .breaking-ticker marquee a{color:var(--primary-navy);font-weight:600;margin:0 8px}
+        .breaking-ticker marquee span{color:var(--gold-accent)}
+        .main-container{max-width:1400px;margin:0 auto;padding:20px 15px}
+        .page-view{display:none}
+        .page-view.active{display:block}
+        .page-title-bar{background:linear-gradient(135deg,var(--primary-navy),var(--secondary-blue));color:#fff;padding:30px 25px;border-radius:6px;margin-bottom:25px;border-right:5px solid var(--gold-accent);position:relative;overflow:hidden}
+        .page-title-bar::before{content:'';position:absolute;top:-50%;left:-20%;width:140%;height:200%;background:radial-gradient(circle,rgba(201,169,97,.15),transparent 60%)}
+        .page-title-bar h1{font-size:1.8rem;font-weight:800;margin-bottom:6px;position:relative;z-index:2;display:flex;align-items:center;gap:12px}
+        .page-title-bar h1 i{color:var(--gold-accent)}
+        .page-title-bar p{font-size:14px;color:rgba(255,255,255,.85);margin:0;position:relative;z-index:2}
+        .content-card{background:#fff;border-radius:6px;padding:25px 30px;box-shadow:0 2px 10px rgba(26,43,74,.06);border:1px solid var(--border-color);margin-bottom:20px;border-top:4px solid var(--primary-navy)}
+        .content-card h2{color:var(--primary-navy);font-size:1.3rem;font-weight:800;margin-bottom:15px;display:flex;align-items:center;gap:10px;padding-bottom:10px;border-bottom:2px solid var(--gold-light)}
+        .content-card h2 i{color:var(--gold-accent)}
+        .content-card p{font-size:14.5px;color:var(--text-dark);line-height:1.9;margin-bottom:12px}
+        .content-card ul{list-style:none;padding:0;margin-bottom:15px}
+        .content-card ul li{padding:8px 28px 8px 0;position:relative;font-size:14px;border-bottom:1px dashed var(--border-color)}
+        .content-card ul li:last-child{border-bottom:none}
+        .content-card ul li::before{content:'\f058';font-family:'Font Awesome 6 Free';font-weight:900;color:var(--secondary-blue);position:absolute;right:0;top:8px;font-size:14px}
+        .sections-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:15px;margin-top:15px}
+        .section-tile{background:var(--very-light-blue);border:1px solid var(--border-color);border-radius:6px;padding:18px 20px;transition:.3s;cursor:pointer;border-right:4px solid var(--gold-accent)}
+        .section-tile:hover{background:#fff;transform:translateY(-4px);box-shadow:0 8px 20px rgba(26,43,74,.1);border-right-color:var(--primary-navy)}
+        .section-tile .icon{width:42px;height:42px;background:linear-gradient(135deg,var(--primary-navy),var(--secondary-blue));border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--gold-accent);font-size:18px;margin-bottom:12px}
+        .section-tile h4{color:var(--primary-navy);font-size:1rem;font-weight:800;margin-bottom:5px}
+        .section-tile p{color:var(--text-muted);font-size:12.5px;margin:0}
+        .steps-list{list-style:none;padding:0;counter-reset:step-counter}
+        .steps-list li{padding:12px 55px 12px 0;position:relative;font-size:14px;border-bottom:1px dashed var(--border-color);counter-increment:step-counter}
+        .steps-list li:last-child{border-bottom:none}
+        .steps-list li::before{content:counter(step-counter);position:absolute;right:0;top:12px;width:34px;height:34px;background:linear-gradient(135deg,var(--primary-navy),var(--secondary-blue));color:var(--gold-accent);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px}
+        .invite-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:15px;margin-top:15px}
+        .invite-tile{background:linear-gradient(135deg,var(--primary-navy),var(--secondary-blue));color:#fff;padding:22px;border-radius:6px;text-align:center;transition:.3s;border:1px solid var(--gold-accent)}
+        .invite-tile:hover{transform:translateY(-5px);box-shadow:0 10px 25px rgba(26,43,74,.2)}
+        .invite-tile i{font-size:32px;color:var(--gold-accent);margin-bottom:12px;display:block}
+        .invite-tile h4{font-size:1rem;font-weight:800;margin-bottom:5px}
+        .invite-tile p{font-size:12.5px;color:rgba(255,255,255,.85);margin:0}
+        .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+        .contact-tile{background:#fff;border:1px solid var(--border-color);border-radius:6px;padding:22px;text-align:center;border-top:4px solid var(--gold-accent);transition:.3s}
+        .contact-tile:hover{transform:translateY(-4px);box-shadow:0 8px 20px rgba(26,43,74,.1)}
+        .contact-tile i{font-size:30px;color:var(--primary-navy);margin-bottom:12px;display:block}
+        .contact-tile h4{font-size:1rem;color:var(--primary-navy);font-weight:800;margin-bottom:8px}
+        .contact-tile p{font-size:13.5px;color:var(--text-muted);margin:0;direction:ltr}
+        .hero-compact{background:linear-gradient(135deg,var(--primary-navy),var(--secondary-blue));color:#fff;padding:25px 30px;border-radius:6px;margin-bottom:20px;border-right:5px solid var(--gold-accent);display:flex;align-items:center;gap:20px;position:relative;overflow:hidden}
+        .hero-compact::before{content:'';position:absolute;top:-50%;left:-20%;width:140%;height:200%;background:radial-gradient(circle,rgba(201,169,97,.15),transparent 60%)}
+        .hero-compact .hero-icon{font-size:45px;color:var(--gold-accent);flex-shrink:0;position:relative;z-index:2}
+        .hero-compact .hero-text{position:relative;z-index:2}
+        .hero-compact h1{font-size:1.6rem;font-weight:800;margin-bottom:6px}
+        .hero-compact h1 .gold-text{color:var(--gold-accent)}
+        .hero-compact p{font-size:13.5px;color:rgba(255,255,255,.85);margin:0}
+        .news-grid{display:grid;grid-template-columns:1fr 320px;gap:25px}
+        .content-area{min-width:0}
+        .section-header{display:flex;align-items:center;gap:10px;border-bottom:3px solid var(--primary-navy);padding-bottom:8px;margin:0 0 18px}
+        .section-header h2{font-size:1.3rem;font-weight:800;color:var(--primary-navy);margin:0;display:flex;align-items:center;gap:8px}
+        .section-header h2::before{content:'';width:5px;height:22px;background:var(--gold-accent);border-radius:2px}
+        .category-tabs{display:flex;gap:6px;margin-bottom:18px;overflow-x:auto;padding-bottom:5px}
+        .category-tabs .cat-btn{background:#fff;border:1px solid var(--border-color);color:var(--primary-navy);padding:6px 16px;border-radius:3px;font-size:12px;font-weight:600;cursor:pointer;white-space:nowrap;transition:.3s;font-family:'Tajawal',sans-serif}
+        .category-tabs .cat-btn.active{background:var(--primary-navy);color:#fff;border-color:var(--primary-navy)}
+        .articles-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:18px}
+        .article-card{background:#fff;border-radius:6px;overflow:hidden;box-shadow:0 2px 8px rgba(26,43,74,.06);transition:.3s;display:flex;flex-direction:column;border:1px solid var(--border-color)}
+        .article-card:hover{transform:translateY(-4px);box-shadow:0 10px 25px rgba(26,43,74,.15);border-color:var(--gold-accent)}
+        .article-card .card-top{height:4px;background:var(--primary-navy)}
+        .article-card:hover .card-top{background:var(--gold-accent)}
+        .article-card .card-body{padding:16px;display:flex;flex-direction:column;flex-grow:1}
+        .article-card .category-badge{display:inline-block;background:var(--very-light-blue);color:var(--primary-navy);padding:3px 10px;border-radius:3px;font-size:10.5px;font-weight:700;margin-bottom:10px;border-right:3px solid var(--gold-accent);align-self:flex-start}
+        .article-card h3{color:var(--text-dark);font-weight:700;font-size:1rem;margin-bottom:8px;line-height:1.5}
+        .article-card .excerpt{color:var(--text-muted);font-size:13px;flex-grow:1;margin-bottom:12px}
+        .article-card .meta{border-top:1px solid var(--border-color);padding-top:8px;display:flex;justify-content:space-between;font-size:11px;color:var(--text-muted)}
+        .article-card .meta i{color:var(--secondary-blue)}
+        .featured-card{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;background:#fff;border-radius:6px;overflow:hidden;box-shadow:0 4px 15px rgba(26,43,74,.08);border:1px solid var(--border-color)}
+        .featured-card .featured-image{background:linear-gradient(135deg,var(--primary-navy),var(--secondary-blue));min-height:250px;display:flex;align-items:center;justify-content:center;color:var(--gold-accent);font-size:60px;position:relative}
+        .featured-card .featured-image::after{content:attr(data-label);position:absolute;top:15px;right:15px;background:var(--gold-accent);color:var(--primary-navy);padding:4px 12px;font-size:11px;font-weight:800;border-radius:3px}
+        .featured-card .featured-body{padding:30px;display:flex;flex-direction:column;justify-content:center}
+        .featured-card .category-badge{background:var(--gold-light);color:var(--primary-navy);padding:4px 12px;border-radius:3px;font-size:11px;font-weight:700;align-self:flex-start;margin-bottom:12px}
+        .featured-card h2{font-size:1.5rem;font-weight:800;color:var(--primary-navy);margin-bottom:12px;line-height:1.4}
+        .featured-card .excerpt{color:var(--text-muted);font-size:14px;margin-bottom:15px;line-height:1.8}
+        .featured-card .meta{display:flex;gap:15px;font-size:12px;color:var(--text-muted);border-top:1px solid var(--border-color);padding-top:12px}
+        .featured-card .meta i{color:var(--secondary-blue)}
+        .sidebar{display:flex;flex-direction:column;gap:20px}
+        .sidebar-box{background:#fff;border-radius:6px;border:1px solid var(--border-color);overflow:hidden;box-shadow:0 2px 8px rgba(26,43,74,.04)}
+        .sidebar-box .box-header{background:var(--primary-navy);color:#fff;padding:10px 16px;font-size:13.5px;font-weight:700;display:flex;align-items:center;gap:8px;border-bottom:2px solid var(--gold-accent)}
+        .sidebar-box .box-header i{color:var(--gold-accent)}
+        .sidebar-box .box-body{padding:12px 16px}
+        .most-read-item{display:flex;gap:10px;padding:10px 0;border-bottom:1px dashed var(--border-color);cursor:pointer;transition:.3s}
+        .most-read-item:last-child{border-bottom:none}
+        .most-read-item:hover{padding-right:5px}
+        .most-read-item .number{width:26px;height:26px;background:var(--gold-light);color:var(--primary-navy);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;flex-shrink:0}
+        .most-read-item .text{flex:1}
+        .most-read-item .text p{margin:0;font-size:13px;font-weight:600;color:var(--text-dark);line-height:1.4}
+        .most-read-item .text small{color:var(--text-muted);font-size:11px}
+        .sidebar-cat-item{display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-bottom:1px dashed var(--border-color);cursor:pointer;transition:.3s}
+        .sidebar-cat-item:last-child{border-bottom:none}
+        .sidebar-cat-item:hover{padding-right:5px}
+        .sidebar-cat-item span:first-child{font-size:13px;font-weight:600;color:var(--text-dark)}
+        .sidebar-cat-item .count{background:var(--very-light-blue);color:var(--primary-navy);padding:2px 8px;border-radius:10px;font-size:11px;font-weight:700}
+        .follow-icons{display:flex;flex-wrap:wrap;gap:8px}
+        .follow-icons a{flex:1;min-width:45px;height:45px;display:flex;align-items:center;justify-content:center;color:#fff;border-radius:4px;font-size:18px;transition:.3s}
+        .follow-icons a:hover{transform:translateY(-3px)}
+        .follow-icons .fb{background:#1877f2}
+        .follow-icons .tw{background:#1da1f2}
+        .follow-icons .yt{background:#ff0000}
+        .follow-icons .tg{background:#0088cc}
+        .follow-icons .wa{background:#25d366}
+        .follow-icons .ig{background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888)}
+        .submit-box{background:#fff;border-radius:6px;padding:25px;box-shadow:0 2px 10px rgba(26,43,74,.06);border:1px solid var(--border-color);border-top:4px solid var(--gold-accent);margin-top:30px}
+        .submit-box label{font-weight:700;color:var(--primary-navy);margin-bottom:6px;display:block;font-size:13px}
+        .submit-box input,.submit-box select,.submit-box textarea{width:100%;padding:10px 14px;border:1px solid var(--border-color);border-radius:4px;font-family:'Tajawal',sans-serif;font-size:13.5px;outline:none;transition:.3s;margin-bottom:12px}
+        .submit-box input:focus,.submit-box select:focus,.submit-box textarea:focus{border-color:var(--secondary-blue);box-shadow:0 0 0 3px rgba(44,74,124,.08)}
+        .btn-submit{background:var(--primary-navy);color:#fff;border:none;padding:11px 30px;border-radius:4px;font-weight:700;font-family:'Tajawal',sans-serif;cursor:pointer;transition:.3s;font-size:14px}
+        .btn-submit:hover{background:var(--gold-accent);color:var(--primary-navy)}
+        footer{background:var(--primary-navy);color:#b8c4d6;padding:30px 0 0;border-top:4px solid var(--gold-accent);margin-top:40px}
+        footer .footer-brand{display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:20px}
+        footer .footer-brand .logo-mark{width:48px;height:48px;border:2px solid var(--gold-accent);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--gold-accent);font-size:22px}
+        footer .footer-brand span{color:#fff;font-size:1.5rem;font-weight:800}
+        .footer-contact-row{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:15px 35px;padding:15px 0;border-top:1px solid rgba(255,255,255,.08);border-bottom:1px solid rgba(255,255,255,.08)}
+        .footer-contact-item{display:flex;align-items:center;gap:8px;color:#b8c4d6;font-size:13.5px;transition:.3s;text-decoration:none;direction:ltr}
+        .footer-contact-item i{color:var(--gold-accent);font-size:15px}
+        .footer-contact-item:hover{color:var(--gold-accent)}
+        .footer-socials{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;padding:18px 0 20px}
+        .footer-socials a{width:42px;height:42px;display:flex;align-items:center;justify-content:center;border-radius:50%;color:#fff;font-size:17px;transition:.3s;text-decoration:none}
+        .footer-socials a:hover{transform:translateY(-4px)}
+        .footer-socials .fb{background:#1877f2}
+        .footer-socials .tw{background:#1da1f2}
+        .footer-socials .yt{background:#ff0000}
+        .footer-socials .tg{background:#0088cc}
+        .footer-socials .wa{background:#25d366}
+        .footer-socials .ig{background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888)}
+        .footer-socials .admin-link{background:rgba(255,255,255,.08);color:#8896b0;font-size:15px;border:1px solid rgba(255,255,255,.1)}
+        .footer-socials .admin-link:hover{color:var(--gold-accent);border-color:var(--gold-accent)}
+        footer .footer-bottom{background:var(--primary-navy-dark);padding:13px 0;text-align:center}
+        footer .footer-bottom p{margin:0;font-size:12px;color:#8896b0}
+        @media (max-width:1024px){.news-grid{grid-template-columns:1fr 280px;gap:18px}}
+        @media (max-width:900px){.news-grid{grid-template-columns:1fr}.sidebar{flex-direction:row;flex-wrap:wrap}.sidebar-box{flex:1;min-width:250px}.featured-card{grid-template-columns:1fr}.featured-card .featured-image{min-height:180px;font-size:45px}.contact-grid{grid-template-columns:1fr}}
+        @media (max-width:768px){
+            .main-nav{display:none}
+            .main-nav.mobile-open{display:block;position:fixed;top:0;right:0;width:300px;height:100vh;z-index:2000;overflow-y:auto;box-shadow:-5px 0 20px rgba(0,0,0,.3)}
+            .main-nav.mobile-open .nav-list{flex-direction:column;padding-top:60px}
+            .main-nav.mobile-open .nav-list li{width:100%}
+            .main-nav.mobile-open .nav-list li a{padding:14px 20px;border-bottom:1px solid rgba(255,255,255,.08);border-right:3px solid transparent;margin-bottom:0}
+            .main-nav.mobile-open .nav-list li a.active,.main-nav.mobile-open .nav-list li a:hover{border-bottom-color:transparent;border-right-color:var(--gold-accent)}
+            .main-nav.mobile-open .search-mini{display:none}
+            .mobile-menu-btn{display:flex;align-items:center;justify-content:center}
+            .mobile-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:1500}
+            .mobile-overlay.show{display:block}
+            .mobile-close-btn{position:absolute;top:15px;left:15px;background:transparent;color:var(--gold-accent);border:none;font-size:24px;cursor:pointer}
+            .main-header .brand-text .main{font-size:1.3rem}
+            .main-header .brand .logo-mark{width:45px;height:45px;font-size:20px}
+            .main-header .header-clock{display:none}
+            .main-header .container{flex-direction:row;justify-content:space-between;padding:0 15px}
+            .mobile-clock-bar{display:flex;justify-content:center;align-items:center;gap:10px;padding:8px 15px;background:var(--very-light-blue);border-bottom:1px solid var(--border-color);font-size:11px;color:var(--text-dark);flex-wrap:wrap}
+            .mobile-clock-bar i{color:var(--gold-accent);margin-left:3px}
+            .mobile-clock-bar .sep{color:var(--border-color);font-size:10px}
+            .mobile-clock-bar strong{color:var(--primary-navy);font-weight:700}
+            .mobile-search-bar{display:flex;padding:8px 15px;background:#fff;border-bottom:1px solid var(--border-color)}
+            .mobile-search-bar input{flex:1;padding:8px 14px;border:1px solid var(--border-color);border-left:none;border-radius:0 4px 4px 0;font-family:'Tajawal',sans-serif;font-size:13px;outline:none;background:var(--very-light-blue)}
+            .mobile-search-bar button{padding:8px 16px;background:var(--primary-navy);color:#fff;border:1px solid var(--primary-navy);border-radius:4px 0 0 4px;cursor:pointer;font-size:13px;font-family:'Tajawal',sans-serif}
+            .breaking-bar{padding:8px 12px;margin-bottom:15px}
+            .breaking-label{font-size:11px;padding:4px 10px}
+            .breaking-ticker marquee{font-size:12.5px}
+            .hero-compact{padding:18px 20px;flex-direction:column;text-align:center;gap:10px;margin-bottom:15px}
+            .hero-compact .hero-icon{font-size:35px}
+            .hero-compact h1{font-size:1.3rem}
+            .hero-compact p{font-size:12.5px}
+            .articles-grid{grid-template-columns:1fr;gap:14px}
+            .featured-card .featured-body{padding:20px}
+            .featured-card h2{font-size:1.2rem}
+            .section-header h2{font-size:1.1rem}
+            .section-header h2::before{height:18px}
+            .sidebar{flex-direction:column}
+            .main-container{padding:15px 12px}
+            .submit-box{padding:18px 20px}
+            .content-card{padding:20px}
+            .page-title-bar h1{font-size:1.4rem}
+            .page-title-bar{padding:22px 20px}
+            .footer-contact-row{gap:10px 20px;padding:12px 0}
+            .footer-contact-item{font-size:12.5px}
+            .footer-socials{padding:15px 0;gap:8px}
+            .footer-socials a{width:38px;height:38px;font-size:15px}
+        }
+        @media (max-width:480px){
+            .top-bar .contact-info{display:none}
+            .top-bar .social-icons{display:none}
+            .top-bar .container{justify-content:center}
+            .top-bar .right{margin:0 auto}
+            .main-header .brand-text .sub{display:none}
+            .featured-card .featured-image{min-height:140px;font-size:38px}
+            .featured-card h2{font-size:1.05rem}
+            .featured-card .featured-body{padding:15px}
+            .mobile-clock-bar{font-size:10px;gap:7px;padding:6px 10px}
+            .footer-contact-row{flex-direction:column;gap:8px}
+            .footer-contact-item{font-size:12px}
+            .footer-socials a{width:36px;height:36px;font-size:14px}
+        }
+    </style>
+</head>
+<body>
+
+    <!-- شريط علوي -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="contact-info">
+                <i class="fa-regular fa-envelope"></i>
+                <span>alaqeelafoundation@gmail.com</span>
+            </div>
+            <div class="right">
+                <div class="social-icons">
+                    <a href="#" title="فيسبوك"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" title="تويتر"><i class="fab fa-twitter"></i></a>
+                    <a href="#" title="يوتيوب"><i class="fab fa-youtube"></i></a>
+                </div>
+                <button class="lang-btn active" data-lang="ar">العربية</button>
+                <button class="lang-btn" data-lang="en">English</button>
+                <button class="lang-btn" data-lang="fa">فارسی</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- الترويسة -->
+    <header class="main-header">
+        <div class="container">
+            <a class="brand" onclick="showView('home')">
+                <div class="logo-mark"><i class="fa-solid fa-lightbulb"></i></div>
+                <div class="brand-text">
+                    <span class="main" data-i18n="brandName">مِشْكَاة</span>
+                    <span class="sub" data-i18n="brandSub">للنور والوعي</span>
+                </div>
+            </a>
+            <div class="header-clock">
+                <div class="time-row">
+                    <i class="fa-regular fa-clock"></i>
+                    <span id="liveClock">--:--:--</span>
+                    <span id="clockPeriod">ص</span>
+                </div>
+                <div class="date-row">
+                    <span><i class="fa-regular fa-calendar"></i> <span id="dayName">—</span></span>
+                    <span>|</span>
+                    <span id="gregorianDate">—</span>
+                    <span>|</span>
+                    <span><i class="fa-solid fa-moon"></i> <span id="hijriDate">—</span></span>
+                </div>
+            </div>
+            <div class="menu-area">
+                <button class="mobile-menu-btn" id="mobileMenuBtn"><i class="fa-solid fa-bars"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <!-- شريط التنقل -->
+    <nav class="main-nav" id="mainNav">
+        <div class="container">
+            <ul class="nav-list">
+                <li><a data-view="home" class="active" data-i18n="navHome">الرئيسية</a></li>
+                <li><a data-view="about" data-i18n="navAbout">عن المنصة</a></li>
+                <li><a data-view="sections" data-i18n="navSections">الأقسام</a></li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-bs-toggle="dropdown"><span data-i18n="navCats">التصنيفات</span> <i class="fa-solid fa-chevron-down" style="font-size:10px;"></i></a>
+                    <ul class="dropdown-menu" id="catsDropdownMenu">
+                        <li><a class="dropdown-item" data-cat="cat1" data-i18n="cat1">مقالات ورؤى</a></li>
+                        <li><a class="dropdown-item" data-cat="cat2" data-i18n="cat2">أهل البيت (ع)</a></li>
+                        <li><a class="dropdown-item" data-cat="cat3" data-i18n="cat3">وعي مجتمعي</a></li>
+                        <li><a class="dropdown-item" data-cat="cat4" data-i18n="cat4">رؤى وحلول</a></li>
+                        <li><a class="dropdown-item" data-cat="cat5" data-i18n="cat5">قضايا معاصرة</a></li>
+                        <li><a class="dropdown-item" data-cat="cat6" data-i18n="cat6">حوارات ومقابلات</a></li>
+                        <li><a class="dropdown-item" data-cat="cat7" data-i18n="cat7">شبهات وردود</a></li>
+                        <li><a class="dropdown-item" data-cat="cat8" data-i18n="cat8">التوجيهات الأخلاقية</a></li>
+                    </ul>
+                </li>
+                <li><a data-view="participation" data-i18n="navParticipation">كيفية المشاركة</a></li>
+                <li><a data-view="invitation" data-i18n="navInvitation">دعوة للمشاركة</a></li>
+                <li><a data-view="contact" data-i18n="navContact">تواصل معنا</a></li>
+            </ul>
+            <div class="search-mini">
+                <input type="search" id="headerSearchInput" data-i18n-ph="searchPh" placeholder="ابحث...">
+                <button type="button"><i class="fa-solid fa-search"></i></button>
+            </div>
+        </div>
+    </nav>
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+
+    <!-- أشرطة الجوال -->
+    <div class="mobile-clock-bar">
+        <span><i class="fa-regular fa-clock"></i> <strong id="mobileClock">--:--</strong> <span id="mobilePeriod">ص</span></span>
+        <span class="sep">|</span>
+        <span><i class="fa-regular fa-calendar"></i> <span id="mobileDate">—</span></span>
+        <span class="sep">|</span>
+        <span><i class="fa-solid fa-moon"></i> <span id="mobileHijri">—</span></span>
+    </div>
+    <div class="mobile-search-bar">
+        <input type="search" id="mobileSearchInput" data-i18n-ph="searchPhFull" placeholder="ابحث في الموقع...">
+        <button type="button"><i class="fa-solid fa-search"></i> <span data-i18n="searchBtn">بحث</span></button>
+    </div>
+
+    <!-- الحاوية الرئيسية -->
+    <div class="main-container">
+
+        <!-- صفحة: الرئيسية -->
+        <div class="page-view active" id="view-home">
+            <div class="hero-compact">
+                <div class="hero-icon"><i class="fa-solid fa-lightbulb"></i></div>
+                <div class="hero-text">
+                    <h1 data-i18n-html="heroTitle">مِشْكَاةُ <span class="gold-text">النُّورِ</span></h1>
+                    <p data-i18n="heroDesc">منصة فكرية توعوية لنشر المقالات والرؤى في بناء وعي مجتمعي متصل بكتاب الله وعترة رسوله</p>
+                </div>
+            </div>
+
+            <div class="breaking-bar">
+                <div class="container">
+                    <div class="breaking-label"><i class="fa-solid fa-circle"></i> <span data-i18n="breakingLabel">آخر الأخبار</span></div>
+                    <div class="breaking-ticker">
+                        <marquee behavior="scroll" direction="right" scrollamount="3">
+                            <a data-i18n="news1">صدور مقال جديد: مقام العدالة عند الإمام علي (ع)</a>
+                            <span>●</span>
+                            <a data-i18n="news2">حوار خاص: دور الشباب في نهضة المجتمع</a>
+                            <span>●</span>
+                            <a data-i18n="news3">قراءة في كتاب الأخلاق في القرآن</a>
+                            <span>●</span>
+                            <a data-i18n="news4">ندوة علمية حول الذكاء الاصطناعي من منظور إسلامي</a>
+                        </marquee>
+                    </div>
+                </div>
+            </div>
+
+            <div class="news-grid" id="articles">
+                <div class="content-area">
+                    <div class="section-header" id="sectionHeader">
+                        <h2 data-i18n="articlesTitle">المقالات والرؤى</h2>
+                    </div>
+                    <div class="category-tabs" id="mishkatCategories">
+                        <button class="cat-btn active" data-cat="all" data-i18n="catAll">الكل</button>
+                        <button class="cat-btn" data-cat="cat1" data-i18n="cat1">مقالات ورؤى</button>
+                        <button class="cat-btn" data-cat="cat2" data-i18n="cat2">أهل البيت (ع)</button>
+                        <button class="cat-btn" data-cat="cat3" data-i18n="cat3">وعي مجتمعي</button>
+                        <button class="cat-btn" data-cat="cat4" data-i18n="cat4">رؤى وحلول</button>
+                        <button class="cat-btn" data-cat="cat5" data-i18n="cat5">قضايا معاصرة</button>
+                        <button class="cat-btn" data-cat="cat6" data-i18n="cat6">حوارات ومقابلات</button>
+                        <button class="cat-btn" data-cat="cat7" data-i18n="cat7">شبهات وردود</button>
+                        <button class="cat-btn" data-cat="cat8" data-i18n="cat8">التوجيهات الأخلاقية</button>
+                    </div>
+                    <div class="articles-grid" id="articlesGrid"></div>
+                    <div id="articlesEmpty" class="text-center py-5" style="display:none;">
+                        <i class="fa-regular fa-newspaper" style="font-size:45px;color:var(--secondary-blue);"></i>
+                        <p style="margin-top:15px;color:var(--text-muted);" data-i18n="noArticles">لا توجد مقالات في هذا التصنيف حالياً</p>
+                    </div>
+                </div>
+
+                <aside class="sidebar">
+                    <div class="sidebar-box">
+                        <div class="box-header"><i class="fa-solid fa-fire"></i> <span data-i18n="mostRead">الأكثر قراءة</span></div>
+                        <div class="box-body" id="mostReadBox"></div>
+                    </div>
+                    <div class="sidebar-box">
+                        <div class="box-header"><i class="fa-solid fa-tags"></i> <span data-i18n="categoriesLabel">التصنيفات</span></div>
+                        <div class="box-body" id="sidebarCatsBox"></div>
+                    </div>
+                    <div class="sidebar-box">
+                        <div class="box-header"><i class="fa-solid fa-share-nodes"></i> <span data-i18n="followUs">تابعنا</span></div>
+                        <div class="box-body">
+                            <div class="follow-icons">
+                                <a href="#" class="fb"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#" class="tw"><i class="fab fa-twitter"></i></a>
+                                <a href="#" class="yt"><i class="fab fa-youtube"></i></a>
+                                <a href="#" class="tg"><i class="fab fa-telegram"></i></a>
+                                <a href="#" class="wa"><i class="fab fa-whatsapp"></i></a>
+                                <a href="#" class="ig"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+
+        <!-- صفحة: عن المنصة -->
+        <div class="page-view" id="view-about">
+            <div class="page-title-bar">
+                <h1><i class="fa-solid fa-circle-info"></i> <span data-i18n="pageAbout">عن المنصة</span></h1>
+                <p data-i18n="pageAboutDesc">تعرّف على منصة مشكاة ورؤيتها ورسالتها</p>
+            </div>
+            <div class="content-card">
+                <h2><i class="fa-solid fa-lightbulb"></i> <span data-i18n="aboutIntro">التعريف</span></h2>
+                <p data-i18n="aboutIntroText">مشكاة منصة إلكترونية ثقافية توعوية، تُعنى بنشر الأفكار والرؤى والمقالات الهادفة التي تساهم في توعية المجتمع، وتقديم حلول عملية للمشكلات المعاصرة، وإحياء ذكر أهل البيت عليهم السلام وسيرتهم، وترسيخ القيم الأخلاقية والإنسانية.</p>
+            </div>
+            <div class="content-card">
+                <h2><i class="fa-solid fa-eye"></i> <span data-i18n="aboutVision">الرؤية</span></h2>
+                <p data-i18n="aboutVisionText">أن تكون مشكاة منارة رقمية موثوقة، يلجأ إليها الباحث عن المعرفة الصافية، والفكر النير، والرؤية المتوازنة، بعيداً عن الضجيج والتشويش.</p>
+            </div>
+            <div class="content-card">
+                <h2><i class="fa-solid fa-bullhorn"></i> <span data-i18n="aboutMission">الرسالة</span></h2>
+                <p data-i18n="aboutMissionText">تقديم محتوى فكري وثقافي رصين، يُنتقى بعناية، ويُنشر بعد مراجعة دقيقة، ليصل إلى القارئ نقياً خالياً من الشوائب، ويُساهم في بناء وعي مجتمعي متصل بكتاب الله وعترة رسوله ﷺ.</p>
+            </div>
+            <div class="content-card">
+                <h2><i class="fa-solid fa-star"></i> <span data-i18n="aboutFeatures">ما يميز مشكاة</span></h2>
+                <ul>
+                    <li data-i18n="feat1">محتوى منتقى: لا مكان للفوضى أو المحتوى التجاري.</li>
+                    <li data-i18n="feat2">هوية بصرية أنيقة: تعكس الطابع الروحي.</li>
+                    <li data-i18n="feat3">إدارة سهلة: لوحة تحكم خاصة للمشرفين لنشر المقالات.</li>
+                    <li data-i18n="feat4">دعم متعدد اللغات: العربية، الإنجليزية، الفارسية.</li>
+                    <li data-i18n="feat5">مجانية بالكامل: لا رسوم على النشر أو القراءة.</li>
+                </ul>
+            </div>
+            <div class="content-card">
+                <h2><i class="fa-solid fa-bullseye"></i> <span data-i18n="aboutGoals">الأهداف</span></h2>
+                <ul>
+                    <li data-i18n="goal1">إثراء المحتوى العربي الرصين على الإنترنت.</li>
+                    <li data-i18n="goal2">توعية المجتمع بالقضايا المعاصرة.</li>
+                    <li data-i18n="goal3">إحياء تراث أهل البيت عليهم السلام.</li>
+                    <li data-i18n="goal4">فتح المجال أمام الكتّاب الجدد للنشر.</li>
+                    <li data-i18n="goal5">بناء جيل واعٍ مرتبط بكتاب الله وعترة رسوله.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- صفحة: الأقسام -->
+        <div class="page-view" id="view-sections">
+            <div class="page-title-bar">
+                <h1><i class="fa-solid fa-list"></i> <span data-i18n="pageSections">الأقسام</span></h1>
+                <p data-i18n="pageSectionsDesc">تصفح الأقسام الثمانية لمنصة مشكاة</p>
+            </div>
+            <div class="content-card">
+                <h2><i class="fa-solid fa-tags"></i> <span data-i18n="sectionsContent">أقسام المحتوى</span></h2>
+                <p data-i18n="sectionsContentText">تضم منصة مشكاة ثمانية أقسام رئيسية تغطي مختلف المجالات الفكرية والثقافية والاجتماعية:</p>
+                <div class="sections-grid">
+                    <div class="section-tile" data-cat="cat1"><div class="icon"><i class="fa-solid fa-pen-fancy"></i></div><h4 data-i18n="cat1">مقالات ورؤى</h4><p data-i18n="tile1">مقالات فكرية عامة تعالج قضايا معاصرة برؤية متوازنة.</p></div>
+                    <div class="section-tile" data-cat="cat2"><div class="icon"><i class="fa-solid fa-mosque"></i></div><h4 data-i18n="cat2">أهل البيت (ع)</h4><p data-i18n="tile2">مقالات متخصصة في سيرة وسلوك أهل البيت ودروس من مدرستهم.</p></div>
+                    <div class="section-tile" data-cat="cat3"><div class="icon"><i class="fa-solid fa-users"></i></div><h4 data-i18n="cat3">وعي مجتمعي</h4><p data-i18n="tile3">قضايا اجتماعية معاصرة: الأسرة، التربية، الشباب.</p></div>
+                    <div class="section-tile" data-cat="cat4"><div class="icon"><i class="fa-solid fa-lightbulb"></i></div><h4 data-i18n="cat4">رؤى وحلول</h4><p data-i18n="tile4">قراءة تحليلية للمشكلات الواقعية مع حلول عملية.</p></div>
+                    <div class="section-tile" data-cat="cat5"><div class="icon"><i class="fa-solid fa-globe"></i></div><h4 data-i18n="cat5">قضايا معاصرة</h4><p data-i18n="tile5">قراءة إسلامية للأحداث الجارية والظواهر الحديثة.</p></div>
+                    <div class="section-tile" data-cat="cat6"><div class="icon"><i class="fa-solid fa-comments"></i></div><h4 data-i18n="cat6">حوارات ومقابلات</h4><p data-i18n="tile6">حوارات مع شخصيات فكرية وثقافية وأكاديمية.</p></div>
+                    <div class="section-tile" data-cat="cat7"><div class="icon"><i class="fa-solid fa-shield-halved"></i></div><h4 data-i18n="cat7">شبهات وردود</h4><p data-i18n="tile7">الرد العلمي على الشبهات الفكرية والعقائدية.</p></div>
+                    <div class="section-tile" data-cat="cat8"><div class="icon"><i class="fa-solid fa-heart"></i></div><h4 data-i18n="cat8">التوجيهات الأخلاقية</h4><p data-i18n="tile8">دروس تربوية وأخلاقية مأثورة عن أهل البيت.</p></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- صفحة: سياسة النشر -->
+        <div class="page-view" id="view-policy">
+            <div class="page-title-bar">
+                <h1><i class="fa-solid fa-circle-check"></i> <span data-i18n="pagePolicy">سياسة النشر</span></h1>
+                <p data-i18n="pagePolicyDesc">شروط وقواعد نشر المقالات في منصة مشكاة</p>
+            </div>
+            <div class="content-card">
+                <h2><i class="fa-solid fa-scale-balanced"></i> <span data-i18n="policyTerms">شروط النشر</span></h2>
+                <ul>
+                    <li data-i18n="pol1">الانتقاء: لا يُنشر أي مقال إلا بعد مراجعته من فريق التحرير.</li>
+                    <li data-i18n="pol2">الأصالة: يُشترط أن يكون المقال جديداً ولم يُنشر سابقاً.</li>
+                    <li data-i18n="pol3">الموضوعية: الالتزام بالطرح العلمي الرصين بعيداً عن التعصب.</li>
+                    <li data-i18n="pol4">اللغة: سلامة اللغة العربية، وحسن العرض.</li>
+                    <li data-i18n="pol5">الحقوق: تُحفظ حقوق الكاتب، ويُذكر اسمه في كل مقال.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- صفحة: كيفية المشاركة -->
+        <div class="page-view" id="view-participation">
+            <div class="page-title-bar">
+                <h1><i class="fa-solid fa-hands-helping"></i> <span data-i18n="pageParticipation">كيفية المشاركة</span></h1>
+                <p data-i18n="pageParticipationDesc">خطوات إرسال مقالك إلى منصة مشكاة</p>
+            </div>
+            <div class="content-card">
+                <h2><i class="fa-solid fa-list-ol"></i> <span data-i18n="partSteps">خطوات المشاركة</span></h2>
+                <ol class="steps-list">
+                    <li data-i18n="step1">اكتب مقالك بصيغة Word أو Google Docs، بموضوع أصيل ولغة سليمة.</li>
+                    <li data-i18n="step2">أرسل المقال إلى البريد الإلكتروني: alaqeelafoundation@gmail.com</li>
+                    <li data-i18n="step3">أو عبر النموذج الإلكتروني المخصص (سيتوفر قريباً).</li>
+                    <li data-i18n="step4">سيتم مراجعة المقال خلال أسبوع من استلامه.</li>
+                    <li data-i18n="step5">يُخطر الكاتب بالقبول، أو الرفض، أو طلب التعديل.</li>
+                    <li data-i18n="step6">عند النشر، يُذكر اسم الكاتب ويُروّج للمقال عبر قنوات المنصة.</li>
+                </ol>
+            </div>
+            <div class="content-card">
+                <h2><i class="fa-solid fa-envelope"></i> <span data-i18n="partForm">نموذج التواصل المبدئي</span></h2>
+                <div class="submit-box" style="margin-top:0;">
+                    <form onsubmit="event.preventDefault(); alert(translations[currentLang].submitAlert); this.reset();">
+                        <div class="row g-3">
+                            <div class="col-md-6"><label data-i18n="formName">الاسم الكامل</label><input type="text" required></div>
+                            <div class="col-md-6"><label data-i18n="formEmail">البريد الإلكتروني</label><input type="email" required></div>
+                            <div class="col-12"><label data-i18n="formArticleTitle">عنوان المقال</label><input type="text" required></div>
+                            <div class="col-md-6">
+                                <label data-i18n="formCategory">التصنيف المقترح</label>
+                                <select required>
+                                    <option value="" data-i18n="formChoose">اختر التصنيف</option>
+                                    <option data-i18n="cat1">مقالات ورؤى</option>
+                                    <option data-i18n="cat2">أهل البيت (ع)</option>
+                                    <option data-i18n="cat3">وعي مجتمعي</option>
+                                    <option data-i18n="cat4">رؤى وحلول</option>
+                                    <option data-i18n="cat5">قضايا معاصرة</option>
+                                    <option data-i18n="cat6">حوارات ومقابلات</option>
+                                    <option data-i18n="cat7">شبهات وردود</option>
+                                    <option data-i18n="cat8">التوجيهات الأخلاقية</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6"><label data-i18n="formLink">رابط ملف المقال (اختياري)</label><input type="url" placeholder="Google Drive / Dropbox"></div>
+                            <div class="col-12"><label data-i18n="formExcerpt">المقتطف (نبذة قصيرة)</label><textarea rows="3" required></textarea></div>
+                            <div class="col-12 text-start">
+                                <button type="submit" class="btn-submit"><i class="fa-regular fa-paper-plane"></i> <span data-i18n="formSubmit">إرسال المقال</span></button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- صفحة: دعوة للمشاركة -->
+        <div class="page-view" id="view-invitation">
+            <div class="page-title-bar">
+                <h1><i class="fa-solid fa-bullhorn"></i> <span data-i18n="pageInvitation">دعوة للمشاركة</span></h1>
+                <p data-i18n="pageInvitationDesc">طرق الإسهام في منصة مشكاة</p>
+            </div>
+            <div class="content-card">
+                <h2><i class="fa-solid fa-hand-holding-heart"></i> <span data-i18n="inviteTitle">كيف تُساهم معنا؟</span></h2>
+                <p data-i18n="inviteDesc">نرحب بكل من يجد في نفسه القدرة على الإسهام في هذا المشروع المبارك، من خلال الطرق التالية:</p>
+                <div class="invite-grid">
+                    <div class="invite-tile"><i class="fa-solid fa-pen-nib"></i><h4 data-i18n="invite1">الكتابة</h4><p data-i18n="invite1Desc">مقالات، رؤى، تحليلات في مختلف المجالات.</p></div>
+                    <div class="invite-tile"><i class="fa-solid fa-language"></i><h4 data-i18n="invite2">الترجمة</h4><p data-i18n="invite2Desc">ترجمة المقالات إلى لغات أخرى.</p></div>
+                    <div class="invite-tile"><i class="fa-solid fa-magnifying-glass"></i><h4 data-i18n="invite3">المراجعة</h4><p data-i18n="invite3Desc">تدقيق لغوي أو علمي للمقالات.</p></div>
+                    <div class="invite-tile"><i class="fa-solid fa-code"></i><h4 data-i18n="invite4">الدعم التقني</h4><p data-i18n="invite4Desc">تطوير المنصة وتحسين أدائها.</p></div>
+                    <div class="invite-tile"><i class="fa-solid fa-share-nodes"></i><h4 data-i18n="invite5">النشر</h4><p data-i18n="invite5Desc">نشر المقالات عبر وسائل التواصل.</p></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- صفحة: تواصل معنا -->
+        <div class="page-view" id="view-contact">
+            <div class="page-title-bar">
+                <h1><i class="fa-solid fa-address-book"></i> <span data-i18n="pageContact">تواصل معنا</span></h1>
+                <p data-i18n="pageContactDesc">نحن هنا للإجابة على استفساراتكم</p>
+            </div>
+            <div class="content-card">
+                <h2><i class="fa-solid fa-headset"></i> <span data-i18n="contactInfo">معلومات التواصل</span></h2>
+                <div class="contact-grid">
+                    <div class="contact-tile">
+                        <i class="fa-regular fa-envelope"></i>
+                        <h4 data-i18n="contactEmailLabel">البريد الإلكتروني</h4>
+                        <p>alaqeelafoundation@gmail.com</p>
+                    </div>
+                    <div class="contact-tile">
+                        <i class="fa-solid fa-phone"></i>
+                        <h4 data-i18n="contactPhoneLabel">الهاتف</h4>
+                        <p>+967 779 018 414</p>
+                    </div>
+                </div>
+            </div>
+            <div class="content-card">
+                <h2><i class="fa-regular fa-paper-plane"></i> <span data-i18n="contactSendTitle">أرسل رسالة</span></h2>
+                <div class="submit-box" style="margin-top:0;">
+                    <form onsubmit="event.preventDefault(); alert(translations[currentLang].messageAlert); this.reset();">
+                        <div class="row g-3">
+                            <div class="col-md-6"><label data-i18n="formNameOnly">الاسم</label><input type="text" required></div>
+                            <div class="col-md-6"><label data-i18n="formEmail">البريد الإلكتروني</label><input type="email" required></div>
+                            <div class="col-12"><label data-i18n="formSubject">الموضوع</label><input type="text" required></div>
+                            <div class="col-12"><label data-i18n="formMessage">الرسالة</label><textarea rows="4" required></textarea></div>
+                            <div class="col-12 text-start">
+                                <button type="submit" class="btn-submit"><i class="fa-regular fa-paper-plane"></i> <span data-i18n="formSend">إرسال</span></button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- التذييل -->
+    <footer>
+        <div class="container">
+            <div class="footer-brand">
+                <div class="logo-mark"><i class="fa-solid fa-lightbulb"></i></div>
+                <span data-i18n="brandName">مِشْكَاة</span>
+            </div>
+            <div class="footer-contact-row">
+                <a href="mailto:alaqeelafoundation@gmail.com" class="footer-contact-item">
+                    <i class="fa-regular fa-envelope"></i>
+                    alaqeelafoundation@gmail.com
+                </a>
+                <a href="tel:+967779018414" class="footer-contact-item">
+                    <i class="fa-solid fa-phone"></i>
+                    +967 779 018 414
+                </a>
+            </div>
+            <div class="footer-socials">
+                <a href="#" class="fb" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="tw" title="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="yt" title="YouTube"><i class="fab fa-youtube"></i></a>
+                <a href="#" class="tg" title="Telegram"><i class="fab fa-telegram"></i></a>
+                <a href="#" class="wa" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                <a href="#" class="ig" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="/admin/" class="admin-link" title="Admin"><i class="fa-solid fa-gear"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container"><p data-i18n="footerRights">جميع الحقوق محفوظة © 2026 منصة مشكاة | للنور والوعي</p></div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        const mishkatArticles = {
+            ar: [
+                { catKey: 'cat2', title: 'مقام العدالة عند الإمام علي (ع)', author: 'د. أحمد الفقيه', date: '2026-09-01', excerpt: 'نظرة في سيرته كحاكم عادل ومكافح للظلم، وكيف يمكن تطبيق مبادئه اليوم.' },
+                { catKey: 'cat3', title: 'أثر التربية الأخلاقية في تماسك الأسرة', author: 'أ. سعاد الموسوي', date: '2026-08-28', excerpt: 'كيف نعيد القيم النبوية والعلوية إلى بيوتنا؟' },
+                { catKey: 'cat4', title: 'مشكلة البطالة المقنعة .. رؤية اقتصادية', author: 'د. علي الحسني', date: '2026-08-20', excerpt: 'قراءة في الحلول المستدامة من منظور إسلامي.' },
+                { catKey: 'cat2', title: 'السيدة زينب (ع) نموذج الصبر والحكمة', author: 'الشيخ محمد الصادق', date: '2026-08-15', excerpt: 'دروس في الثبات والفصاحة من موقف الطف.' },
+                { catKey: 'cat7', title: 'شبهة حول عصمة الأنبياء - رد علمي', author: 'السيد مهدي الحسيني', date: '2026-08-10', excerpt: 'رد مفصل على الشبهات المثارة حول عصمة الأنبياء.' },
+                { catKey: 'cat6', title: 'حوار مع الأستاذ حول الثقافة', author: 'فريق التحرير', date: '2026-08-05', excerpt: 'حوار حول واقع الثقافة وسبل النهوض بها.' },
+                { catKey: 'cat8', title: 'التواضع في سيرة أهل البيت (ع)', author: 'الشيخ محمد الصادق', date: '2026-08-01', excerpt: 'دروس عملية في التواضع من سيرة العترة الطاهرة.' },
+                { catKey: 'cat5', title: 'الذكاء الاصطناعي - قراءة إسلامية', author: 'د. أحمد الفقيه', date: '2026-07-28', excerpt: 'كيف نتعامل مع تقنيات الذكاء الاصطناعي من منظور إسلامي؟' },
+                { catKey: 'cat1', title: 'دور الشباب في نهضة المجتمع', author: 'أ. سعاد الموسوي', date: '2026-07-20', excerpt: 'قراءة في طاقات الشباب وكيفية استثمارها في بناء المجتمع.' }
+            ],
+            en: [
+                { catKey: 'cat2', title: 'The Position of Justice with Imam Ali (as)', author: 'Dr. Ahmed Al-Faqih', date: '2026-09-01', excerpt: 'A look at his biography as a just ruler who fought oppression, and how his principles can be applied today.' },
+                { catKey: 'cat3', title: 'The Impact of Moral Education on Family Cohesion', author: 'Ms. Suad Al-Musawi', date: '2026-08-28', excerpt: 'How do we restore prophetic and Alawite values to our homes?' },
+                { catKey: 'cat4', title: 'Disguised Unemployment — An Economic View', author: 'Dr. Ali Al-Hasani', date: '2026-08-20', excerpt: 'A reading of sustainable solutions from an Islamic perspective.' },
+                { catKey: 'cat2', title: 'Lady Zaynab (as): A Model of Patience and Wisdom', author: 'Sheikh Muhammad Al-Sadiq', date: '2026-08-15', excerpt: 'Lessons in steadfastness and eloquence from the events of Karbala.' },
+                { catKey: 'cat7', title: 'A Doubt About the Infallibility of Prophets — A Scholarly Response', author: 'Sayyid Mahdi Al-Husseini', date: '2026-08-10', excerpt: 'A detailed response to the doubts raised about the infallibility of the prophets.' },
+                { catKey: 'cat6', title: 'A Dialogue with the Professor on Culture', author: 'Editorial Team', date: '2026-08-05', excerpt: 'A dialogue on the state of culture and ways to advance it.' },
+                { catKey: 'cat8', title: 'Humility in the Biography of Ahl al-Bayt (as)', author: 'Sheikh Muhammad Al-Sadiq', date: '2026-08-01', excerpt: 'Practical lessons in humility from the biography of the pure household.' },
+                { catKey: 'cat5', title: 'Artificial Intelligence — An Islamic Reading', author: 'Dr. Ahmed Al-Faqih', date: '2026-07-28', excerpt: 'How do we deal with AI technologies from an Islamic perspective?' },
+                { catKey: 'cat1', title: 'The Role of Youth in the Renaissance of Society', author: 'Ms. Suad Al-Musawi', date: '2026-07-20', excerpt: 'A reading of the energies of youth and how to invest them in building society.' }
+            ],
+            fa: [
+                { catKey: 'cat2', title: 'جایگاه عدالت نزد امام علی (ع)', author: 'دکتر احمد فقیه', date: '2026-09-01', excerpt: 'نگاهی به سیره او به‌عنوان حاکم عادل و مبارز با ظلم، و اینکه چگونه می‌توان اصولش را امروز پیاده کرد.' },
+                { catKey: 'cat3', title: 'تأثیر تربیت اخلاقی بر انسجام خانواده', author: 'خانم سعاد موسوی', date: '2026-08-28', excerpt: 'چگونه ارزش‌های نبوی و علوی را به خانه‌هایمان برگردانیم؟' },
+                { catKey: 'cat4', title: 'بیکاری پنهان — نگاهی اقتصادی', author: 'دکتر علی حسنی', date: '2026-08-20', excerpt: 'خوانشی از راه‌حل‌های پایدار از منظر اسلامی.' },
+                { catKey: 'cat2', title: 'حضرت زینب (س): الگوی صبر و حکمت', author: 'شیخ محمد صادق', date: '2026-08-15', excerpt: 'درس‌هایی از استقامت و فصاحت از واقعه عاشورا.' },
+                { catKey: 'cat7', title: 'شبهه‌ای درباره عصمت انبیا — پاسخی علمی', author: 'سید مهدی حسینی', date: '2026-08-10', excerpt: 'پاسخی مفصل به شبهات مطرح‌شده درباره عصمت انبیا.' },
+                { catKey: 'cat6', title: 'گفتگو با استاد درباره فرهنگ', author: 'تیم تحریریه', date: '2026-08-05', excerpt: 'گفتگویی درباره وضعیت فرهنگ و راه‌های پیشرفت آن.' },
+                { catKey: 'cat8', title: 'تواضع در سیره اهل بیت (ع)', author: 'شیخ محمد صادق', date: '2026-08-01', excerpt: 'درس‌های عملی در تواضع از سیره عترت پاک.' },
+                { catKey: 'cat5', title: 'هوش مصنوعی — خوانش اسلامی', author: 'دکتر احمد فقیه', date: '2026-07-28', excerpt: 'چگونه با فناوری‌های هوش مصنوعی از منظر اسلامی مواجه شویم؟' },
+                { catKey: 'cat1', title: 'نقش جوانان در شکوفایی جامعه', author: 'خانم سعاد موسوی', date: '2026-07-20', excerpt: 'خوانشی از توانمندی‌های جوانان و چگونگی سرمایه‌گذاری در ساخت جامعه.' }
+            ]
+        };
+
+        const translations = {
+            ar: {
+                title: 'منصة مشكاة | للنور والوعي', brandName: 'مِشْكَاة', brandSub: 'للنور والوعي',
+                navHome: 'الرئيسية', navAbout: 'عن المنصة', navSections: 'الأقسام', navCats: 'التصنيفات',
+                navParticipation: 'كيفية المشاركة', navInvitation: 'دعوة للمشاركة', navContact: 'تواصل معنا',
+                searchPh: 'ابحث...', searchPhFull: 'ابحث في الموقع...', searchBtn: 'بحث',
+                heroTitle: 'مِشْكَاةُ <span class="gold-text">النُّورِ</span>',
+                heroDesc: 'منصة فكرية توعوية لنشر المقالات والرؤى في بناء وعي مجتمعي متصل بكتاب الله وعترة رسوله',
+                breakingLabel: 'آخر الأخبار',
+                news1: 'صدور مقال جديد: مقام العدالة عند الإمام علي (ع)',
+                news2: 'حوار خاص: دور الشباب في نهضة المجتمع',
+                news3: 'قراءة في كتاب الأخلاق في القرآن',
+                news4: 'ندوة علمية حول الذكاء الاصطناعي من منظور إسلامي',
+                articlesTitle: 'المقالات والرؤى', noArticles: 'لا توجد مقالات في هذا التصنيف حالياً',
+                mostRead: 'الأكثر قراءة', categoriesLabel: 'التصنيفات', followUs: 'تابعنا',
+                catAll: 'الكل', cat1: 'مقالات ورؤى', cat2: 'أهل البيت (ع)', cat3: 'وعي مجتمعي',
+                cat4: 'رؤى وحلول', cat5: 'قضايا معاصرة', cat6: 'حوارات ومقابلات', cat7: 'شبهات وردود', cat8: 'التوجيهات الأخلاقية',
+                featured: 'مقال مميز',
+                pageAbout: 'عن المنصة', pageAboutDesc: 'تعرّف على منصة مشكاة ورؤيتها ورسالتها',
+                aboutIntro: 'التعريف', aboutIntroText: 'مشكاة منصة إلكترونية ثقافية توعوية، تُعنى بنشر الأفكار والرؤى والمقالات الهادفة التي تساهم في توعية المجتمع، وتقديم حلول عملية للمشكلات المعاصرة، وإحياء ذكر أهل البيت عليهم السلام وسيرتهم، وترسيخ القيم الأخلاقية والإنسانية.',
+                aboutVision: 'الرؤية', aboutVisionText: 'أن تكون مشكاة منارة رقمية موثوقة، يلجأ إليها الباحث عن المعرفة الصافية، والفكر النير، والرؤية المتوازنة، بعيداً عن الضجيج والتشويش.',
+                aboutMission: 'الرسالة', aboutMissionText: 'تقديم محتوى فكري وثقافي رصين، يُنتقى بعناية، ويُنشر بعد مراجعة دقيقة، ليصل إلى القارئ نقياً خالياً من الشوائب، ويُساهم في بناء وعي مجتمعي متصل بكتاب الله وعترة رسوله ﷺ.',
+                aboutFeatures: 'ما يميز مشكاة', feat1: 'محتوى منتقى: لا مكان للفوضى أو المحتوى التجاري.',
+                feat2: 'هوية بصرية أنيقة: تعكس الطابع الروحي.', feat3: 'إدارة سهلة: لوحة تحكم خاصة للمشرفين لنشر المقالات.',
+                feat4: 'دعم متعدد اللغات: العربية، الإنجليزية، الفارسية.', feat5: 'مجانية بالكامل: لا رسوم على النشر أو القراءة.',
+                aboutGoals: 'الأهداف', goal1: 'إثراء المحتوى العربي الرصين على الإنترنت.',
+                goal2: 'توعية المجتمع بالقضايا المعاصرة.', goal3: 'إحياء تراث أهل البيت عليهم السلام.',
+                goal4: 'فتح المجال أمام الكتّاب الجدد للنشر.', goal5: 'بناء جيل واعٍ مرتبط بكتاب الله وعترة رسوله.',
+                pageSections: 'الأقسام', pageSectionsDesc: 'تصفح الأقسام الثمانية لمنصة مشكاة',
+                sectionsContent: 'أقسام المحتوى', sectionsContentText: 'تضم منصة مشكاة ثمانية أقسام رئيسية تغطي مختلف المجالات الفكرية والثقافية والاجتماعية:',
+                tile1: 'مقالات فكرية عامة تعالج قضايا معاصرة برؤية متوازنة.', tile2: 'مقالات متخصصة في سيرة وسلوك أهل البيت ودروس من مدرستهم.',
+                tile3: 'قضايا اجتماعية معاصرة: الأسرة، التربية، الشباب.', tile4: 'قراءة تحليلية للمشكلات الواقعية مع حلول عملية.',
+                tile5: 'قراءة إسلامية للأحداث الجارية والظواهر الحديثة.', tile6: 'حوارات مع شخصيات فكرية وثقافية وأكاديمية.',
+                tile7: 'الرد العلمي على الشبهات الفكرية والعقائدية.', tile8: 'دروس تربوية وأخلاقية مأثورة عن أهل البيت.',
+                pagePolicy: 'سياسة النشر', pagePolicyDesc: 'شروط وقواعد نشر المقالات في منصة مشكاة',
+                policyTerms: 'شروط النشر', pol1: 'الانتقاء: لا يُنشر أي مقال إلا بعد مراجعته من فريق التحرير.',
+                pol2: 'الأصالة: يُشترط أن يكون المقال جديداً ولم يُنشر سابقاً.', pol3: 'الموضوعية: الالتزام بالطرح العلمي الرصين بعيداً عن التعصب.',
+                pol4: 'اللغة: سلامة اللغة العربية، وحسن العرض.', pol5: 'الحقوق: تُحفظ حقوق الكاتب، ويُذكر اسمه في كل مقال.',
+                pageParticipation: 'كيفية المشاركة', pageParticipationDesc: 'خطوات إرسال مقالك إلى منصة مشكاة',
+                partSteps: 'خطوات المشاركة', step1: 'اكتب مقالك بصيغة Word أو Google Docs، بموضوع أصيل ولغة سليمة.',
+                step2: 'أرسل المقال إلى البريد الإلكتروني: alaqeelafoundation@gmail.com', step3: 'أو عبر النموذج الإلكتروني المخصص (سيتوفر قريباً).',
+                step4: 'سيتم مراجعة المقال خلال أسبوع من استلامه.', step5: 'يُخطر الكاتب بالقبول، أو الرفض، أو طلب التعديل.',
+                step6: 'عند النشر، يُذكر اسم الكاتب ويُروّج للمقال عبر قنوات المنصة.',
+                partForm: 'نموذج التواصل المبدئي', formName: 'الاسم الكامل', formNameOnly: 'الاسم', formEmail: 'البريد الإلكتروني',
+                formArticleTitle: 'عنوان المقال', formCategory: 'التصنيف المقترح', formChoose: 'اختر التصنيف',
+                formLink: 'رابط ملف المقال (اختياري)', formExcerpt: 'المقتطف (نبذة قصيرة)', formSubmit: 'إرسال المقال',
+                formSubject: 'الموضوع', formMessage: 'الرسالة', formSend: 'إرسال',
+                pageInvitation: 'دعوة للمشاركة', pageInvitationDesc: 'طرق الإسهام في منصة مشكاة',
+                inviteTitle: 'كيف تُساهم معنا؟', inviteDesc: 'نرحب بكل من يجد في نفسه القدرة على الإسهام في هذا المشروع المبارك، من خلال الطرق التالية:',
+                invite1: 'الكتابة', invite1Desc: 'مقالات، رؤى، تحليلات في مختلف المجالات.',
+                invite2: 'الترجمة', invite2Desc: 'ترجمة المقالات إلى لغات أخرى.', invite3: 'المراجعة', invite3Desc: 'تدقيق لغوي أو علمي للمقالات.',
+                invite4: 'الدعم التقني', invite4Desc: 'تطوير المنصة وتحسين أدائها.', invite5: 'النشر', invite5Desc: 'نشر المقالات عبر وسائل التواصل.',
+                pageContact: 'تواصل معنا', pageContactDesc: 'نحن هنا للإجابة على استفساراتكم',
+                contactInfo: 'معلومات التواصل', contactEmailLabel: 'البريد الإلكتروني', contactPhoneLabel: 'الهاتف', contactSendTitle: 'أرسل رسالة',
+                footerRights: 'جميع الحقوق محفوظة © 2026 منصة مشكاة | للنور والوعي',
+                am: 'ص', pm: 'م',
+                submitAlert: 'تم استلام مقالك بنجاح! سيتم مراجعته وإبلاغك قريباً.',
+                messageAlert: 'تم استلام رسالتك بنجاح! شكراً لتواصلك.'
+            },
+            en: {
+                title: 'Mishkat Platform | For Light & Awareness', brandName: 'MISHKAT', brandSub: 'For Light & Awareness',
+                navHome: 'Home', navAbout: 'About', navSections: 'Sections', navCats: 'Categories',
+                navParticipation: 'How to Participate', navInvitation: 'Invitation', navContact: 'Contact Us',
+                searchPh: 'Search...', searchPhFull: 'Search the site...', searchBtn: 'Search',
+                heroTitle: 'Mishkat <span class="gold-text">of Light</span>',
+                heroDesc: 'An intellectual awareness platform for publishing articles and insights to build a conscious society connected to the Book of God and the Prophet\'s Household',
+                breakingLabel: 'Latest News',
+                news1: 'New article: The position of justice with Imam Ali (as)',
+                news2: 'Special interview: The role of youth in reviving society',
+                news3: 'Review of the book "Ethics in the Quran"',
+                news4: 'Scientific seminar on AI from an Islamic perspective',
+                articlesTitle: 'Articles & Insights', noArticles: 'No articles in this category yet',
+                mostRead: 'Most Read', categoriesLabel: 'Categories', followUs: 'Follow Us',
+                catAll: 'All', cat1: 'Articles & Insights', cat2: 'Ahl al-Bayt (as)', cat3: 'Social Awareness',
+                cat4: 'Insights & Solutions', cat5: 'Contemporary Issues', cat6: 'Dialogues & Interviews', cat7: 'Doubts & Responses', cat8: 'Ethical Guidance',
+                featured: 'Featured Article',
+                pageAbout: 'About the Platform', pageAboutDesc: 'Learn about Mishkat, its vision and mission',
+                aboutIntro: 'Introduction', aboutIntroText: 'Mishkat is an electronic cultural and awareness platform, dedicated to publishing ideas, insights, and purposeful articles that contribute to raising community awareness, offering practical solutions to contemporary problems, reviving the memory of Ahl al-Bayt (peace be upon them) and their biography, and consolidating ethical and human values.',
+                aboutVision: 'Vision', aboutVisionText: 'To be a trusted digital beacon that seekers of pure knowledge, bright intellect, and balanced vision turn to — away from noise and confusion.',
+                aboutMission: 'Mission', aboutMissionText: 'To provide solid intellectual and cultural content, carefully selected and published after precise review, reaching the reader pure and free of impurities, contributing to building a conscious society connected to the Book of God and the Prophet\'s Household.',
+                aboutFeatures: 'What Distinguishes Mishkat', feat1: 'Selected content: No room for chaos or commercial content.',
+                feat2: 'Elegant visual identity: Reflects the spiritual character.', feat3: 'Easy management: A dedicated dashboard for publishing.',
+                feat4: 'Multi-language support: Arabic, English, Persian.', feat5: 'Completely free: No fees for publishing or reading.',
+                aboutGoals: 'Objectives', goal1: 'Enriching solid Arabic content on the internet.',
+                goal2: 'Raising community awareness of contemporary issues.', goal3: 'Reviving the heritage of Ahl al-Bayt (as).',
+                goal4: 'Opening the door for new writers to publish.', goal5: 'Building a conscious generation connected to the Book of God and the Prophet\'s Household.',
+                pageSections: 'Sections', pageSectionsDesc: 'Browse the eight sections of Mishkat',
+                sectionsContent: 'Content Sections', sectionsContentText: 'Mishkat includes eight main sections covering various intellectual, cultural, and social fields:',
+                tile1: 'General intellectual articles addressing contemporary issues with a balanced vision.', tile2: 'Specialized articles on the biography and conduct of Ahl al-Bayt.',
+                tile3: 'Contemporary social issues: family, education, youth.', tile4: 'Analytical reading of real-world problems with practical solutions.',
+                tile5: 'Islamic reading of current events and modern phenomena.', tile6: 'Dialogues with intellectual, cultural, and academic figures.',
+                tile7: 'Scholarly response to intellectual and doctrinal doubts.', tile8: 'Educational and ethical lessons from Ahl al-Bayt.',
+                pagePolicy: 'Publishing Policy', pagePolicyDesc: 'Terms and rules for publishing articles on Mishkat',
+                policyTerms: 'Publishing Terms', pol1: 'Selection: No article is published except after review by the editorial team.',
+                pol2: 'Originality: The article must be new and not previously published.', pol3: 'Objectivity: Commitment to solid scholarly discourse, away from bias.',
+                pol4: 'Language: Sound Arabic language and good presentation.', pol5: 'Rights: The writer\'s rights are preserved, and their name is mentioned in every article.',
+                pageParticipation: 'How to Participate', pageParticipationDesc: 'Steps to submit your article to Mishkat',
+                partSteps: 'Participation Steps', step1: 'Write your article in Word or Google Docs, with an original topic and sound language.',
+                step2: 'Send the article to: alaqeelafoundation@gmail.com', step3: 'Or via the dedicated electronic form (coming soon).',
+                step4: 'The article will be reviewed within a week of receipt.', step5: 'The writer is notified of acceptance, rejection, or a request for modification.',
+                step6: 'Upon publication, the writer\'s name is mentioned and the article is promoted across the platform.',
+                partForm: 'Initial Contact Form', formName: 'Full Name', formNameOnly: 'Name', formEmail: 'Email Address',
+                formArticleTitle: 'Article Title', formCategory: 'Suggested Category', formChoose: 'Choose category',
+                formLink: 'Article file link (optional)', formExcerpt: 'Excerpt (short summary)', formSubmit: 'Submit Article',
+                formSubject: 'Subject', formMessage: 'Message', formSend: 'Send',
+                pageInvitation: 'Invitation to Participate', pageInvitationDesc: 'Ways to contribute to Mishkat',
+                inviteTitle: 'How can you contribute?', inviteDesc: 'We welcome anyone who finds the ability to contribute to this blessed project through the following ways:',
+                invite1: 'Writing', invite1Desc: 'Articles, insights, analyses in various fields.',
+                invite2: 'Translation', invite2Desc: 'Translating articles into other languages.', invite3: 'Review', invite3Desc: 'Linguistic or scholarly proofreading.',
+                invite4: 'Technical Support', invite4Desc: 'Developing the platform and improving performance.', invite5: 'Sharing', invite5Desc: 'Sharing articles via social media.',
+                pageContact: 'Contact Us', pageContactDesc: 'We are here to answer your inquiries',
+                contactInfo: 'Contact Information', contactEmailLabel: 'Email Address', contactPhoneLabel: 'Phone', contactSendTitle: 'Send a Message',
+                footerRights: 'All rights reserved © 2026 Mishkat Platform | For Light & Awareness',
+                am: 'AM', pm: 'PM',
+                submitAlert: 'Your article has been received successfully! It will be reviewed and you\'ll be notified soon.',
+                messageAlert: 'Your message has been received successfully! Thank you for contacting us.'
+            },
+            fa: {
+                title: 'پلتفرم مشکاه | برای نور و آگاهی', brandName: 'مشکاه', brandSub: 'برای نور و آگاهی',
+                navHome: 'صفحه اصلی', navAbout: 'درباره پلتفرم', navSections: 'بخش‌ها', navCats: 'دسته‌بندی‌ها',
+                navParticipation: 'نحوه مشارکت', navInvitation: 'دعوت به مشارکت', navContact: 'تماس با ما',
+                searchPh: 'جستجو...', searchPhFull: 'جستجو در سایت...', searchBtn: 'جستجو',
+                heroTitle: 'مشکاه <span class="gold-text">نور</span>',
+                heroDesc: 'پلتفرم فکری و آگاهی‌بخش برای انتشار مقالات و دیدگاه‌ها جهت ساختن جامعه‌ای آگاه متصل به کتاب خدا و عترت رسول',
+                breakingLabel: 'آخرین اخبار',
+                news1: 'انتشار مقاله جدید: جایگاه عدالت نزد امام علی (ع)',
+                news2: 'گفتگوی ویژه: نقش جوانان در شکوفایی جامعه',
+                news3: 'مروری بر کتاب اخلاق در قرآن',
+                news4: 'نشست علمی درباره هوش مصنوعی از منظر اسلامی',
+                articlesTitle: 'مقالات و دیدگاه‌ها', noArticles: 'در این دسته هنوز مقاله‌ای نیست',
+                mostRead: 'پربازدیدترین', categoriesLabel: 'دسته‌بندی‌ها', followUs: 'ما را دنبال کنید',
+                catAll: 'همه', cat1: 'مقالات و دیدگاه‌ها', cat2: 'اهل بیت (ع)', cat3: 'آگاهی اجتماعی',
+                cat4: 'دیدگاه‌ها و راه‌حل‌ها', cat5: 'مسائل معاصر', cat6: 'گفتگوها و مصاحبه‌ها', cat7: 'شبهات و پاسخ‌ها', cat8: 'رهنمودهای اخلاقی',
+                featured: 'مقاله ویژه',
+                pageAbout: 'درباره پلتفرم', pageAboutDesc: 'با پلتفرم مشکاه، چشم‌انداز و رسالت آن آشنا شوید',
+                aboutIntro: 'معرفی', aboutIntroText: 'مشکاه یک پلتفرم فرهنگی و آگاهی‌بخش الکترونیکی است که به انتشار اندیشه‌ها، دیدگاه‌ها و مقالات هدفمندی می‌پردازد که در جهت آگاهی جامعه، ارائه راه‌حل‌های عملی برای مشکلات معاصر، احیای یاد اهل بیت (علیهم‌السلام) و سیره آنان و تثبیت ارزش‌های اخلاقی و انسانی گام برمی‌دارد.',
+                aboutVision: 'چشم‌انداز', aboutVisionText: 'مشکاه به‌عنوان یک مناره دیجیتال مورد اعتماد باشد که پژوهشگران برای یافتن دانش ناب، اندیشه روشن و دیدگاه متوازن به آن مراجعه کنند — به‌دور از هیاهو و آشفتگی.',
+                aboutMission: 'رسالت', aboutMissionText: 'ارائه محتوای فکری و فرهنگی استوار، که با دقت گزینش و پس از بررسی دقیق منتشر می‌شود تا خالص و بدون ناخالصی به خواننده برسد و به ساخت جامعه‌ای آگاه متصل به کتاب خدا و عترت رسول کمک کند.',
+                aboutFeatures: 'ویژگی‌های مشکاه', feat1: 'محتوای گزیده: جایی برای هرج‌ومرج یا محتوای تجاری نیست.',
+                feat2: 'هویت بصری شیک: منعکس‌کننده ماهیت معنوی.', feat3: 'مدیریت آسان: داشبورد اختصاصی برای انتشار مقالات.',
+                feat4: 'پشتیبانی چندزبانه: عربی، انگلیسی، فارسی.', feat5: 'کاملاً رایگان: بدون هزینه برای انتشار یا خواندن.',
+                aboutGoals: 'اهداف', goal1: 'غنی‌سازی محتوای عربی استوار در اینترنت.',
+                goal2: 'آگاهی‌بخشی جامعه به مسائل معاصر.', goal3: 'احیای میراث اهل بیت (ع).',
+                goal4: 'بازکردن راه برای نویسندگان جدید.', goal5: 'ساختن نسلی آگاه متصل به کتاب خدا و عترت رسول.',
+                pageSections: 'بخش‌ها', pageSectionsDesc: 'هشت بخش مشکاه را مرور کنید',
+                sectionsContent: 'بخش‌های محتوا', sectionsContentText: 'مشکاه شامل هشت بخش اصلی است که حوزه‌های فکری، فرهنگی و اجتماعی مختلف را پوشش می‌دهد:',
+                tile1: 'مقالات فکری عمومی که مسائل معاصر را با دیدگاهی متوازن بررسی می‌کنند.', tile2: 'مقالات تخصصی درباره سیره و رفتار اهل بیت و درس‌هایی از مکتب آنان.',
+                tile3: 'مسائل اجتماعی معاصر: خانواده، تربیت، جوانان.', tile4: 'خوانش تحلیلی از مشکلات واقعی با راه‌حل‌های عملی.',
+                tile5: 'خوانش اسلامی از رویدادهای جاری و پدیده‌های مدرن.', tile6: 'گفتگوها با شخصیت‌های فکری، فرهنگی و دانشگاهی.',
+                tile7: 'پاسخ علمی به شبهات فکری و اعتقادی.', tile8: 'درس‌های تربیتی و اخلاقی از اهل بیت.',
+                pagePolicy: 'سیاست انتشار', pagePolicyDesc: 'شرایط و قواعد انتشار مقالات در مشکاه',
+                policyTerms: 'شرایط انتشار', pol1: 'گزینش: هیچ مقاله‌ای بدون بررسی تیم تحریریه منتشر نمی‌شود.',
+                pol2: 'اصالت: مقاله باید جدید باشد و قبلاً منتشر نشده باشد.', pol3: 'عینیت: پایبندی به گفتمان علمی استوار، دور از تعصب.',
+                pol4: 'زبان: سلامت زبان عربی و ارائه خوب.', pol5: 'حقوق: حقوق نویسنده حفظ می‌شود و نامش در هر مقاله ذکر می‌گردد.',
+                pageParticipation: 'نحوه مشارکت', pageParticipationDesc: 'گام‌های ارسال مقاله به مشکاه',
+                partSteps: 'گام‌های مشارکت', step1: 'مقاله خود را در Word یا Google Docs با موضوعی اصیل و زبانی سالم بنویسید.',
+                step2: 'مقاله را به ایمیل زیر ارسال کنید: alaqeelafoundation@gmail.com', step3: 'یا از طریق فرم الکترونیکی اختصاصی (به‌زودی).',
+                step4: 'مقاله ظرف یک هفته از دریافت بررسی می‌شود.', step5: 'نویسنده از پذیرش، رد یا درخواست اصلاح مطلع می‌شود.',
+                step6: 'هنگام انتشار، نام نویسنده ذکر و مقاله از طریق کانال‌های پلتفرم ترویج می‌شود.',
+                partForm: 'فرم تماس اولیه', formName: 'نام کامل', formNameOnly: 'نام', formEmail: 'ایمیل',
+                formArticleTitle: 'عنوان مقاله', formCategory: 'دسته پیشنهادی', formChoose: 'انتخاب دسته',
+                formLink: 'لینک فایل مقاله (اختیاری)', formExcerpt: 'چکیده (خلاصه کوتاه)', formSubmit: 'ارسال مقاله',
+                formSubject: 'موضوع', formMessage: 'پیام', formSend: 'ارسال',
+                pageInvitation: 'دعوت به مشارکت', pageInvitationDesc: 'راه‌های مشارکت در مشکاه',
+                inviteTitle: 'چگونه مشارکت می‌کنید؟', inviteDesc: 'ما از هر کسی که توانایی مشارکت در این پروژه مبارک را در خود می‌بیند استقبال می‌کنیم، از راه‌های زیر:',
+                invite1: 'نویسندگی', invite1Desc: 'مقالات، دیدگاه‌ها، تحلیل‌ها در زمینه‌های مختلف.',
+                invite2: 'ترجمه', invite2Desc: 'ترجمه مقالات به زبان‌های دیگر.', invite3: 'بازبینی', invite3Desc: 'ویرایش زبانی یا علمی مقالات.',
+                invite4: 'پشتیبانی فنی', invite4Desc: 'توسعه پلتفرم و بهبود عملکرد.', invite5: 'اشتراک‌گذاری', invite5Desc: 'اشتراک‌گذاری مقالات در شبکه‌های اجتماعی.',
+                pageContact: 'تماس با ما', pageContactDesc: 'ما برای پاسخ به پرسش‌های شما اینجاییم',
+                contactInfo: 'اطلاعات تماس', contactEmailLabel: 'ایمیل', contactPhoneLabel: 'تلفن', contactSendTitle: 'ارسال پیام',
+                footerRights: 'تمامی حقوق محفوظ است © ۲۰۲۶ پلتفرم مشکاه | برای نور و آگاهی',
+                am: 'ق.ظ', pm: 'ب.ظ',
+                submitAlert: 'مقاله شما با موفقیت دریافت شد! به‌زودی بررسی و به شما اطلاع داده می‌شود.',
+                messageAlert: 'پیام شما با موفقیت دریافت شد! از تماس شما سپاسگزاریم.'
+            }
+        };
+
+        let currentLang = 'ar';
+
+        function updateDateTime() {
+            const now = new Date();
+            const lang = currentLang || 'ar';
+            const localeMap = { ar: 'ar', en: 'en-US', fa: 'fa-IR' };
+            const locale = localeMap[lang] || 'ar';
+
+            let days;
+            try {
+                days = Array.from({length:7}, (_, i) => 
+                    new Intl.DateTimeFormat(locale, { weekday: 'long' }).format(new Date(2024, 0, 7 + i))
+                );
+            } catch(e) {
+                days = ['الأحد','الإثنين','الثلاثاء','الأربعاء','الخميس','الجمعة','السبت'];
+            }
+            document.getElementById('dayName').textContent = days[now.getDay()];
+
+            try {
+                const hijriFmt = lang === 'ar' ? 'ar-SA-u-ca-islamic' : (lang === 'fa' ? 'fa-IR-u-ca-islamic' : 'en-US-u-ca-islamic');
+                const hijriText = new Intl.DateTimeFormat(hijriFmt, { day:'numeric', month:'long', year:'numeric' }).format(now);
+                const hijriShort = new Intl.DateTimeFormat(hijriFmt, { day:'numeric', month:'short' }).format(now);
+                document.getElementById('hijriDate').textContent = hijriText;
+                document.getElementById('mobileHijri').textContent = hijriShort;
+            } catch(e) {}
+
+            const day = String(now.getDate()).padStart(2,'0');
+            const month = String(now.getMonth()+1).padStart(2,'0');
+            const year = now.getFullYear();
+            const dateStr = `${day}/${month}/${year}`;
+            document.getElementById('gregorianDate').textContent = dateStr;
+            document.getElementById('mobileDate').textContent = dateStr;
+
+            let h = now.getHours();
+            const t = translations[lang];
+            const period = h >= 12 ? t.pm : t.am;
+            h = h % 12; h = h ? h : 12;
+            const m = String(now.getMinutes()).padStart(2,'0');
+            const s = String(now.getSeconds()).padStart(2,'0');
+            document.getElementById('liveClock').textContent = `${h}:${m}:${s}`;
+            document.getElementById('clockPeriod').textContent = period;
+            document.getElementById('mobileClock').textContent = `${h}:${m}`;
+            document.getElementById('mobilePeriod').textContent = period;
+        }
+
+        function renderArticles(filterCat, searchQuery) {
+            const grid = document.getElementById('articlesGrid');
+            const empty = document.getElementById('articlesEmpty');
+            const t = translations[currentLang];
+            const articles = mishkatArticles[currentLang] || mishkatArticles.ar;
+            const isFiltered = (filterCat && filterCat !== 'all') || searchQuery;
+
+            if (isFiltered) document.body.classList.add('extras-hidden');
+            else document.body.classList.remove('extras-hidden');
+
+            let filtered = articles;
+            if (filterCat && filterCat !== 'all') filtered = filtered.filter(a => a.catKey === filterCat);
+            if (searchQuery) {
+                const q = searchQuery.toLowerCase();
+                filtered = filtered.filter(a =>
+                    a.title.toLowerCase().includes(q) || a.excerpt.toLowerCase().includes(q) || a.author.toLowerCase().includes(q)
+                );
+            }
+            if (filtered.length === 0) {
+                grid.innerHTML = '';
+                empty.style.display = 'block';
+                return;
+            }
+            empty.style.display = 'none';
+
+            let html = '';
+            if (!isFiltered && filtered.length > 0) {
+                const first = filtered[0];
+                html += `
+                    <div class="featured-card">
+                        <div class="featured-image" data-label="${t.featured}"><i class="fa-solid fa-lightbulb"></i></div>
+                        <div class="featured-body">
+                            <span class="category-badge">${t[first.catKey]}</span>
+                            <h2>${first.title}</h2>
+                            <p class="excerpt">${first.excerpt}</p>
+                            <div class="meta">
+                                <span><i class="fa-regular fa-user"></i> ${first.author}</span>
+                                <span><i class="fa-regular fa-calendar"></i> ${first.date}</span>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                filtered = filtered.slice(1);
+            }
+
+            html += filtered.map(a => `
+                <div class="article-card">
+                    <div class="card-top"></div>
+                    <div class="card-body">
+                        <span class="category-badge">${t[a.catKey]}</span>
+                        <h3>${a.title}</h3>
+                        <p class="excerpt">${a.excerpt}</p>
+                        <div class="meta">
+                            <span><i class="fa-regular fa-user"></i> ${a.author}</span>
+                            <span><i class="fa-regular fa-calendar"></i> ${a.date}</span>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+
+            grid.innerHTML = html;
+        }
+
+        function renderSidebar() {
+            const t = translations[currentLang];
+            const articles = mishkatArticles[currentLang] || mishkatArticles.ar;
+            
+            const mostReadBox = document.getElementById('mostReadBox');
+            mostReadBox.innerHTML = articles.slice(0, 5).map((a, i) => `
+                <div class="most-read-item">
+                    <div class="number">${i + 1}</div>
+                    <div class="text">
+                        <p>${a.title}</p>
+                        <small>${t[a.catKey]}</small>
+                    </div>
+                </div>
+            `).join('');
+
+            const catsBox = document.getElementById('sidebarCatsBox');
+            const catsCount = {};
+            articles.forEach(a => { catsCount[a.catKey] = (catsCount[a.catKey] || 0) + 1; });
+            catsBox.innerHTML = Object.keys(catsCount).map(catKey => `
+                <div class="sidebar-cat-item" data-cat="${catKey}">
+                    <span>${t[catKey]}</span>
+                    <span class="count">${catsCount[catKey]}</span>
+                </div>
+            `).join('');
+            
+            catsBox.querySelectorAll('.sidebar-cat-item').forEach(item => {
+                item.addEventListener('click', function() {
+                    const cat = this.dataset.cat;
+                    showView('home');
+                    setTimeout(() => {
+                        document.querySelectorAll('#mishkatCategories .cat-btn').forEach(b => {
+                            b.classList.toggle('active', b.dataset.cat === cat);
+                        });
+                        renderArticles(cat, '');
+                        document.getElementById('articles').scrollIntoView({behavior: 'smooth'});
+                    }, 100);
+                });
+            });
+        }
+
+        function setLanguage(lang) {
+            currentLang = lang;
+            const t = translations[lang] || translations.ar;
+
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (t[key] !== undefined) el.textContent = t[key];
+            });
+            document.querySelectorAll('[data-i18n-html]').forEach(el => {
+                const key = el.getAttribute('data-i18n-html');
+                if (t[key] !== undefined) el.innerHTML = t[key];
+            });
+            document.querySelectorAll('[data-i18n-ph]').forEach(el => {
+                const key = el.getAttribute('data-i18n-ph');
+                if (t[key] !== undefined) el.placeholder = t[key];
+            });
+
+            const html = document.documentElement;
+            if (lang === 'ar' || lang === 'fa') {
+                html.dir = 'rtl';
+                document.body.style.direction = 'rtl';
+            } else {
+                html.dir = 'ltr';
+                document.body.style.direction = 'ltr';
+            }
+            document.title = t.title;
+
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.lang === lang);
+            });
+
+            const activeCat = document.querySelector('#mishkatCategories .cat-btn.active');
+            renderArticles(activeCat ? activeCat.dataset.cat : 'all', '');
+            renderSidebar();
+            updateDateTime();
+
+            localStorage.setItem('mishkat_lang', lang);
+        }
+
+        function showView(viewId) {
+            document.body.classList.remove('extras-hidden');
+            document.querySelectorAll('.page-view').forEach(v => v.classList.remove('active'));
+            const target = document.getElementById('view-' + viewId);
+            if (target) target.classList.add('active');
+            document.querySelectorAll('.main-nav .nav-list li a[data-view]').forEach(a => {
+                a.classList.toggle('active', a.dataset.view === viewId);
+            });
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            if (viewId === 'home') {
+                const activeCat = document.querySelector('#mishkatCategories .cat-btn.active');
+                renderArticles(activeCat ? activeCat.dataset.cat : 'all', '');
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.addEventListener('click', function() { setLanguage(this.dataset.lang); });
+            });
+            setLanguage(localStorage.getItem('mishkat_lang') || 'ar');
+
+            document.querySelectorAll('.main-nav .nav-list li a[data-view]').forEach(a => {
+                a.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    showView(this.dataset.view);
+                    if (window.innerWidth <= 768) {
+                        document.getElementById('mainNav').classList.remove('mobile-open');
+                        document.getElementById('mobileOverlay').classList.remove('show');
+                    }
+                });
+            });
+
+            document.querySelectorAll('.section-tile').forEach(tile => {
+                tile.addEventListener('click', function() {
+                    const cat = this.dataset.cat;
+                    showView('home');
+                    setTimeout(() => {
+                        document.querySelectorAll('#mishkatCategories .cat-btn').forEach(b => {
+                            b.classList.toggle('active', b.dataset.cat === cat);
+                        });
+                        renderArticles(cat, '');
+                        document.getElementById('articles').scrollIntoView({behavior: 'smooth'});
+                    }, 100);
+                });
+            });
+
+            document.querySelectorAll('#catsDropdownMenu .dropdown-item').forEach(item => {
+                item.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const cat = this.dataset.cat;
+                    showView('home');
+                    setTimeout(() => {
+                        document.querySelectorAll('#mishkatCategories .cat-btn').forEach(b => {
+                            b.classList.toggle('active', b.dataset.cat === cat);
+                        });
+                        renderArticles(cat, '');
+                        document.getElementById('articles').scrollIntoView({behavior: 'smooth'});
+                    }, 100);
+                    if (window.innerWidth <= 768) {
+                        document.getElementById('mainNav').classList.remove('mobile-open');
+                        document.getElementById('mobileOverlay').classList.remove('show');
+                    }
+                });
+            });
+
+            document.querySelectorAll('#mishkatCategories .cat-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    document.querySelectorAll('#mishkatCategories .cat-btn').forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    const searchVal = (document.getElementById('headerSearchInput') || {}).value || '';
+                    renderArticles(this.dataset.cat, searchVal);
+                });
+            });
+
+            const desktopSearch = document.getElementById('headerSearchInput');
+            const mobileSearch = document.getElementById('mobileSearchInput');
+            function doSearch(value) {
+                showView('home');
+                const activeCat = document.querySelector('#mishkatCategories .cat-btn.active');
+                renderArticles(activeCat ? activeCat.dataset.cat : 'all', value);
+            }
+            if (desktopSearch) {
+                desktopSearch.addEventListener('input', function() {
+                    if (mobileSearch) mobileSearch.value = this.value;
+                    doSearch(this.value);
+                });
+            }
+            if (mobileSearch) {
+                mobileSearch.addEventListener('input', function() {
+                    if (desktopSearch) desktopSearch.value = this.value;
+                    doSearch(this.value);
+                });
+            }
+
+            updateDateTime();
+            setInterval(updateDateTime, 1000);
+
+            const mobileBtn = document.getElementById('mobileMenuBtn');
+            const mainNav = document.getElementById('mainNav');
+            const overlay = document.getElementById('mobileOverlay');
+
+            if (mobileBtn) {
+                mobileBtn.addEventListener('click', function() {
+                    mainNav.classList.add('mobile-open');
+                    overlay.classList.add('show');
+                    if (!mainNav.querySelector('.mobile-close-btn')) {
+                        const closeBtn = document.createElement('button');
+                        closeBtn.className = 'mobile-close-btn';
+                        closeBtn.innerHTML = '<i class="fa-solid fa-times"></i>';
+                        closeBtn.addEventListener('click', function() {
+                            mainNav.classList.remove('mobile-open');
+                            overlay.classList.remove('show');
+                        });
+                        mainNav.appendChild(closeBtn);
+                    }
+                });
+            }
+            if (overlay) {
+                overlay.addEventListener('click', function() {
+                    mainNav.classList.remove('mobile-open');
+                    overlay.classList.remove('show');
+                });
+            }
+        });
+    </script>
+
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <script>
+        if (window.location.search.includes('invite_token=') || window.location.hash.includes('invite_token=')) {
+            window.location.href = '/admin/';
+        }
+        if (window.netlifyIdentity) { window.netlifyIdentity.init(); }
+    </script>
+
+</body>
+</html>
