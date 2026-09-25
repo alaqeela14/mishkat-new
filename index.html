@@ -83,16 +83,6 @@
         .section-tile .icon{width:42px;height:42px;background:linear-gradient(135deg,var(--primary-navy),var(--secondary-blue));border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--gold-accent);font-size:18px;margin-bottom:12px}
         .section-tile h4{color:var(--primary-navy);font-size:1rem;font-weight:800;margin-bottom:5px}
         .section-tile p{color:var(--text-muted);font-size:12.5px;margin:0}
-        .steps-list{list-style:none;padding:0;counter-reset:step-counter}
-        .steps-list li{padding:12px 55px 12px 0;position:relative;font-size:14px;border-bottom:1px dashed var(--border-color);counter-increment:step-counter}
-        .steps-list li:last-child{border-bottom:none}
-        .steps-list li::before{content:counter(step-counter);position:absolute;right:0;top:12px;width:34px;height:34px;background:linear-gradient(135deg,var(--primary-navy),var(--secondary-blue));color:var(--gold-accent);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px}
-        .invite-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:15px;margin-top:15px}
-        .invite-tile{background:linear-gradient(135deg,var(--primary-navy),var(--secondary-blue));color:#fff;padding:22px;border-radius:6px;text-align:center;transition:.3s;border:1px solid var(--gold-accent)}
-        .invite-tile:hover{transform:translateY(-5px);box-shadow:0 10px 25px rgba(26,43,74,.2)}
-        .invite-tile i{font-size:32px;color:var(--gold-accent);margin-bottom:12px;display:block}
-        .invite-tile h4{font-size:1rem;font-weight:800;margin-bottom:5px}
-        .invite-tile p{font-size:12.5px;color:rgba(255,255,255,.85);margin:0}
         .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}
         .contact-tile{background:#fff;border:1px solid var(--border-color);border-radius:6px;padding:22px;text-align:center;border-top:4px solid var(--gold-accent);transition:.3s}
         .contact-tile:hover{transform:translateY(-4px);box-shadow:0 8px 20px rgba(26,43,74,.1)}
@@ -250,9 +240,27 @@
         .team-avatar{width:90px;height:90px;margin:0 auto 15px;border-radius:50%;background:linear-gradient(135deg,var(--primary-navy),var(--secondary-blue));display:flex;align-items:center;justify-content:center;color:var(--gold-accent);font-size:40px;border:3px solid var(--gold-accent)}
         .team-card h3{color:var(--primary-navy);font-size:1.1rem;font-weight:800;margin-bottom:5px}
         .team-role{color:var(--gold-accent);font-size:12.5px;font-weight:700;margin-bottom:12px}
-        .team-desc{color:var(--text-muted);font-size:13px;line-height:1.7}
         .lang-articles-empty{text-align:center;padding:60px 20px;color:var(--text-muted)}
         .lang-articles-empty i{font-size:60px;color:var(--gold-accent);margin-bottom:15px;display:block}
+        /* نتائج البحث */
+        .search-results-view{padding:20px 0}
+        .search-results-header{background:#fff;border-radius:6px;padding:20px 25px;box-shadow:0 2px 10px rgba(26,43,74,.06);border:1px solid var(--border-color);border-top:4px solid var(--gold-accent);margin-bottom:20px}
+        .search-results-header h2{color:var(--primary-navy);font-size:1.3rem;font-weight:800;margin:0 0 5px 0;display:flex;align-items:center;gap:10px}
+        .search-results-header h2 i{color:var(--gold-accent)}
+        .search-results-header p{color:var(--text-muted);font-size:14px;margin:0}
+        .search-results-header p strong{color:var(--primary-navy)}
+        .search-result-item{background:#fff;border-radius:8px;padding:18px 22px;margin-bottom:14px;box-shadow:0 2px 10px rgba(26,43,74,.06);border:1px solid var(--border-color);border-right:5px solid var(--secondary-blue);cursor:pointer;transition:.3s}
+        .search-result-item:hover{transform:translateX(-5px);box-shadow:0 8px 20px rgba(26,43,74,.12);border-right-color:var(--gold-accent)}
+        .search-result-item .result-type{display:inline-flex;align-items:center;gap:6px;background:var(--very-light-blue);color:var(--primary-navy);padding:3px 10px;border-radius:12px;font-size:11px;font-weight:700;margin-bottom:10px;border:1px solid var(--border-color)}
+        .search-result-item .result-type i{color:var(--gold-accent)}
+        .search-result-item h3{color:var(--primary-navy);font-size:1.1rem;font-weight:800;margin:0 0 8px 0;line-height:1.5}
+        .search-result-item .result-snippet{color:var(--text-muted);font-size:13.5px;line-height:1.8;margin-bottom:10px}
+        .search-result-item .result-snippet mark{background:var(--gold-light);color:var(--primary-navy);padding:2px 4px;border-radius:3px;font-weight:700}
+        .search-result-item .result-meta{font-size:11.5px;color:var(--text-muted);border-top:1px solid var(--border-color);padding-top:8px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+        .search-result-item .result-meta i{color:var(--secondary-blue)}
+        .search-empty{text-align:center;padding:60px 20px;color:var(--text-muted);background:#fff;border-radius:8px;border:1px solid var(--border-color)}
+        .search-empty i{font-size:60px;color:var(--gold-accent);margin-bottom:15px;display:block}
+        .search-empty h3{color:var(--primary-navy);font-size:1.2rem;font-weight:800;margin-bottom:8px}
         @media (max-width:1024px){.news-grid{grid-template-columns:1fr 280px;gap:18px}.main-nav .nav-list li a{padding:13px 10px;font-size:12px}}
         @media (max-width:900px){.news-grid{grid-template-columns:1fr}.sidebar{flex-direction:row;flex-wrap:wrap}.sidebar-box{flex:1;min-width:250px}.featured-card{grid-template-columns:1fr}.featured-card .featured-image{min-height:180px;font-size:45px}.contact-grid{grid-template-columns:1fr}}
         @media (max-width:768px){
@@ -308,6 +316,7 @@
             .comments-section{padding:16px 18px}
             .top-bar .right{align-items:center;width:100%}
             .top-bar .lang-note{text-align:center}
+            .search-result-item{padding:14px 16px}
         }
         @media (max-width:480px){
             .top-bar .contact-info{display:none}
@@ -381,7 +390,7 @@
         </div>
     </header>
 
-    <!-- شريط التنقل - الترتيب الصحيح -->
+    <!-- شريط التنقل -->
     <nav class="main-nav" id="mainNav">
         <div class="container">
             <ul class="nav-list">
@@ -579,6 +588,22 @@
             </div>
         </div>
 
+        <!-- صفحة: نتائج البحث -->
+        <div class="page-view" id="view-search">
+            <div class="search-results-view">
+                <div class="search-results-header">
+                    <h2><i class="fa-solid fa-magnifying-glass"></i> <span data-i18n="searchResultsTitle">نتائج البحث</span></h2>
+                    <p><span data-i18n="searchResultsFor">نتائج البحث عن:</span> <strong id="searchQueryDisplay">—</strong></p>
+                </div>
+                <div id="searchResultsList"></div>
+                <div class="search-empty hidden-section" id="searchEmpty">
+                    <i class="fa-solid fa-magnifying-glass-minus"></i>
+                    <h3 data-i18n="noSearchResults">لا توجد نتائج مطابقة</h3>
+                    <p data-i18n="noSearchResultsDesc">جرّب كلمات بحث أخرى</p>
+                </div>
+            </div>
+        </div>
+
         <!-- صفحة: عرض المقال الكامل -->
         <div class="page-view" id="view-article">
             <div class="container" style="max-width:900px;margin:0 auto;">
@@ -762,7 +787,6 @@
             'رؤى وحلول': 'cat4',
             'قضايا معاصرة': 'cat5',
             'حوارات ومقابلات': 'cat6',
-            'شبهات ووردود': 'cat7',
             'شبهات وردود': 'cat7',
             'التوجيهات الأخلاقية': 'cat8'
         };
@@ -774,16 +798,12 @@
                 langNote: 'ستتوفر ميزة ترجمة المقال قريباً',
                 navHome: 'الرئيسية', navLibrary: 'المكتبة', navAbout: 'عن المنصة', navSections: 'الأقسام', navCats: 'التصنيفات',
                 navArticlesEn: 'مقالات بالإنجليزية', navArticlesFa: 'مقالات بالفارسية', navArticlesTr: 'مقالات بالتركية',
-                navFamily: 'أسرة المنصة',
-                navContact: 'تواصل معنا',
+                navFamily: 'أسرة المنصة', navContact: 'تواصل معنا',
                 searchPh: 'ابحث...', searchPhFull: 'ابحث في الموقع...', searchBtn: 'بحث',
                 heroTitle: 'مِشْكَاةُ <span class="gold-text">النُّورِ</span>',
                 heroDesc: 'منصة فكرية توعوية لنشر المقالات والرؤى في بناء وعي مجتمعي متصل بكتاب الله وعترة رسوله',
                 breakingLabel: 'آخر الأخبار',
-                news1: 'مرحباً بكم في منصة مشكاة',
-                news2: 'تابعوا جديد المقالات والرؤى',
-                news3: 'منصة فكرية توعوية',
-                news4: 'للنور والوعي',
+                news1: 'مرحباً بكم في منصة مشكاة', news2: 'تابعوا جديد المقالات والرؤى', news3: 'منصة فكرية توعوية', news4: 'للنور والوعي',
                 articlesTitle: 'المقالات والرؤى', noArticles: 'لا توجد مقالات في هذا التصنيف حالياً',
                 mostRead: 'الأكثر قراءة', categoriesLabel: 'التصنيفات', followUs: 'تابعنا',
                 catAll: 'الكل', cat1: 'مقالات ورؤى', cat2: 'أهل البيت (ع)', cat3: 'وعي مجتمعي',
@@ -791,6 +811,8 @@
                 featured: 'مقال مميز', backToArticles: 'رجوع للمقالات',
                 shareTitle: 'شارك المقال', commentsTitle: 'التعليقات', copyBtn: 'نسخ النص',
                 copySuccess: '✅ تم نسخ المقال كاملاً!', copyFail: '❌ فشل النسخ',
+                searchResultsTitle: 'نتائج البحث', searchResultsFor: 'نتائج البحث عن:',
+                noSearchResults: 'لا توجد نتائج مطابقة', noSearchResultsDesc: 'جرّب كلمات بحث أخرى',
                 pageLibrary: 'المكتبة', pageLibraryDesc: 'كتب وملفات للتحميل والقراءة',
                 noBooks: 'لا توجد كتب في المكتبة حالياً', noBooksDesc: 'سيتم إضافة الكتب قريباً',
                 readBtn: 'قراءة', downloadBtn: 'تحميل', shareBtn: 'مشاركة',
@@ -808,30 +830,18 @@
                 aboutIntro: 'التعريف', aboutIntroText: 'مشكاة منصة إلكترونية ثقافية توعوية، تُعنى بنشر الأفكار والرؤى والمقالات الهادفة.',
                 aboutVision: 'الرؤية', aboutVisionText: 'أن تكون مشكاة منارة رقمية موثوقة، يلجأ إليها الباحث عن المعرفة الصافية.',
                 aboutMission: 'الرسالة', aboutMissionText: 'تقديم محتوى فكري وثقافي رصين، يُنتقى بعناية، ويُنشر بعد مراجعة دقيقة.',
-                aboutFeatures: 'ما يميز مشكاة', feat1: 'محتوى منتقى.',
-                feat2: 'هوية بصرية أنيقة.', feat3: 'إدارة سهلة.',
-                feat4: 'دعم متعدد اللغات.', feat5: 'مجانية بالكامل.',
+                aboutFeatures: 'ما يميز مشكاة', feat1: 'محتوى منتقى.', feat2: 'هوية بصرية أنيقة.',
+                feat3: 'إدارة سهلة.', feat4: 'دعم متعدد اللغات.', feat5: 'مجانية بالكامل.',
                 pageSections: 'الأقسام', pageSectionsDesc: 'تصفح الأقسام الثمانية',
                 sectionsContent: 'أقسام المحتوى', sectionsContentText: 'تضم منصة مشكاة ثمانية أقسام رئيسية:',
-                tile1: 'مقالات فكرية عامة.', tile2: 'مقالات أهل البيت.',
-                tile3: 'قضايا اجتماعية.', tile4: 'رؤى وحلول.',
-                tile5: 'قضايا معاصرة.', tile6: 'حوارات ومقابلات.',
-                tile7: 'شبهات وردود.', tile8: 'توجيهات أخلاقية.',
-                pagePolicy: 'سياسة النشر', pagePolicyDesc: 'شروط نشر المقالات',
-                policyTerms: 'شروط النشر', pol1: 'الانتقاء.',
-                pol2: 'الأصالة.', pol3: 'الموضوعية.',
-                pol4: 'اللغة.', pol5: 'الحقوق.',
-                partForm: 'نموذج التواصل', formName: 'الاسم الكامل', formNameOnly: 'الاسم', formEmail: 'البريد الإلكتروني',
-                formArticleTitle: 'عنوان المقال', formCategory: 'التصنيف المقترح', formChoose: 'اختر التصنيف',
-                formLink: 'رابط الملف (اختياري)', formExcerpt: 'المقتطف', formSubmit: 'إرسال',
-                formSubject: 'الموضوع', formMessage: 'الرسالة', formSend: 'إرسال',
+                tile1: 'مقالات فكرية عامة.', tile2: 'مقالات أهل البيت.', tile3: 'قضايا اجتماعية.', tile4: 'رؤى وحلول.',
+                tile5: 'قضايا معاصرة.', tile6: 'حوارات ومقابلات.', tile7: 'شبهات وردود.', tile8: 'توجيهات أخلاقية.',
                 pageContact: 'تواصل معنا', pageContactDesc: 'نحن هنا للإجابة على استفساراتكم',
                 contactInfo: 'معلومات التواصل', contactEmailLabel: 'البريد الإلكتروني', contactPhoneLabel: 'الهاتف', contactSendTitle: 'أرسل رسالة',
+                formNameOnly: 'الاسم', formEmail: 'البريد الإلكتروني', formSubject: 'الموضوع', formMessage: 'الرسالة', formSend: 'إرسال',
                 comingSoon: 'سيتم الإعلان عنه قريباً',
                 footerRights: 'جميع الحقوق محفوظة © 2026 منصة مشكاة | للنور والوعي',
-                am: 'ص', pm: 'م',
-                submitAlert: 'تم الاستلام بنجاح!',
-                messageAlert: 'تم استلام رسالتك بنجاح!'
+                am: 'ص', pm: 'م', messageAlert: 'تم استلام رسالتك بنجاح!'
             },
             en: {
                 title: 'Mishkat Platform | For Light & Awareness', brandName: 'MISHKAT', brandSub: 'For Light & Awareness',
@@ -839,16 +849,12 @@
                 langNote: 'Article translation feature coming soon',
                 navHome: 'Home', navLibrary: 'Library', navAbout: 'About', navSections: 'Sections', navCats: 'Categories',
                 navArticlesEn: 'English Articles', navArticlesFa: 'Farsi Articles', navArticlesTr: 'Turkish Articles',
-                navFamily: 'Platform Family',
-                navContact: 'Contact Us',
+                navFamily: 'Platform Family', navContact: 'Contact Us',
                 searchPh: 'Search...', searchPhFull: 'Search the site...', searchBtn: 'Search',
                 heroTitle: 'Mishkat <span class="gold-text">of Light</span>',
                 heroDesc: 'An intellectual awareness platform for publishing articles and insights',
-                breakingLabel: 'Latest News',
-                news1: 'Welcome to Mishkat Platform',
-                news2: 'Follow the latest articles',
-                news3: 'An intellectual platform',
-                news4: 'For Light and Awareness',
+                breakingLabel: 'Latest News', news1: 'Welcome to Mishkat Platform', news2: 'Follow the latest articles',
+                news3: 'An intellectual platform', news4: 'For Light and Awareness',
                 articlesTitle: 'Articles & Insights', noArticles: 'No articles in this category yet',
                 mostRead: 'Most Read', categoriesLabel: 'Categories', followUs: 'Follow Us',
                 catAll: 'All', cat1: 'Articles & Insights', cat2: 'Ahl al-Bayt (as)', cat3: 'Social Awareness',
@@ -856,11 +862,12 @@
                 featured: 'Featured Article', backToArticles: 'Back to Articles',
                 shareTitle: 'Share Article', commentsTitle: 'Comments', copyBtn: 'Copy Text',
                 copySuccess: '✅ Article copied!', copyFail: '❌ Copy failed',
+                searchResultsTitle: 'Search Results', searchResultsFor: 'Results for:',
+                noSearchResults: 'No matching results', noSearchResultsDesc: 'Try different keywords',
                 pageLibrary: 'Library', pageLibraryDesc: 'Books for download and reading',
                 noBooks: 'No books yet', noBooksDesc: 'Books coming soon',
                 readBtn: 'Read', downloadBtn: 'Download', shareBtn: 'Share',
-                downloadTitle: 'Choose format',
-                bookLinkCopied: '✅ Link copied!', bookNotFound: 'File not available',
+                downloadTitle: 'Choose format', bookLinkCopied: '✅ Link copied!', bookNotFound: 'File not available',
                 pageArticlesEn: 'English Articles', pageArticlesEnDesc: 'Articles in English',
                 pageArticlesFa: 'Farsi Articles', pageArticlesFaDesc: 'مقالات به زبان فارسی',
                 pageArticlesTr: 'Turkish Articles', pageArticlesTrDesc: 'Türkçe Makaleler',
@@ -873,30 +880,18 @@
                 aboutIntro: 'Introduction', aboutIntroText: 'Mishkat is an electronic cultural and awareness platform.',
                 aboutVision: 'Vision', aboutVisionText: 'To be a trusted digital beacon.',
                 aboutMission: 'Mission', aboutMissionText: 'To provide solid intellectual content.',
-                aboutFeatures: 'What Distinguishes Mishkat', feat1: 'Selected content.',
-                feat2: 'Elegant identity.', feat3: 'Easy management.',
-                feat4: 'Multi-language.', feat5: 'Completely free.',
+                aboutFeatures: 'What Distinguishes Mishkat', feat1: 'Selected content.', feat2: 'Elegant identity.',
+                feat3: 'Easy management.', feat4: 'Multi-language.', feat5: 'Completely free.',
                 pageSections: 'Sections', pageSectionsDesc: 'Browse the eight sections',
                 sectionsContent: 'Content Sections', sectionsContentText: 'Mishkat includes eight main sections:',
-                tile1: 'General articles.', tile2: 'Ahl al-Bayt.',
-                tile3: 'Social issues.', tile4: 'Insights.',
-                tile5: 'Current events.', tile6: 'Dialogues.',
-                tile7: 'Doubts & responses.', tile8: 'Ethical lessons.',
-                pagePolicy: 'Publishing Policy', pagePolicyDesc: 'Terms and rules',
-                policyTerms: 'Publishing Terms', pol1: 'Selection.',
-                pol2: 'Originality.', pol3: 'Objectivity.',
-                pol4: 'Language.', pol5: 'Rights.',
-                partForm: 'Contact Form', formName: 'Full Name', formNameOnly: 'Name', formEmail: 'Email',
-                formArticleTitle: 'Article Title', formCategory: 'Suggested Category', formChoose: 'Choose category',
-                formLink: 'File link (optional)', formExcerpt: 'Excerpt', formSubmit: 'Submit',
-                formSubject: 'Subject', formMessage: 'Message', formSend: 'Send',
+                tile1: 'General articles.', tile2: 'Ahl al-Bayt.', tile3: 'Social issues.', tile4: 'Insights.',
+                tile5: 'Current events.', tile6: 'Dialogues.', tile7: 'Doubts & responses.', tile8: 'Ethical lessons.',
                 pageContact: 'Contact Us', pageContactDesc: 'We are here to answer your inquiries',
                 contactInfo: 'Contact Information', contactEmailLabel: 'Email', contactPhoneLabel: 'Phone', contactSendTitle: 'Send a Message',
+                formNameOnly: 'Name', formEmail: 'Email', formSubject: 'Subject', formMessage: 'Message', formSend: 'Send',
                 comingSoon: 'Will be announced soon',
                 footerRights: 'All rights reserved © 2026 Mishkat Platform',
-                am: 'AM', pm: 'PM',
-                submitAlert: 'Received successfully!',
-                messageAlert: 'Your message has been received!'
+                am: 'AM', pm: 'PM', messageAlert: 'Your message has been received!'
             },
             fa: {
                 title: 'پلتفرم مشکاه | برای نور و آگاهی', brandName: 'مشکاه', brandSub: 'برای نور و آگاهی',
@@ -904,16 +899,12 @@
                 langNote: 'قابلیت ترجمه مقالات به‌زودی',
                 navHome: 'صفحه اصلی', navLibrary: 'کتابخانه', navAbout: 'درباره', navSections: 'بخش‌ها', navCats: 'دسته‌بندی‌ها',
                 navArticlesEn: 'مقالات انگلیسی', navArticlesFa: 'مقالات فارسی', navArticlesTr: 'مقالات ترکی',
-                navFamily: 'خانواده پلتفرم',
-                navContact: 'تماس با ما',
+                navFamily: 'خانواده پلتفرم', navContact: 'تماس با ما',
                 searchPh: 'جستجو...', searchPhFull: 'جستجو در سایت...', searchBtn: 'جستجو',
                 heroTitle: 'مشکاه <span class="gold-text">نور</span>',
                 heroDesc: 'پلتفرم فکری و آگاهی‌بخش برای انتشار مقالات',
-                breakingLabel: 'آخرین اخبار',
-                news1: 'به پلتفرم مشکاه خوش آمدید',
-                news2: 'جدیدترین مقالات را دنبال کنید',
-                news3: 'پلتفرم فکری',
-                news4: 'برای نور و آگاهی',
+                breakingLabel: 'آخرین اخبار', news1: 'به پلتفرم مشکاه خوش آمدید', news2: 'جدیدترین مقالات را دنبال کنید',
+                news3: 'پلتفرم فکری', news4: 'برای نور و آگاهی',
                 articlesTitle: 'مقالات و دیدگاه‌ها', noArticles: 'هنوز مقاله‌ای نیست',
                 mostRead: 'پربازدیدترین', categoriesLabel: 'دسته‌بندی‌ها', followUs: 'ما را دنبال کنید',
                 catAll: 'همه', cat1: 'مقالات', cat2: 'اهل بیت (ع)', cat3: 'آگاهی اجتماعی',
@@ -921,11 +912,12 @@
                 featured: 'مقاله ویژه', backToArticles: 'بازگشت',
                 shareTitle: 'اشتراک‌گذاری', commentsTitle: 'نظرات', copyBtn: 'کپی',
                 copySuccess: '✅ کپی شد!', copyFail: '❌ نشد',
+                searchResultsTitle: 'نتایج جستجو', searchResultsFor: 'نتایج برای:',
+                noSearchResults: 'نتیجه‌ای یافت نشد', noSearchResultsDesc: 'کلمات دیگری را امتحان کنید',
                 pageLibrary: 'کتابخانه', pageLibraryDesc: 'کتاب‌ها برای دانلود',
                 noBooks: 'هنوز کتابی نیست', noBooksDesc: 'به‌زودی',
                 readBtn: 'مطالعه', downloadBtn: 'دانلود', shareBtn: 'اشتراک',
-                downloadTitle: 'انتخاب فرمت',
-                bookLinkCopied: '✅ کپی شد!', bookNotFound: 'موجود نیست',
+                downloadTitle: 'انتخاب فرمت', bookLinkCopied: '✅ کپی شد!', bookNotFound: 'موجود نیست',
                 pageArticlesEn: 'مقالات انگلیسی', pageArticlesEnDesc: 'Articles in English',
                 pageArticlesFa: 'مقالات فارسی', pageArticlesFaDesc: 'مقالات به زبان فارسی',
                 pageArticlesTr: 'مقالات ترکی', pageArticlesTrDesc: 'Türkçe Makaleler',
@@ -938,30 +930,18 @@
                 aboutIntro: 'معرفی', aboutIntroText: 'مشکاه یک پلتفرم فرهنگی است.',
                 aboutVision: 'چشم‌انداز', aboutVisionText: 'مناره دیجیتال مورد اعتماد.',
                 aboutMission: 'رسالت', aboutMissionText: 'ارائه محتوای استوار.',
-                aboutFeatures: 'ویژگی‌ها', feat1: 'محتوای گزیده.',
-                feat2: 'هویت شیک.', feat3: 'مدیریت آسان.',
-                feat4: 'چندزبانه.', feat5: 'رایگان.',
+                aboutFeatures: 'ویژگی‌ها', feat1: 'محتوای گزیده.', feat2: 'هویت شیک.',
+                feat3: 'مدیریت آسان.', feat4: 'چندزبانه.', feat5: 'رایگان.',
                 pageSections: 'بخش‌ها', pageSectionsDesc: 'هشت بخش',
                 sectionsContent: 'بخش‌ها', sectionsContentText: 'شامل هشت بخش است:',
-                tile1: 'مقالات عمومی.', tile2: 'اهل بیت.',
-                tile3: 'مسائل اجتماعی.', tile4: 'راه‌حل‌ها.',
-                tile5: 'رویدادها.', tile6: 'گفتگوها.',
-                tile7: 'پاسخ‌ها.', tile8: 'اخلاقی.',
-                pagePolicy: 'سیاست انتشار', pagePolicyDesc: 'قواعد انتشار',
-                policyTerms: 'شرایط', pol1: 'گزینش.',
-                pol2: 'اصالت.', pol3: 'عینیت.',
-                pol4: 'زبان.', pol5: 'حقوق.',
-                partForm: 'فرم تماس', formName: 'نام کامل', formNameOnly: 'نام', formEmail: 'ایمیل',
-                formArticleTitle: 'عنوان', formCategory: 'دسته', formChoose: 'انتخاب',
-                formLink: 'لینک', formExcerpt: 'چکیده', formSubmit: 'ارسال',
-                formSubject: 'موضوع', formMessage: 'پیام', formSend: 'ارسال',
+                tile1: 'مقالات عمومی.', tile2: 'اهل بیت.', tile3: 'مسائل اجتماعی.', tile4: 'راه‌حل‌ها.',
+                tile5: 'رویدادها.', tile6: 'گفتگوها.', tile7: 'پاسخ‌ها.', tile8: 'اخلاقی.',
                 pageContact: 'تماس', pageContactDesc: 'اینجاییم',
                 contactInfo: 'اطلاعات تماس', contactEmailLabel: 'ایمیل', contactPhoneLabel: 'تلفن', contactSendTitle: 'ارسال پیام',
+                formNameOnly: 'نام', formEmail: 'ایمیل', formSubject: 'موضوع', formMessage: 'پیام', formSend: 'ارسال',
                 comingSoon: 'به‌زودی',
                 footerRights: '© ۲۰۲۶ پلتفرم مشکاه',
-                am: 'ق.ظ', pm: 'ب.ظ',
-                submitAlert: 'دریافت شد!',
-                messageAlert: 'پیام دریافت شد!'
+                am: 'ق.ظ', pm: 'ب.ظ', messageAlert: 'پیام دریافت شد!'
             }
         };
 
@@ -974,7 +954,6 @@
                 const data = await response.json();
                 const items = data.items || [];
 
-                // القائمة العربية (كل المقالات) - تدعم الحقول القديمة والجديدة
                 const articlesAr = items.map(item => ({
                     catKey: categoryToKey[item.category] || 'cat1',
                     title: item.title_ar || item.title || '',
@@ -985,66 +964,26 @@
                     category: item.category || ''
                 }));
 
-                const articlesEnFallback = items.map((item, i) => ({
-                    catKey: categoryToKey[item.category] || 'cat1',
-                    title: item.title_en || articlesAr[i].title,
-                    author: item.author_en || articlesAr[i].author,
-                    date: item.date || '',
-                    excerpt: item.excerpt_en || articlesAr[i].excerpt,
-                    body: item.body_en || articlesAr[i].body,
-                    category: item.category || ''
-                }));
-
-                const articlesFaFallback = items.map((item, i) => ({
-                    catKey: categoryToKey[item.category] || 'cat1',
-                    title: item.title_fa || articlesAr[i].title,
-                    author: item.author_fa || articlesAr[i].author,
-                    date: item.date || '',
-                    excerpt: item.excerpt_fa || articlesAr[i].excerpt,
-                    body: item.body_fa || articlesAr[i].body,
-                    category: item.category || ''
-                }));
-
                 mishkatArticles.ar = articlesAr;
-                mishkatArticles.en = articlesEnFallback;
-                mishkatArticles.fa = articlesFaFallback;
-
-                // قوائم اللغة المستقلة
+                mishkatArticles.en = articlesAr;
+                mishkatArticles.fa = articlesAr;
                 articlesByLang.ar = articlesAr;
 
-                articlesByLang.en = items
-                    .filter(item => item.title_en && item.title_en.trim())
-                    .map(item => ({
-                        catKey: categoryToKey[item.category] || 'cat1',
-                        title: item.title_en,
-                        author: item.author_en || item.author_ar || item.author || '',
-                        date: item.date || '',
-                        excerpt: item.excerpt_en || '',
-                        body: item.body_en || ''
-                    }));
-
-                articlesByLang.fa = items
-                    .filter(item => item.title_fa && item.title_fa.trim())
-                    .map(item => ({
-                        catKey: categoryToKey[item.category] || 'cat1',
-                        title: item.title_fa,
-                        author: item.author_fa || item.author_ar || item.author || '',
-                        date: item.date || '',
-                        excerpt: item.excerpt_fa || '',
-                        body: item.body_fa || ''
-                    }));
-
-                articlesByLang.tr = items
-                    .filter(item => item.title_tr && item.title_tr.trim())
-                    .map(item => ({
-                        catKey: categoryToKey[item.category] || 'cat1',
-                        title: item.title_tr,
-                        author: item.author_tr || item.author_ar || item.author || '',
-                        date: item.date || '',
-                        excerpt: item.excerpt_tr || '',
-                        body: item.body_tr || ''
-                    }));
-
+                articlesByLang.en = items.filter(i => i.title_en && i.title_en.trim()).map(i => ({
+                    catKey: categoryToKey[i.category] || 'cat1',
+                    title: i.title_en, author: i.author_en || '', date: i.date || '',
+                    excerpt: i.excerpt_en || '', body: i.body_en || ''
+                }));
+                articlesByLang.fa = items.filter(i => i.title_fa && i.title_fa.trim()).map(i => ({
+                    catKey: categoryToKey[i.category] || 'cat1',
+                    title: i.title_fa, author: i.author_fa || '', date: i.date || '',
+                    excerpt: i.excerpt_fa || '', body: i.body_fa || ''
+                }));
+                articlesByLang.tr = items.filter(i => i.title_tr && i.title_tr.trim()).map(i => ({
+                    catKey: categoryToKey[i.category] || 'cat1',
+                    title: i.title_tr, author: i.author_tr || '', date: i.date || '',
+                    excerpt: i.excerpt_tr || '', body: i.body_tr || ''
+                }));
             } catch (error) { console.error('Error loading articles:', error); }
         }
 
@@ -1054,15 +993,10 @@
                 if (!response.ok) { console.warn('books.json not found'); return; }
                 const data = await response.json();
                 const items = data.items || [];
-
                 const booksAr = items.map(item => ({
-                    title: item.title_ar || item.title || '',
-                    author: item.author_ar || item.author || '',
-                    date: item.date || '',
-                    description: item.description_ar || item.description || '',
-                    cover: item.cover || '',
-                    pdf_url: item.pdf_url || '',
-                    word_url: item.word_url || ''
+                    title: item.title || '', author: item.author || '', date: item.date || '',
+                    description: item.description || '', cover: item.cover || '',
+                    pdf_url: item.pdf_url || '', word_url: item.word_url || ''
                 }));
                 mishkatBooks.ar = booksAr;
                 mishkatBooks.en = booksAr;
@@ -1075,16 +1009,11 @@
             const lang = currentLang || 'ar';
             const localeMap = { ar: 'ar', en: 'en-US', fa: 'fa-IR' };
             const locale = localeMap[lang] || 'ar';
-
             let days;
-            try {
-                days = Array.from({length:7}, (_, i) => new Intl.DateTimeFormat(locale, { weekday: 'long' }).format(new Date(2024, 0, 7 + i)));
-            } catch(e) {
-                days = ['الأحد','الإثنين','الثلاثاء','الأربعاء','الخميس','الجمعة','السبت'];
-            }
+            try { days = Array.from({length:7}, (_, i) => new Intl.DateTimeFormat(locale, { weekday: 'long' }).format(new Date(2024, 0, 7 + i))); }
+            catch(e) { days = ['الأحد','الإثنين','الثلاثاء','الأربعاء','الخميس','الجمعة','السبت']; }
             const dayNameEl = document.getElementById('dayName');
             if (dayNameEl) dayNameEl.textContent = days[now.getDay()];
-
             try {
                 const hijriFmt = lang === 'ar' ? 'ar-SA-u-ca-islamic' : (lang === 'fa' ? 'fa-IR-u-ca-islamic' : 'en-US-u-ca-islamic');
                 const hijriText = new Intl.DateTimeFormat(hijriFmt, { day:'numeric', month:'long', year:'numeric' }).format(now);
@@ -1094,7 +1023,6 @@
                 if (hijriDateEl) hijriDateEl.textContent = hijriText;
                 if (mobileHijriEl) mobileHijriEl.textContent = hijriShort;
             } catch(e) {}
-
             const day = String(now.getDate()).padStart(2,'0');
             const month = String(now.getMonth()+1).padStart(2,'0');
             const year = now.getFullYear();
@@ -1103,7 +1031,6 @@
             const mobileDateEl = document.getElementById('mobileDate');
             if (gregorianDateEl) gregorianDateEl.textContent = dateStr;
             if (mobileDateEl) mobileDateEl.textContent = dateStr;
-
             let h = now.getHours();
             const t = translations[lang];
             const period = h >= 12 ? t.pm : t.am;
@@ -1120,27 +1047,18 @@
             if (mobilePeriodEl) mobilePeriodEl.textContent = period;
         }
 
-        function renderArticles(filterCat, searchQuery) {
+        function renderArticles(filterCat) {
             const grid = document.getElementById('articlesGrid');
             const empty = document.getElementById('articlesEmpty');
             const t = translations[currentLang];
             const articles = mishkatArticles[currentLang] || mishkatArticles.ar;
-            const isFiltered = (filterCat && filterCat !== 'all') || searchQuery;
-
+            const isFiltered = (filterCat && filterCat !== 'all');
             if (isFiltered) document.body.classList.add('extras-hidden');
             else document.body.classList.remove('extras-hidden');
-
             let filtered = articles;
             if (filterCat && filterCat !== 'all') filtered = filtered.filter(a => a.catKey === filterCat);
-            if (searchQuery) {
-                const q = searchQuery.toLowerCase();
-                filtered = filtered.filter(a =>
-                    (a.title||'').toLowerCase().includes(q) || (a.excerpt||'').toLowerCase().includes(q) || (a.author||'').toLowerCase().includes(q)
-                );
-            }
             if (filtered.length === 0) { grid.innerHTML = ''; empty.style.display = 'block'; return; }
             empty.style.display = 'none';
-
             let html = '';
             if (!isFiltered && filtered.length > 0) {
                 const first = filtered[0];
@@ -1152,34 +1070,15 @@
                             <span class="category-badge">${t[first.catKey] || ''}</span>
                             <h2>${first.title}</h2>
                             <p class="excerpt">${first.excerpt}</p>
-                            <div class="meta">
-                                <span><i class="fa-regular fa-user"></i> ${first.author}</span>
-                                <span><i class="fa-regular fa-calendar"></i> ${first.date}</span>
-                            </div>
+                            <div class="meta"><span><i class="fa-regular fa-user"></i> ${first.author}</span><span><i class="fa-regular fa-calendar"></i> ${first.date}</span></div>
                         </div>
-                    </div>
-                `;
+                    </div>`;
                 filtered = filtered.slice(1);
             }
-
             html += filtered.map(a => {
                 const idx = articles.indexOf(a);
-                return `
-                <div class="article-card" onclick="openArticle(${idx})">
-                    <div class="card-top"></div>
-                    <div class="card-body">
-                        <span class="category-badge">${t[a.catKey] || ''}</span>
-                        <h3>${a.title}</h3>
-                        <p class="excerpt">${a.excerpt}</p>
-                        <div class="meta">
-                            <span><i class="fa-regular fa-user"></i> ${a.author}</span>
-                            <span><i class="fa-regular fa-calendar"></i> ${a.date}</span>
-                        </div>
-                    </div>
-                </div>
-                `;
+                return `<div class="article-card" onclick="openArticle(${idx})"><div class="card-top"></div><div class="card-body"><span class="category-badge">${t[a.catKey] || ''}</span><h3>${a.title}</h3><p class="excerpt">${a.excerpt}</p><div class="meta"><span><i class="fa-regular fa-user"></i> ${a.author}</span><span><i class="fa-regular fa-calendar"></i> ${a.date}</span></div></div></div>`;
             }).join('');
-
             grid.innerHTML = html;
         }
 
@@ -1189,28 +1088,10 @@
             const grid = document.getElementById(gridId);
             const empty = document.getElementById(emptyId);
             if (!grid || !empty) return;
-
             const articles = articlesByLang[lang] || [];
-            if (articles.length === 0) {
-                grid.innerHTML = '';
-                empty.classList.remove('hidden-section');
-                return;
-            }
+            if (articles.length === 0) { grid.innerHTML = ''; empty.classList.remove('hidden-section'); return; }
             empty.classList.add('hidden-section');
-
-            grid.innerHTML = articles.map((a, idx) => `
-                <div class="article-card" onclick="openLangArticle('${lang}', ${idx})">
-                    <div class="card-top"></div>
-                    <div class="card-body">
-                        <h3>${a.title}</h3>
-                        <p class="excerpt">${a.excerpt}</p>
-                        <div class="meta">
-                            <span><i class="fa-regular fa-user"></i> ${a.author}</span>
-                            <span><i class="fa-regular fa-calendar"></i> ${a.date}</span>
-                        </div>
-                    </div>
-                </div>
-            `).join('');
+            grid.innerHTML = articles.map((a, idx) => `<div class="article-card" onclick="openLangArticle('${lang}', ${idx})"><div class="card-top"></div><div class="card-body"><h3>${a.title}</h3><p class="excerpt">${a.excerpt}</p><div class="meta"><span><i class="fa-regular fa-user"></i> ${a.author}</span><span><i class="fa-regular fa-calendar"></i> ${a.date}</span></div></div></div>`).join('');
         }
 
         function openLangArticle(lang, idx) {
@@ -1218,16 +1099,7 @@
             if (!article) return;
             const container = document.getElementById('articleFullContent');
             const bodyHtml = article.body ? article.body.replace(/\n/g, '<br>') : '<p>' + (article.excerpt || '') + '</p>';
-
-            container.innerHTML = `
-                <h1>${article.title}</h1>
-                <div class="article-meta">
-                    <span><i class="fa-regular fa-user"></i> ${article.author}</span>
-                    <span><i class="fa-regular fa-calendar"></i> ${article.date}</span>
-                </div>
-                <div class="article-body">${bodyHtml}</div>
-            `;
-
+            container.innerHTML = `<h1>${article.title}</h1><div class="article-meta"><span><i class="fa-regular fa-user"></i> ${article.author}</span><span><i class="fa-regular fa-calendar"></i> ${article.date}</span></div><div class="article-body">${bodyHtml}</div>`;
             document.querySelectorAll('.page-view').forEach(v => v.classList.remove('active'));
             document.getElementById('view-article').classList.add('active');
             window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -1244,13 +1116,7 @@
                 { name: 'الدعم التقني', role: 'تطوير المنصة', icon: 'fa-code' },
                 { name: 'العلاقات العامة', role: 'التواصل والنشر', icon: 'fa-bullhorn' }
             ];
-            grid.innerHTML = members.map(m => `
-                <div class="team-card">
-                    <div class="team-avatar"><i class="fa-solid ${m.icon}"></i></div>
-                    <h3>${m.name}</h3>
-                    <div class="team-role">${m.role}</div>
-                </div>
-            `).join('');
+            grid.innerHTML = members.map(m => `<div class="team-card"><div class="team-avatar"><i class="fa-solid ${m.icon}"></i></div><h3>${m.name}</h3><div class="team-role">${m.role}</div></div>`).join('');
         }
 
         function renderBooks() {
@@ -1259,31 +1125,11 @@
             if (!grid) return;
             const t = translations[currentLang];
             const books = mishkatBooks[currentLang] || mishkatBooks.ar;
-
-            if (!books || books.length === 0) {
-                grid.innerHTML = '';
-                empty.classList.remove('hidden-section');
-                return;
-            }
+            if (!books || books.length === 0) { grid.innerHTML = ''; empty.classList.remove('hidden-section'); return; }
             empty.classList.add('hidden-section');
-
             grid.innerHTML = books.map((b, i) => {
                 const coverHtml = b.cover ? `<img src="${b.cover}" alt="${b.title}">` : `<i class="fa-solid fa-book"></i>`;
-                return `
-                <div class="book-card">
-                    <div class="book-cover">${coverHtml}</div>
-                    <div class="book-body">
-                        <h3>${b.title}</h3>
-                        <div class="book-author"><i class="fa-solid fa-user-pen"></i> ${b.author}</div>
-                        <p class="book-desc">${b.description}</p>
-                        <div class="book-actions">
-                            <button class="book-btn read" onclick="readBook(${i})"><i class="fa-solid fa-book-open"></i> ${t.readBtn}</button>
-                            <button class="book-btn download" onclick="showDownloadModal(${i})"><i class="fa-solid fa-download"></i> ${t.downloadBtn}</button>
-                            <button class="book-btn share" onclick="shareBook(${i})"><i class="fa-solid fa-share-nodes"></i> ${t.shareBtn}</button>
-                        </div>
-                    </div>
-                </div>
-                `;
+                return `<div class="book-card"><div class="book-cover">${coverHtml}</div><div class="book-body"><h3>${b.title}</h3><div class="book-author"><i class="fa-solid fa-user-pen"></i> ${b.author}</div><p class="book-desc">${b.description}</p><div class="book-actions"><button class="book-btn read" onclick="readBook(${i})"><i class="fa-solid fa-book-open"></i> ${t.readBtn}</button><button class="book-btn download" onclick="showDownloadModal(${i})"><i class="fa-solid fa-download"></i> ${t.downloadBtn}</button><button class="book-btn share" onclick="shareBook(${i})"><i class="fa-solid fa-share-nodes"></i> ${t.shareBtn}</button></div></div></div>`;
             }).join('');
         }
 
@@ -1304,53 +1150,28 @@
             const pdfBtn = document.getElementById('downloadPDF');
             const wordBtn = document.getElementById('downloadWord');
             const t = translations[currentLang];
-
-            if (book.pdf_url) {
-                pdfBtn.href = book.pdf_url;
-                pdfBtn.classList.remove('unavailable');
-                pdfBtn.onclick = null;
-            } else {
-                pdfBtn.href = '#';
-                pdfBtn.classList.add('unavailable');
-                pdfBtn.onclick = (e) => { e.preventDefault(); alert(t.bookNotFound); };
-            }
-
-            if (book.word_url) {
-                wordBtn.href = book.word_url;
-                wordBtn.classList.remove('unavailable');
-                wordBtn.onclick = null;
-            } else {
-                wordBtn.href = '#';
-                wordBtn.classList.add('unavailable');
-                wordBtn.onclick = (e) => { e.preventDefault(); alert(t.bookNotFound); };
-            }
+            if (book.pdf_url) { pdfBtn.href = book.pdf_url; pdfBtn.classList.remove('unavailable'); pdfBtn.onclick = null; }
+            else { pdfBtn.href = '#'; pdfBtn.classList.add('unavailable'); pdfBtn.onclick = (e) => { e.preventDefault(); alert(t.bookNotFound); }; }
+            if (book.word_url) { wordBtn.href = book.word_url; wordBtn.classList.remove('unavailable'); wordBtn.onclick = null; }
+            else { wordBtn.href = '#'; wordBtn.classList.add('unavailable'); wordBtn.onclick = (e) => { e.preventDefault(); alert(t.bookNotFound); }; }
             document.getElementById('downloadModal').classList.add('show');
         }
 
-        function closeDownloadModal() {
-            document.getElementById('downloadModal').classList.remove('show');
-        }
+        function closeDownloadModal() { document.getElementById('downloadModal').classList.remove('show'); }
 
         async function shareBook(index) {
             const t = translations[currentLang];
             const books = mishkatBooks[currentLang] || mishkatBooks.ar;
             const book = books[index];
             if (!book) return;
-            const siteUrl = 'https://al-mishkat1.netlify.app';
-            const shareUrl = siteUrl + '/#book-' + index;
-            const text = '📚 ' + book.title + '\n👤 ' + book.author + '\n\n📖 ' + book.description + '\n\n🔗 ' + shareUrl + '\n\nتم المشاركة من منصة مشكاة';
-
-            if (navigator.share) {
-                try { await navigator.share({ title: book.title, text: text, url: shareUrl }); return; } catch(e) {}
-            }
+            const siteUrl = 'https://mishkat-new.pages.dev';
+            const text = '📚 ' + book.title + '\n👤 ' + book.author + '\n\n📖 ' + book.description + '\n\n🔗 ' + siteUrl + '\n\nتم المشاركة من منصة مشكاة';
+            if (navigator.share) { try { await navigator.share({ title: book.title, text: text, url: siteUrl }); return; } catch(e) {} }
             try { await navigator.clipboard.writeText(text); alert(t.bookLinkCopied); }
             catch (err) {
                 const textarea = document.createElement('textarea');
-                textarea.value = text;
-                textarea.style.position = 'fixed';
-                textarea.style.opacity = '0';
-                document.body.appendChild(textarea);
-                textarea.select();
+                textarea.value = text; textarea.style.position = 'fixed'; textarea.style.opacity = '0';
+                document.body.appendChild(textarea); textarea.select();
                 try { document.execCommand('copy'); alert(t.bookLinkCopied); } catch(e) { alert(t.copyFail); }
                 document.body.removeChild(textarea);
             }
@@ -1363,17 +1184,7 @@
             const t = translations[currentLang];
             const container = document.getElementById('articleFullContent');
             const bodyHtml = article.body ? article.body.replace(/\n/g, '<br>') : '<p>' + (article.excerpt || '') + '</p>';
-
-            container.innerHTML = `
-                <span class="category-badge" style="display:inline-block;background:var(--gold-light);color:var(--primary-navy);padding:5px 14px;border-radius:4px;font-size:12px;font-weight:700;margin-bottom:15px;">${t[article.catKey] || ''}</span>
-                <h1>${article.title}</h1>
-                <div class="article-meta">
-                    <span><i class="fa-regular fa-user"></i> ${article.author}</span>
-                    <span><i class="fa-regular fa-calendar"></i> ${article.date}</span>
-                </div>
-                <div class="article-body">${bodyHtml}</div>
-            `;
-
+            container.innerHTML = `<span class="category-badge" style="display:inline-block;background:var(--gold-light);color:var(--primary-navy);padding:5px 14px;border-radius:4px;font-size:12px;font-weight:700;margin-bottom:15px;">${t[article.catKey] || ''}</span><h1>${article.title}</h1><div class="article-meta"><span><i class="fa-regular fa-user"></i> ${article.author}</span><span><i class="fa-regular fa-calendar"></i> ${article.date}</span></div><div class="article-body">${bodyHtml}</div>`;
             window.history.replaceState(null, '', '#article-' + index);
             document.querySelectorAll('.page-view').forEach(v => v.classList.remove('active'));
             document.getElementById('view-article').classList.add('active');
@@ -1414,18 +1225,11 @@
         function getShareText() {
             const a = getCurrentArticle();
             if (!a) return '';
-            const siteUrl = 'https://al-mishkat1.netlify.app';
-            let text = '📄 ' + a.title + '\n\n';
-            text += '👤 الكاتب: ' + a.author + '\n';
-            text += '📅 التاريخ: ' + a.date + '\n';
-            text += '📚 المصدر: مشكاة | للنور والوعي\n';
-            text += '🔗 ' + window.location.href + '\n\n';
-            text += '━━━━━━━━━━━━━━━\n\n';
+            const siteUrl = 'https://mishkat-new.pages.dev';
+            let text = '📄 ' + a.title + '\n\n👤 الكاتب: ' + a.author + '\n📅 التاريخ: ' + a.date + '\n📚 المصدر: مشكاة | للنور والوعي\n🔗 ' + window.location.href + '\n\n━━━━━━━━━━━━━━━\n\n';
             if (a.body) text += a.body + '\n\n';
             else if (a.excerpt) text += a.excerpt + '\n\n';
-            text += '━━━━━━━━━━━━━━━\n';
-            text += 'تم النسخ من منصة مشكاة\n';
-            text += siteUrl;
+            text += '━━━━━━━━━━━━━━━\nتم النسخ من منصة مشكاة\n' + siteUrl;
             return text;
         }
 
@@ -1434,34 +1238,27 @@
             const text = '📄 ' + a.title + '\n\n👤 ' + a.author + '\n📅 ' + a.date + '\n\n' + a.excerpt + '\n\n' + window.location.href;
             window.open('https://wa.me/?text=' + encodeURIComponent(text), '_blank');
         }
-
         function shareTelegram() {
             const a = getCurrentArticle(); if (!a) return;
             const text = '📄 ' + a.title + '\n\n👤 ' + a.author + '\n📅 ' + a.date + '\n\n' + a.excerpt;
             window.open('https://t.me/share/url?url=' + encodeURIComponent(window.location.href) + '&text=' + encodeURIComponent(text), '_blank');
         }
-
         function shareTwitter() {
             const a = getCurrentArticle(); if (!a) return;
             const text = '📄 ' + a.title + '\n\n' + a.excerpt;
             window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(text) + '&url=' + encodeURIComponent(window.location.href), '_blank');
         }
-
         function shareFacebook() {
             window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(window.location.href), '_blank');
         }
-
         async function copyArticleText() {
             const text = getShareText();
             const t = translations[currentLang];
             try { await navigator.clipboard.writeText(text); alert(t.copySuccess); }
             catch (err) {
                 const textarea = document.createElement('textarea');
-                textarea.value = text;
-                textarea.style.position = 'fixed';
-                textarea.style.opacity = '0';
-                document.body.appendChild(textarea);
-                textarea.select();
+                textarea.value = text; textarea.style.position = 'fixed'; textarea.style.opacity = '0';
+                document.body.appendChild(textarea); textarea.select();
                 try { document.execCommand('copy'); alert(t.copySuccess); } catch (e) { alert(t.copyFail); }
                 document.body.removeChild(textarea);
             }
@@ -1470,40 +1267,22 @@
         function renderSidebar() {
             const t = translations[currentLang];
             const articles = mishkatArticles[currentLang] || mishkatArticles.ar;
-
             const mostReadBox = document.getElementById('mostReadBox');
             if (mostReadBox) {
-                mostReadBox.innerHTML = articles.slice(0, 5).map((a, i) => `
-                    <div class="most-read-item" onclick="openArticle(${i})">
-                        <div class="number">${i + 1}</div>
-                        <div class="text">
-                            <p>${a.title}</p>
-                            <small>${t[a.catKey] || ''}</small>
-                        </div>
-                    </div>
-                `).join('');
+                mostReadBox.innerHTML = articles.slice(0, 5).map((a, i) => `<div class="most-read-item" onclick="openArticle(${i})"><div class="number">${i + 1}</div><div class="text"><p>${a.title}</p><small>${t[a.catKey] || ''}</small></div></div>`).join('');
             }
-
             const catsBox = document.getElementById('sidebarCatsBox');
             if (catsBox) {
                 const catsCount = {};
                 articles.forEach(a => { catsCount[a.catKey] = (catsCount[a.catKey] || 0) + 1; });
-                catsBox.innerHTML = Object.keys(catsCount).map(catKey => `
-                    <div class="sidebar-cat-item" data-cat="${catKey}">
-                        <span>${t[catKey]}</span>
-                        <span class="count">${catsCount[catKey]}</span>
-                    </div>
-                `).join('');
-
+                catsBox.innerHTML = Object.keys(catsCount).map(catKey => `<div class="sidebar-cat-item" data-cat="${catKey}"><span>${t[catKey]}</span><span class="count">${catsCount[catKey]}</span></div>`).join('');
                 catsBox.querySelectorAll('.sidebar-cat-item').forEach(item => {
                     item.addEventListener('click', function() {
                         const cat = this.dataset.cat;
                         showView('home');
                         setTimeout(() => {
-                            document.querySelectorAll('#mishkatCategories .cat-btn').forEach(b => {
-                                b.classList.toggle('active', b.dataset.cat === cat);
-                            });
-                            renderArticles(cat, '');
+                            document.querySelectorAll('#mishkatCategories .cat-btn').forEach(b => b.classList.toggle('active', b.dataset.cat === cat));
+                            renderArticles(cat);
                             document.getElementById('articles').scrollIntoView({behavior: 'smooth'});
                         }, 100);
                     });
@@ -1514,7 +1293,6 @@
         function setLanguage(lang) {
             currentLang = lang;
             const t = translations[lang] || translations.ar;
-
             document.querySelectorAll('[data-i18n]').forEach(el => {
                 const key = el.getAttribute('data-i18n');
                 if (t[key] !== undefined) el.textContent = t[key];
@@ -1527,18 +1305,13 @@
                 const key = el.getAttribute('data-i18n-ph');
                 if (t[key] !== undefined) el.placeholder = t[key];
             });
-
             const html = document.documentElement;
             if (lang === 'ar' || lang === 'fa') { html.dir = 'rtl'; document.body.style.direction = 'rtl'; }
             else { html.dir = 'ltr'; document.body.style.direction = 'ltr'; }
             document.title = t.title;
-
-            document.querySelectorAll('.lang-btn').forEach(btn => {
-                btn.classList.toggle('active', btn.dataset.lang === lang);
-            });
-
+            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.toggle('active', btn.dataset.lang === lang));
             const activeCat = document.querySelector('#mishkatCategories .cat-btn.active');
-            renderArticles(activeCat ? activeCat.dataset.cat : 'all', '');
+            renderArticles(activeCat ? activeCat.dataset.cat : 'all');
             renderBooks();
             renderSidebar();
             renderLangArticles('en');
@@ -1546,9 +1319,7 @@
             renderLangArticles('tr');
             renderTeam();
             updateDateTime();
-
             if (document.getElementById('view-article').classList.contains('active')) loadGiscus();
-
             localStorage.setItem('mishkat_lang', lang);
         }
 
@@ -1557,33 +1328,128 @@
             document.querySelectorAll('.page-view').forEach(v => v.classList.remove('active'));
             const target = document.getElementById('view-' + viewId);
             if (target) target.classList.add('active');
-            document.querySelectorAll('.main-nav .nav-list li a[data-view]').forEach(a => {
-                a.classList.toggle('active', a.dataset.view === viewId);
-            });
-
+            document.querySelectorAll('.main-nav .nav-list li a[data-view]').forEach(a => a.classList.toggle('active', a.dataset.view === viewId));
             if (viewId === 'home') window.history.replaceState(null, '', window.location.pathname);
             else window.history.replaceState(null, '', '#' + viewId);
-
             window.scrollTo({ top: 0, behavior: 'smooth' });
-
             if (viewId === 'home') {
                 const activeCat = document.querySelector('#mishkatCategories .cat-btn.active');
-                renderArticles(activeCat ? activeCat.dataset.cat : 'all', '');
-            } else if (viewId === 'library') {
-                renderBooks();
-            } else if (viewId === 'articles-en') {
-                renderLangArticles('en');
-            } else if (viewId === 'articles-fa') {
-                renderLangArticles('fa');
-            } else if (viewId === 'articles-tr') {
-                renderLangArticles('tr');
-            } else if (viewId === 'family') {
-                renderTeam();
-            }
-
+                renderArticles(activeCat ? activeCat.dataset.cat : 'all');
+            } else if (viewId === 'library') renderBooks();
+            else if (viewId === 'articles-en') renderLangArticles('en');
+            else if (viewId === 'articles-fa') renderLangArticles('fa');
+            else if (viewId === 'articles-tr') renderLangArticles('tr');
+            else if (viewId === 'family') renderTeam();
             if (window.innerWidth <= 768) {
                 document.getElementById('mainNav').classList.remove('mobile-open');
                 document.getElementById('mobileOverlay').classList.remove('show');
+            }
+        }
+
+        // ============ البحث الشامل ============
+        function doSearch(value) {
+            const query = (value || '').trim();
+            if (query.length < 2) { if (query.length === 0) showView('home'); return; }
+            const q = query.toLowerCase();
+            const results = [];
+
+            // البحث في المقالات
+            const articles = mishkatArticles[currentLang] || mishkatArticles.ar;
+            articles.forEach((a, i) => {
+                const tM = (a.title||'').toLowerCase().includes(q);
+                const eM = (a.excerpt||'').toLowerCase().includes(q);
+                const bM = (a.body||'').toLowerCase().includes(q);
+                const aM = (a.author||'').toLowerCase().includes(q);
+                if (tM || eM || bM || aM) {
+                    let snippet = '';
+                    if (tM) snippet = a.excerpt || a.title;
+                    else if (eM) snippet = a.excerpt;
+                    else if (bM) snippet = extractSnippet(a.body, q);
+                    else snippet = a.author;
+                    results.push({
+                        type: 'article', typeLabel: 'مقال', typeIcon: 'fa-newspaper', index: i,
+                        title: a.title, snippet: highlightText(snippet, q), author: a.author, date: a.date
+                    });
+                }
+            });
+
+            // البحث في الكتب
+            const books = mishkatBooks[currentLang] || mishkatBooks.ar;
+            books.forEach((b, i) => {
+                const tM = (b.title||'').toLowerCase().includes(q);
+                const dM = (b.description||'').toLowerCase().includes(q);
+                const aM = (b.author||'').toLowerCase().includes(q);
+                if (tM || dM || aM) {
+                    let snippet = '';
+                    if (tM) snippet = b.description || b.title;
+                    else if (dM) snippet = b.description;
+                    else snippet = b.author;
+                    results.push({
+                        type: 'book', typeLabel: 'كتاب', typeIcon: 'fa-book', index: i,
+                        title: b.title, snippet: highlightText(snippet, q), author: b.author, date: b.date
+                    });
+                }
+            });
+
+            displaySearchResults(results, query);
+        }
+
+        function extractSnippet(text, query) {
+            if (!text) return '';
+            const lower = text.toLowerCase();
+            const idx = lower.indexOf(query);
+            if (idx === -1) return text.substring(0, 150) + '...';
+            const start = Math.max(0, idx - 60);
+            const end = Math.min(text.length, idx + query.length + 90);
+            return (start > 0 ? '... ' : '') + text.substring(start, end) + (end < text.length ? ' ...' : '');
+        }
+
+        function highlightText(text, query) {
+            if (!text) return '';
+            try {
+                const regex = new RegExp('(' + query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'gi');
+                return text.replace(regex, '<mark>$1</mark>');
+            } catch(e) { return text; }
+        }
+
+        function displaySearchResults(results, query) {
+            const list = document.getElementById('searchResultsList');
+            const empty = document.getElementById('searchEmpty');
+            const queryDisplay = document.getElementById('searchQueryDisplay');
+            if (queryDisplay) queryDisplay.textContent = query;
+
+            if (!results || results.length === 0) {
+                list.innerHTML = '';
+                empty.classList.remove('hidden-section');
+            } else {
+                empty.classList.add('hidden-section');
+                list.innerHTML = results.map(r => `
+                    <div class="search-result-item" onclick="openSearchResult('${r.type}', ${r.index})">
+                        <span class="result-type"><i class="fa-solid ${r.typeIcon}"></i> ${r.typeLabel}</span>
+                        <h3>${r.title}</h3>
+                        <p class="result-snippet">${r.snippet}</p>
+                        <div class="result-meta">
+                            <span><i class="fa-regular fa-user"></i> ${r.author || '—'}</span>
+                            <span><i class="fa-regular fa-calendar"></i> ${r.date || '—'}</span>
+                        </div>
+                    </div>
+                `).join('');
+            }
+
+            document.body.classList.remove('extras-hidden');
+            document.querySelectorAll('.page-view').forEach(v => v.classList.remove('active'));
+            document.getElementById('view-search').classList.add('active');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function openSearchResult(type, index) {
+            if (type === 'article') openArticle(index);
+            else if (type === 'book') {
+                showView('library');
+                setTimeout(() => {
+                    const bks = document.querySelectorAll('.book-card');
+                    if (bks[index]) bks[index].scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }, 300);
             }
         }
 
@@ -1591,16 +1457,11 @@
             await loadArticlesFromJSON();
             await loadBooksFromJSON();
 
-            document.querySelectorAll('.lang-btn').forEach(btn => {
-                btn.addEventListener('click', function() { setLanguage(this.dataset.lang); });
-            });
+            document.querySelectorAll('.lang-btn').forEach(btn => btn.addEventListener('click', function() { setLanguage(this.dataset.lang); }));
             setLanguage(localStorage.getItem('mishkat_lang') || 'ar');
 
             document.querySelectorAll('.main-nav .nav-list li a[data-view]').forEach(a => {
-                a.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    showView(this.dataset.view);
-                });
+                a.addEventListener('click', function(e) { e.preventDefault(); showView(this.dataset.view); });
             });
 
             document.querySelectorAll('.section-tile').forEach(tile => {
@@ -1608,10 +1469,8 @@
                     const cat = this.dataset.cat;
                     showView('home');
                     setTimeout(() => {
-                        document.querySelectorAll('#mishkatCategories .cat-btn').forEach(b => {
-                            b.classList.toggle('active', b.dataset.cat === cat);
-                        });
-                        renderArticles(cat, '');
+                        document.querySelectorAll('#mishkatCategories .cat-btn').forEach(b => b.classList.toggle('active', b.dataset.cat === cat));
+                        renderArticles(cat);
                         document.getElementById('articles').scrollIntoView({behavior: 'smooth'});
                     }, 100);
                 });
@@ -1623,10 +1482,8 @@
                     const cat = this.dataset.cat;
                     showView('home');
                     setTimeout(() => {
-                        document.querySelectorAll('#mishkatCategories .cat-btn').forEach(b => {
-                            b.classList.toggle('active', b.dataset.cat === cat);
-                        });
-                        renderArticles(cat, '');
+                        document.querySelectorAll('#mishkatCategories .cat-btn').forEach(b => b.classList.toggle('active', b.dataset.cat === cat));
+                        renderArticles(cat);
                         document.getElementById('articles').scrollIntoView({behavior: 'smooth'});
                     }, 100);
                 });
@@ -1636,21 +1493,14 @@
                 btn.addEventListener('click', function() {
                     document.querySelectorAll('#mishkatCategories .cat-btn').forEach(b => b.classList.remove('active'));
                     this.classList.add('active');
-                    const searchVal = (document.getElementById('headerSearchInput') || {}).value || '';
-                    renderArticles(this.dataset.cat, searchVal);
+                    renderArticles(this.dataset.cat);
                 });
             });
 
             const desktopSearch = document.getElementById('headerSearchInput');
             const mobileSearch = document.getElementById('mobileSearchInput');
-            function doSearch(value) {
-                showView('home');
-                const activeCat = document.querySelector('#mishkatCategories .cat-btn.active');
-                renderArticles(activeCat ? activeCat.dataset.cat : 'all', value);
-            }
             if (desktopSearch) desktopSearch.addEventListener('input', function() { if (mobileSearch) mobileSearch.value = this.value; doSearch(this.value); });
             if (mobileSearch) mobileSearch.addEventListener('input', function() { if (desktopSearch) desktopSearch.value = this.value; doSearch(this.value); });
-
             document.querySelectorAll('.search-mini button, .mobile-search-bar button').forEach(function(btn) {
                 btn.addEventListener('click', function(e) {
                     e.preventDefault();
@@ -1675,7 +1525,6 @@
             const mobileBtn = document.getElementById('mobileMenuBtn');
             const mainNav = document.getElementById('mainNav');
             const overlay = document.getElementById('mobileOverlay');
-
             if (mobileBtn) {
                 mobileBtn.addEventListener('click', function() {
                     mainNav.classList.add('mobile-open');
@@ -1692,12 +1541,10 @@
                     }
                 });
             }
-            if (overlay) {
-                overlay.addEventListener('click', function() {
-                    mainNav.classList.remove('mobile-open');
-                    overlay.classList.remove('show');
-                });
-            }
+            if (overlay) overlay.addEventListener('click', function() {
+                mainNav.classList.remove('mobile-open');
+                overlay.classList.remove('show');
+            });
         });
     </script>
 
