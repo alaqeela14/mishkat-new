@@ -23,15 +23,39 @@ collections:
             fields:
               - { label: "التصنيف", name: "category", widget: "select", options: ["مقالات ورؤى", "أهل البيت", "وعي مجتمعي", "رؤى وحلول", "قضايا معاصرة", "حوارات ومقابلات", "شبهات وردود", "التوجيهات الأخلاقية"] }
               - { label: "التاريخ", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false }
-              - { label: "اسم الكاتب (عربي)", name: "author_ar", widget: "string" }
-              - { label: "اسم الكاتب (إنجليزي)", name: "author_en", widget: "string", required: false }
-              - { label: "اسم الكاتب (فارسي)", name: "author_fa", widget: "string", required: false }
               - { label: "🇸🇦 العنوان (عربي)", name: "title_ar", widget: "string" }
               - { label: "🇬🇧 Title (English)", name: "title_en", widget: "string", required: false }
               - { label: "🇮🇷 عنوان (فارسی)", name: "title_fa", widget: "string", required: false }
+              - { label: "🇹🇷 Başlık (Türkçe)", name: "title_tr", widget: "string", required: false }
+              - { label: "🇸🇦 اسم الكاتب (عربي)", name: "author_ar", widget: "string" }
+              - { label: "🇬🇧 Author (English)", name: "author_en", widget: "string", required: false }
+              - { label: "🇮🇷 نویسنده (فارسی)", name: "author_fa", widget: "string", required: false }
+              - { label: "🇹🇷 Yazar (Türkçe)", name: "author_tr", widget: "string", required: false }
               - { label: "🇸🇦 المقتطف (عربي)", name: "excerpt_ar", widget: "text" }
               - { label: "🇬🇧 Excerpt (English)", name: "excerpt_en", widget: "text", required: false }
               - { label: "🇮🇷 چکیده (فارسی)", name: "excerpt_fa", widget: "text", required: false }
+              - { label: "🇹🇷 Özet (Türkçe)", name: "excerpt_tr", widget: "text", required: false }
               - { label: "🇸🇦 نص المقال (عربي)", name: "body_ar", widget: "markdown", required: false }
               - { label: "🇬🇧 Article Body (English)", name: "body_en", widget: "markdown", required: false }
               - { label: "🇮🇷 متن مقاله (فارسی)", name: "body_fa", widget: "markdown", required: false }
+              - { label: "🇹🇷 Makale Metni (Türkçe)", name: "body_tr", widget: "markdown", required: false }
+
+  - name: "books"
+    label: "المكتبة (كتب وملفات)"
+    files:
+      - name: "books-list"
+        label: "قائمة الكتب"
+        file: "books.json"
+        fields:
+          - label: "قائمة الكتب"
+            name: "items"
+            widget: "list"
+            summary: "{{fields.title_ar}} ({{fields.author_ar}})"
+            fields:
+              - { label: "🇸🇦 العنوان (عربي)", name: "title_ar", widget: "string" }
+              - { label: "🇸🇦 المؤلف (عربي)", name: "author_ar", widget: "string" }
+              - { label: "التاريخ", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false }
+              - { label: "🇸🇦 الوصف (عربي)", name: "description_ar", widget: "text" }
+              - { label: "صورة الغلاف (اختياري)", name: "cover", widget: "image", required: false }
+              - { label: "رابط ملف PDF", name: "pdf_url", widget: "string", required: false, hint: "الصق رابط ملف PDF (Drive/Dropbox)" }
+              - { label: "رابط ملف Word", name: "word_url", widget: "string", required: false, hint: "الصق رابط ملف Word" }
