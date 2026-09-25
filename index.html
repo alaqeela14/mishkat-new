@@ -201,7 +201,9 @@
         .comments-section{background:#fff;border-radius:6px;padding:20px 25px;box-shadow:0 2px 10px rgba(26,43,74,.06);border:1px solid var(--border-color);border-top:4px solid var(--primary-navy);margin-bottom:20px}
         .comments-section h3{color:var(--primary-navy);font-size:1.2rem;font-weight:800;margin-bottom:15px;display:flex;align-items:center;gap:8px}
         .comments-section h3 i{color:var(--gold-accent)}
-        #giscusContainer{min-height:100px}
+        #comments-list{min-height:60px}
+        .comment-item{animation:fadeIn .3s ease}
+        @keyframes fadeIn{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}
         .library-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:20px}
         .book-card{background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 4px 15px rgba(26,43,74,.06);border:1px solid var(--border-color);display:flex;flex-direction:column;transition:.3s}
         .book-card:hover{transform:translateY(-5px);box-shadow:0 12px 30px rgba(26,43,74,.15);border-color:var(--gold-accent)}
@@ -242,7 +244,6 @@
         .team-role{color:var(--gold-accent);font-size:12.5px;font-weight:700;margin-bottom:12px}
         .lang-articles-empty{text-align:center;padding:60px 20px;color:var(--text-muted)}
         .lang-articles-empty i{font-size:60px;color:var(--gold-accent);margin-bottom:15px;display:block}
-        /* نتائج البحث */
         .search-results-view{padding:20px 0}
         .search-results-header{background:#fff;border-radius:6px;padding:20px 25px;box-shadow:0 2px 10px rgba(26,43,74,.06);border:1px solid var(--border-color);border-top:4px solid var(--gold-accent);margin-bottom:20px}
         .search-results-header h2{color:var(--primary-navy);font-size:1.3rem;font-weight:800;margin:0 0 5px 0;display:flex;align-items:center;gap:10px}
@@ -337,7 +338,6 @@
 </head>
 <body>
 
-    <!-- شريط علوي -->
     <div class="top-bar">
         <div class="container">
             <div class="contact-info">
@@ -360,7 +360,6 @@
         </div>
     </div>
 
-    <!-- الترويسة -->
     <header class="main-header">
         <div class="container">
             <a class="brand" onclick="showView('home')">
@@ -390,7 +389,6 @@
         </div>
     </header>
 
-    <!-- شريط التنقل -->
     <nav class="main-nav" id="mainNav">
         <div class="container">
             <ul class="nav-list">
@@ -402,7 +400,7 @@
                     <a class="dropdown-toggle" data-bs-toggle="dropdown"><span data-i18n="navCats">التصنيفات</span> <i class="fa-solid fa-chevron-down" style="font-size:10px;"></i></a>
                     <ul class="dropdown-menu" id="catsDropdownMenu">
                         <li><a class="dropdown-item" data-cat="cat1" data-i18n="cat1">مقالات ورؤى</a></li>
-                        <li><a class="dropdown-item" data-cat="cat2" data-i18n="cat2">أهل البيت (عليهم السلام)</a></li>
+                        <li><a class="dropdown-item" data-cat="cat2" data-i18n="cat2">أهل البيت (ع)</a></li>
                         <li><a class="dropdown-item" data-cat="cat3" data-i18n="cat3">وعي مجتمعي</a></li>
                         <li><a class="dropdown-item" data-cat="cat4" data-i18n="cat4">رؤى وحلول</a></li>
                         <li><a class="dropdown-item" data-cat="cat5" data-i18n="cat5">قضايا معاصرة</a></li>
@@ -425,7 +423,6 @@
     </nav>
     <div class="mobile-overlay" id="mobileOverlay"></div>
 
-    <!-- أشرطة الجوال -->
     <div class="mobile-clock-bar">
         <span><i class="fa-regular fa-clock"></i> <strong id="mobileClock">--:--</strong> <span id="mobilePeriod">ص</span></span>
         <span class="sep">|</span>
@@ -438,10 +435,8 @@
         <button type="button"><i class="fa-solid fa-search"></i> <span data-i18n="searchBtn">بحث</span></button>
     </div>
 
-    <!-- الحاوية الرئيسية -->
     <div class="main-container">
 
-        <!-- صفحة: الرئيسية -->
         <div class="page-view active" id="view-home">
             <div class="hero-compact">
                 <div class="hero-icon"><i class="fa-solid fa-lightbulb"></i></div>
@@ -476,7 +471,7 @@
                     <div class="category-tabs" id="mishkatCategories">
                         <button class="cat-btn active" data-cat="all" data-i18n="catAll">الكل</button>
                         <button class="cat-btn" data-cat="cat1" data-i18n="cat1">مقالات ورؤى</button>
-                        <button class="cat-btn" data-cat="cat2" data-i18n="cat2">أهل البيت (عليهم السلام)</button>
+                        <button class="cat-btn" data-cat="cat2" data-i18n="cat2">أهل البيت (ع)</button>
                         <button class="cat-btn" data-cat="cat3" data-i18n="cat3">وعي مجتمعي</button>
                         <button class="cat-btn" data-cat="cat4" data-i18n="cat4">رؤى وحلول</button>
                         <button class="cat-btn" data-cat="cat5" data-i18n="cat5">قضايا معاصرة</button>
@@ -517,7 +512,6 @@
             </div>
         </div>
 
-        <!-- صفحة: المكتبة -->
         <div class="page-view" id="view-library">
             <div class="page-title-bar">
                 <h1><i class="fa-solid fa-book"></i> <span data-i18n="pageLibrary">المكتبة</span></h1>
@@ -533,7 +527,6 @@
             </div>
         </div>
 
-        <!-- صفحة: أسرة المنصة -->
         <div class="page-view" id="view-family">
             <div class="page-title-bar">
                 <h1><i class="fa-solid fa-users"></i> <span data-i18n="pageFamily">أسرة المنصة</span></h1>
@@ -546,7 +539,6 @@
             </div>
         </div>
 
-        <!-- صفحة: مقالات بالإنجليزية -->
         <div class="page-view" id="view-articles-en">
             <div class="page-title-bar">
                 <h1><i class="fa-solid fa-language"></i> <span data-i18n="pageArticlesEn">مقالات باللغة الإنجليزية</span></h1>
@@ -560,7 +552,6 @@
             </div>
         </div>
 
-        <!-- صفحة: مقالات بالفارسية -->
         <div class="page-view" id="view-articles-fa">
             <div class="page-title-bar">
                 <h1><i class="fa-solid fa-language"></i> <span data-i18n="pageArticlesFa">مقالات باللغة الفارسية</span></h1>
@@ -574,7 +565,6 @@
             </div>
         </div>
 
-        <!-- صفحة: مقالات بالتركية -->
         <div class="page-view" id="view-articles-tr">
             <div class="page-title-bar">
                 <h1><i class="fa-solid fa-language"></i> <span data-i18n="pageArticlesTr">مقالات باللغة التركية</span></h1>
@@ -588,7 +578,6 @@
             </div>
         </div>
 
-        <!-- صفحة: نتائج البحث -->
         <div class="page-view" id="view-search">
             <div class="search-results-view">
                 <div class="search-results-header">
@@ -604,7 +593,6 @@
             </div>
         </div>
 
-        <!-- صفحة: عرض المقال الكامل -->
         <div class="page-view" id="view-article">
             <div class="container" style="max-width:900px;margin:0 auto;">
                 <button class="back-btn" onclick="showView('home')">
@@ -625,12 +613,25 @@
 
                 <div class="comments-section">
                     <h3><i class="fa-regular fa-comments"></i> <span data-i18n="commentsTitle">التعليقات</span></h3>
-                    <div id="giscusContainer"></div>
+                    <div id="comments-list">
+                        <p style="color: var(--text-muted);">جاري تحميل التعليقات...</p>
+                    </div>
+                    <div class="submit-box" style="margin-top: 20px; border-top: 2px dashed var(--border-color);">
+                        <h4 style="color: var(--primary-navy); margin-bottom: 15px; font-weight: 800;">أضف تعليقاً</h4>
+                        <form id="comment-form">
+                            <input type="hidden" id="comment-slug">
+                            <label for="comment-author">الاسم</label>
+                            <input type="text" id="comment-author" required maxlength="60">
+                            <label for="comment-body">التعليق</label>
+                            <textarea id="comment-body" rows="4" required maxlength="2000"></textarea>
+                            <button type="submit" class="btn-submit"><i class="fa-regular fa-paper-plane"></i> إرسال التعليق</button>
+                            <p id="comment-message" style="margin-top: 10px; font-weight: bold;"></p>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <!-- صفحة: عن المنصة -->
         <div class="page-view" id="view-about">
             <div class="page-title-bar">
                 <h1><i class="fa-solid fa-circle-info"></i> <span data-i18n="pageAbout">عن المنصة</span></h1>
@@ -660,7 +661,6 @@
             </div>
         </div>
 
-        <!-- صفحة: الأقسام -->
         <div class="page-view" id="view-sections">
             <div class="page-title-bar">
                 <h1><i class="fa-solid fa-list"></i> <span data-i18n="pageSections">الأقسام</span></h1>
@@ -671,7 +671,7 @@
                 <p data-i18n="sectionsContentText">تضم منصة مشكاة ثمانية أقسام رئيسية تغطي مختلف المجالات الفكرية والثقافية والاجتماعية:</p>
                 <div class="sections-grid">
                     <div class="section-tile" data-cat="cat1"><div class="icon"><i class="fa-solid fa-pen-fancy"></i></div><h4 data-i18n="cat1">مقالات ورؤى</h4><p data-i18n="tile1">مقالات فكرية عامة تعالج قضايا معاصرة برؤية متوازنة.</p></div>
-                    <div class="section-tile" data-cat="cat2"><div class="icon"><i class="fa-solid fa-mosque"></i></div><h4 data-i18n="cat2">أهل البيت (عليهم السلام)</h4><p data-i18n="tile2">مقالات متخصصة في سيرة وسلوك أهل البيت ودروس من مدرستهم.</p></div>
+                    <div class="section-tile" data-cat="cat2"><div class="icon"><i class="fa-solid fa-mosque"></i></div><h4 data-i18n="cat2">أهل البيت (ع)</h4><p data-i18n="tile2">مقالات متخصصة في سيرة وسلوك أهل البيت ودروس من مدرستهم.</p></div>
                     <div class="section-tile" data-cat="cat3"><div class="icon"><i class="fa-solid fa-users"></i></div><h4 data-i18n="cat3">وعي مجتمعي</h4><p data-i18n="tile3">قضايا اجتماعية معاصرة: الأسرة، التربية، الشباب.</p></div>
                     <div class="section-tile" data-cat="cat4"><div class="icon"><i class="fa-solid fa-lightbulb"></i></div><h4 data-i18n="cat4">رؤى وحلول</h4><p data-i18n="tile4">قراءة تحليلية للمشكلات الواقعية مع حلول عملية.</p></div>
                     <div class="section-tile" data-cat="cat5"><div class="icon"><i class="fa-solid fa-globe"></i></div><h4 data-i18n="cat5">قضايا معاصرة</h4><p data-i18n="tile5">قراءة إسلامية للأحداث الجارية والظواهر الحديثة.</p></div>
@@ -682,7 +682,6 @@
             </div>
         </div>
 
-        <!-- صفحة: تواصل معنا -->
         <div class="page-view" id="view-contact">
             <div class="page-title-bar">
                 <h1><i class="fa-solid fa-address-book"></i> <span data-i18n="pageContact">تواصل معنا</span></h1>
@@ -723,7 +722,6 @@
 
     </div>
 
-    <!-- التذييل -->
     <footer>
         <div class="container">
             <div class="footer-brand">
@@ -755,7 +753,6 @@
         </div>
     </footer>
 
-    <!-- Modal التحميل -->
     <div class="modal-overlay" id="downloadModal" onclick="if(event.target===this)closeDownloadModal()">
         <div class="modal-box">
             <button class="modal-close" onclick="closeDownloadModal()">×</button>
@@ -806,7 +803,7 @@
                 news1: 'مرحباً بكم في منصة مشكاة', news2: 'تابعوا جديد المقالات والرؤى', news3: 'منصة فكرية توعوية', news4: 'للنور والوعي',
                 articlesTitle: 'المقالات والرؤى', noArticles: 'لا توجد مقالات في هذا التصنيف حالياً',
                 mostRead: 'الأكثر قراءة', categoriesLabel: 'التصنيفات', followUs: 'تابعنا',
-                catAll: 'الكل', cat1: 'مقالات ورؤى', cat2: 'أهل البيت (عليهم السلام)', cat3: 'وعي مجتمعي',
+                catAll: 'الكل', cat1: 'مقالات ورؤى', cat2: 'أهل البيت (ع)', cat3: 'وعي مجتمعي',
                 cat4: 'رؤى وحلول', cat5: 'قضايا معاصرة', cat6: 'حوارات ومقابلات', cat7: 'شبهات وردود', cat8: 'التوجيهات الأخلاقية',
                 featured: 'مقال مميز', backToArticles: 'رجوع للمقالات',
                 shareTitle: 'شارك المقال', commentsTitle: 'التعليقات', copyBtn: 'نسخ النص',
@@ -1189,29 +1186,7 @@
             document.querySelectorAll('.page-view').forEach(v => v.classList.remove('active'));
             document.getElementById('view-article').classList.add('active');
             window.scrollTo({ top: 0, behavior: 'smooth' });
-            setTimeout(loadGiscus, 200);
-        }
-
-        function loadGiscus() {
-            const container = document.getElementById('giscusContainer');
-            if (!container) return;
-            container.innerHTML = '';
-            const script = document.createElement('script');
-            script.src = 'https://giscus.app/client.js';
-            script.setAttribute('data-repo', 'alaqeela14/mishkat-new');
-            script.setAttribute('data-repo-id', 'R_kgDOUqF2Ug');
-            script.setAttribute('data-category', 'Announcements');
-            script.setAttribute('data-category-id', 'DIC_kwDOUqF2Us4DGV2u');
-            script.setAttribute('data-mapping', 'pathname');
-            script.setAttribute('data-strict', '0');
-            script.setAttribute('data-reactions-enabled', '1');
-            script.setAttribute('data-emit-metadata', '0');
-            script.setAttribute('data-input-position', 'bottom');
-            script.setAttribute('data-theme', 'preferred_color_scheme');
-            script.setAttribute('data-lang', currentLang);
-            script.setAttribute('crossorigin', 'anonymous');
-            script.async = true;
-            container.appendChild(script);
+            setTimeout(loadComments, 200);
         }
 
         function getCurrentArticle() {
@@ -1319,7 +1294,7 @@
             renderLangArticles('tr');
             renderTeam();
             updateDateTime();
-            if (document.getElementById('view-article').classList.contains('active')) loadGiscus();
+            if (document.getElementById('view-article').classList.contains('active')) loadComments();
             localStorage.setItem('mishkat_lang', lang);
         }
 
@@ -1346,14 +1321,12 @@
             }
         }
 
-        // ============ البحث الشامل ============
         function doSearch(value) {
             const query = (value || '').trim();
             if (query.length < 2) { if (query.length === 0) showView('home'); return; }
             const q = query.toLowerCase();
             const results = [];
 
-            // البحث في المقالات
             const articles = mishkatArticles[currentLang] || mishkatArticles.ar;
             articles.forEach((a, i) => {
                 const tM = (a.title||'').toLowerCase().includes(q);
@@ -1373,7 +1346,6 @@
                 }
             });
 
-            // البحث في الكتب
             const books = mishkatBooks[currentLang] || mishkatBooks.ar;
             books.forEach((b, i) => {
                 const tM = (b.title||'').toLowerCase().includes(q);
@@ -1453,7 +1425,76 @@
             }
         }
 
+        // ============ نظام التعليقات (D1) ============
+        function getCurrentArticleSlug() {
+            const a = getCurrentArticle();
+            if (!a) return 'home';
+            return encodeURIComponent(a.title);
+        }
+
+        async function loadComments() {
+            const slug = getCurrentArticleSlug();
+            const list = document.getElementById('comments-list');
+            const slugInput = document.getElementById('comment-slug');
+            if (slugInput) slugInput.value = slug;
+            if (!list) return;
+            list.innerHTML = '<p style="color: var(--text-muted);">جاري تحميل التعليقات...</p>';
+            try {
+                const r = await fetch('/api/comments?slug=' + slug);
+                const comments = await r.json();
+                if (!Array.isArray(comments)) {
+                    list.innerHTML = '<p style="color:red;">تعذّر تحميل التعليقات.</p>';
+                    return;
+                }
+                if (comments.length === 0) {
+                    list.innerHTML = '<p style="color: var(--text-muted);">لا توجد تعليقات بعد. كن أول من يشارك!</p>';
+                    return;
+                }
+                list.innerHTML = comments.map(c => `
+                    <div class="comment-item" style="border-bottom: 1px solid var(--border-color); padding: 15px 0;">
+                        <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+                            <div style="width:38px;height:38px;background:var(--primary-navy);color:var(--gold-accent);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;">${(c.author||'?').charAt(0)}</div>
+                            <strong style="color:var(--primary-navy);">${c.author}</strong>
+                            <small style="color:var(--text-muted); margin-right:auto;">${new Date(c.created_at*1000).toLocaleDateString('ar-EG')}</small>
+                        </div>
+                        <p style="margin:0; font-size:14px; line-height:1.7;">${c.body}</p>
+                    </div>
+                `).join('');
+            } catch(e) {
+                list.innerHTML = '<p style="color:red;">تعذّر تحميل التعليقات.</p>';
+            }
+        }
+
         document.addEventListener('DOMContentLoaded', async function() {
+            const commentForm = document.getElementById('comment-form');
+            if (commentForm) {
+                commentForm.addEventListener('submit', async function(e) {
+                    e.preventDefault();
+                    const msg = document.getElementById('comment-message');
+                    const author = document.getElementById('comment-author').value.trim();
+                    const body = document.getElementById('comment-body').value.trim();
+                    const slug = document.getElementById('comment-slug').value;
+                    msg.textContent = 'جاري الإرسال...';
+                    msg.style.color = 'var(--primary-navy)';
+                    try {
+                        const r = await fetch('/api/comments', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({ post_slug: slug, author, body })
+                        });
+                        const data = await r.json();
+                        if (r.ok) {
+                            msg.textContent = '✅ تم إرسال تعليقك! سيظهر بعد المراجعة.';
+                            msg.style.color = 'green';
+                            commentForm.reset();
+                        } else throw new Error(data.error || 'خطأ');
+                    } catch(err) {
+                        msg.textContent = '❌ ' + err.message;
+                        msg.style.color = 'red';
+                    }
+                });
+            }
+
             await loadArticlesFromJSON();
             await loadBooksFromJSON();
 
