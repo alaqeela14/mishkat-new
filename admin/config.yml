@@ -26,3 +26,4 @@ collections:
               - { label: "التاريخ", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false }
               - { label: "اسم الكاتب", name: "author", widget: "string" }
               - { label: "المقتطف", name: "excerpt", widget: "text" }
+              - { label: "نص المقال", name: "body", widget: "markdown", required: false }
