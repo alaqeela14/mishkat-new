@@ -475,7 +475,7 @@
                         <button class="cat-btn" data-cat="cat3" data-i18n="cat3">وعي مجتمعي</button>
                         <button class="cat-btn" data-cat="cat4" data-i18n="cat4">رؤى وحلول</button>
                         <button class="cat-btn" data-cat="cat5" data-i18n="cat5">قضايا معاصرة</button>
-                        <button class="cat-btn" data-cat="cat6" data-i18n="cat6">حوارات ومقابلات</button>
+                        <button class="cat-btn" data-cat="cat6" data-i18n="cat6">حوارات ومقابلات</a></button>
                         <button class="cat-btn" data-cat="cat7" data-i18n="cat7">شبهات وردود</button>
                         <button class="cat-btn" data-cat="cat8" data-i18n="cat8">التوجيهات الأخلاقية</button>
                     </div>
@@ -1429,7 +1429,7 @@
         function getCurrentArticleSlug() {
             const a = getCurrentArticle();
             if (!a) return 'home';
-            return encodeURIComponent(a.title);
+            return a.title;
         }
 
         async function loadComments() {
@@ -1440,7 +1440,7 @@
             if (!list) return;
             list.innerHTML = '<p style="color: var(--text-muted);">جاري تحميل التعليقات...</p>';
             try {
-                const r = await fetch('/api/comments?slug=' + slug);
+                const r = await fetch('/api/comments?slug=' + encodeURIComponent(slug));
                 const comments = await r.json();
                 if (!Array.isArray(comments)) {
                     list.innerHTML = '<p style="color:red;">تعذّر تحميل التعليقات.</p>';
