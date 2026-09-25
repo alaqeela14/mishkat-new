@@ -192,7 +192,6 @@
         .article-full .article-body{font-size:15.5px;line-height:2;color:var(--text-dark)}
         .article-full .article-body p{margin-bottom:15px}
         .back-btn{background:var(--primary-navy);color:white;border:none;padding:10px 25px;border-radius:4px;font-family:'Tajawal',sans-serif;font-weight:700;cursor:pointer;margin-bottom:20px;display:inline-flex;align-items:center;gap:8px}
-        /* أزرار المشاركة */
         .share-section{background:#fff;border-radius:6px;padding:20px 25px;box-shadow:0 2px 10px rgba(26,43,74,.06);border:1px solid var(--border-color);border-top:4px solid var(--gold-accent);margin-bottom:20px}
         .share-section h3{color:var(--primary-navy);font-size:1.1rem;font-weight:800;margin-bottom:15px;display:flex;align-items:center;gap:8px}
         .share-section h3 i{color:var(--gold-accent)}
@@ -205,11 +204,45 @@
         .share-btn.facebook{background:#1877f2}
         .share-btn.copy{background:var(--primary-navy)}
         .share-btn.copy:hover{background:var(--gold-accent);color:var(--primary-navy)}
-        /* قسم التعليقات */
         .comments-section{background:#fff;border-radius:6px;padding:20px 25px;box-shadow:0 2px 10px rgba(26,43,74,.06);border:1px solid var(--border-color);border-top:4px solid var(--primary-navy);margin-bottom:20px}
         .comments-section h3{color:var(--primary-navy);font-size:1.2rem;font-weight:800;margin-bottom:15px;display:flex;align-items:center;gap:8px}
         .comments-section h3 i{color:var(--gold-accent)}
         #giscusContainer{min-height:100px}
+        /* ===== المكتبة ===== */
+        .library-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:20px}
+        .book-card{background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 4px 15px rgba(26,43,74,.06);border:1px solid var(--border-color);display:flex;flex-direction:column;transition:.3s}
+        .book-card:hover{transform:translateY(-5px);box-shadow:0 12px 30px rgba(26,43,74,.15);border-color:var(--gold-accent)}
+        .book-cover{background:linear-gradient(135deg,var(--primary-navy),var(--secondary-blue));height:180px;display:flex;align-items:center;justify-content:center;color:var(--gold-accent);font-size:55px;position:relative;overflow:hidden}
+        .book-cover img{width:100%;height:100%;object-fit:cover}
+        .book-cover::after{content:'📖';position:absolute;top:10px;left:10px;font-size:20px;opacity:.9}
+        .book-body{padding:18px;display:flex;flex-direction:column;flex-grow:1}
+        .book-body h3{color:var(--primary-navy);font-size:1.05rem;font-weight:800;margin-bottom:6px;line-height:1.4}
+        .book-author{color:var(--gold-accent);font-size:12.5px;font-weight:700;margin-bottom:10px;display:flex;align-items:center;gap:5px}
+        .book-desc{color:var(--text-muted);font-size:13px;flex-grow:1;margin-bottom:15px;line-height:1.7}
+        .book-actions{display:flex;gap:6px;flex-wrap:wrap;border-top:1px solid var(--border-color);padding-top:12px}
+        .book-btn{flex:1;min-width:70px;border:none;padding:8px 6px;border-radius:5px;font-family:'Tajawal',sans-serif;font-weight:700;font-size:12.5px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;transition:.3s;text-decoration:none;color:#fff}
+        .book-btn:hover{transform:translateY(-2px);box-shadow:0 4px 10px rgba(0,0,0,.15)}
+        .book-btn.read{background:var(--secondary-blue)}
+        .book-btn.download{background:var(--primary-navy)}
+        .book-btn.share{background:var(--gold-accent);color:var(--primary-navy)!important}
+        .library-empty{text-align:center;padding:60px 20px;color:var(--text-muted)}
+        .library-empty i{font-size:60px;color:var(--gold-accent);margin-bottom:15px;display:block}
+        /* Modal */
+        .modal-overlay{display:none;position:fixed;inset:0;background:rgba(15,30,61,.7);z-index:3000;align-items:center;justify-content:center;padding:20px}
+        .modal-overlay.show{display:flex}
+        .modal-box{background:#fff;border-radius:12px;padding:30px;max-width:400px;width:100%;position:relative;box-shadow:0 20px 50px rgba(0,0,0,.3);border-top:5px solid var(--gold-accent);animation:modalIn .3s ease}
+        @keyframes modalIn{from{transform:scale(.9);opacity:0}to{transform:scale(1);opacity:1}}
+        .modal-close{position:absolute;top:10px;left:10px;background:transparent;border:none;font-size:26px;color:var(--text-muted);cursor:pointer;line-height:1}
+        .modal-box h3{color:var(--primary-navy);font-size:1.2rem;font-weight:800;margin-bottom:20px;text-align:center;display:flex;align-items:center;justify-content:center;gap:8px}
+        .modal-box h3 i{color:var(--gold-accent)}
+        .download-options{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+        .download-option{display:flex;flex-direction:column;align-items:center;gap:10px;padding:22px 15px;border-radius:10px;text-decoration:none;color:#fff;font-weight:800;font-size:1rem;transition:.3s;border:2px solid transparent}
+        .download-option:hover{transform:translateY(-3px);box-shadow:0 10px 25px rgba(0,0,0,.2)}
+        .download-option i{font-size:40px}
+        .download-option.pdf{background:#dc2626}
+        .download-option.word{background:#2563eb}
+        .download-option.unavailable{background:#9ca3af;cursor:not-allowed;opacity:.6}
+        .download-option.unavailable:hover{transform:none;box-shadow:none}
         @media (max-width:1024px){.news-grid{grid-template-columns:1fr 280px;gap:18px}}
         @media (max-width:900px){.news-grid{grid-template-columns:1fr}.sidebar{flex-direction:row;flex-wrap:wrap}.sidebar-box{flex:1;min-width:250px}.featured-card{grid-template-columns:1fr}.featured-card .featured-image{min-height:180px;font-size:45px}.contact-grid{grid-template-columns:1fr}}
         @media (max-width:768px){
@@ -242,7 +275,7 @@
             .hero-compact .hero-icon{font-size:35px}
             .hero-compact h1{font-size:1.3rem}
             .hero-compact p{font-size:12.5px}
-            .articles-grid{grid-template-columns:1fr;gap:14px}
+            .articles-grid,.library-grid{grid-template-columns:1fr;gap:14px}
             .featured-card .featured-body{padding:20px}
             .featured-card h2{font-size:1.2rem}
             .section-header h2{font-size:1.1rem}
@@ -337,6 +370,7 @@
         <div class="container">
             <ul class="nav-list">
                 <li><a data-view="home" class="active" data-i18n="navHome">الرئيسية</a></li>
+                <li><a data-view="library" data-i18n="navLibrary">المكتبة</a></li>
                 <li><a data-view="about" data-i18n="navAbout">عن المنصة</a></li>
                 <li><a data-view="sections" data-i18n="navSections">الأقسام</a></li>
                 <li class="dropdown">
@@ -456,6 +490,22 @@
             </div>
         </div>
 
+        <!-- صفحة: المكتبة -->
+        <div class="page-view" id="view-library">
+            <div class="page-title-bar">
+                <h1><i class="fa-solid fa-book"></i> <span data-i18n="pageLibrary">المكتبة</span></h1>
+                <p data-i18n="pageLibraryDesc">كتب وملفات للتحميل والقراءة</p>
+            </div>
+            <div id="libraryContent">
+                <div class="library-grid" id="libraryGrid"></div>
+                <div class="library-empty hidden-section" id="libraryEmpty">
+                    <i class="fa-solid fa-book-open"></i>
+                    <h3 data-i18n="noBooks">لا توجد كتب في المكتبة حالياً</h3>
+                    <p data-i18n="noBooksDesc">سيتم إضافة الكتب قريباً</p>
+                </div>
+            </div>
+        </div>
+
         <!-- صفحة: عرض المقال الكامل -->
         <div class="page-view" id="view-article">
             <div class="container" style="max-width:900px;margin:0 auto;">
@@ -464,7 +514,6 @@
                 </button>
                 <div class="article-full" id="articleFullContent"></div>
 
-                <!-- أزرار المشاركة -->
                 <div class="share-section">
                     <h3><i class="fa-solid fa-share-nodes"></i> <span data-i18n="shareTitle">شارك المقال</span></h3>
                     <div class="share-buttons">
@@ -476,7 +525,6 @@
                     </div>
                 </div>
 
-                <!-- التعليقات -->
                 <div class="comments-section">
                     <h3><i class="fa-regular fa-comments"></i> <span data-i18n="commentsTitle">التعليقات</span></h3>
                     <div id="giscusContainer"></div>
@@ -705,10 +753,29 @@
         </div>
     </footer>
 
+    <!-- Modal التحميل -->
+    <div class="modal-overlay" id="downloadModal" onclick="if(event.target===this)closeDownloadModal()">
+        <div class="modal-box">
+            <button class="modal-close" onclick="closeDownloadModal()">×</button>
+            <h3><i class="fa-solid fa-download"></i> <span data-i18n="downloadTitle">اختر صيغة التحميل</span></h3>
+            <div class="download-options">
+                <a id="downloadPDF" href="#" class="download-option pdf" target="_blank">
+                    <i class="fa-solid fa-file-pdf"></i>
+                    <span>PDF</span>
+                </a>
+                <a id="downloadWord" href="#" class="download-option word" target="_blank">
+                    <i class="fa-solid fa-file-word"></i>
+                    <span>Word</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
     <script>
         let mishkatArticles = { ar: [], en: [], fa: [] };
+        let mishkatBooks = { ar: [], en: [], fa: [] };
 
         const categoryToKey = {
             'مقالات ورؤى': 'cat1',
@@ -717,7 +784,6 @@
             'رؤى وحلول': 'cat4',
             'قضايا معاصرة': 'cat5',
             'حوارات ومقابلات': 'cat6',
-            'شبهات ووردود': 'cat7',
             'شبهات وردود': 'cat7',
             'التوجيهات الأخلاقية': 'cat8'
         };
@@ -727,6 +793,7 @@
                 title: 'منصة مشكاة | للنور والوعي', brandName: 'مِشْكَاة', brandSub: 'للنور والوعي',
                 topBarText: 'منصة مشكاة | للنور والوعي',
                 navHome: 'الرئيسية', navAbout: 'عن المنصة', navSections: 'الأقسام', navCats: 'التصنيفات',
+                navLibrary: 'المكتبة',
                 navParticipation: 'كيفية المشاركة', navInvitation: 'دعوة للمشاركة', navContact: 'تواصل معنا',
                 searchPh: 'ابحث...', searchPhFull: 'ابحث في الموقع...', searchBtn: 'بحث',
                 heroTitle: 'مِشْكَاةُ <span class="gold-text">النُّورِ</span>',
@@ -742,8 +809,14 @@
                 cat4: 'رؤى وحلول', cat5: 'قضايا معاصرة', cat6: 'حوارات ومقابلات', cat7: 'شبهات وردود', cat8: 'التوجيهات الأخلاقية',
                 featured: 'مقال مميز', backToArticles: 'رجوع للمقالات',
                 shareTitle: 'شارك المقال', commentsTitle: 'التعليقات', copyBtn: 'نسخ النص',
-                copySuccess: '✅ تم نسخ المقال كاملاً!',
-                copyFail: '❌ فشل النسخ',
+                copySuccess: '✅ تم نسخ المقال كاملاً!', copyFail: '❌ فشل النسخ',
+                // المكتبة
+                pageLibrary: 'المكتبة', pageLibraryDesc: 'كتب وملفات للتحميل والقراءة',
+                noBooks: 'لا توجد كتب في المكتبة حالياً', noBooksDesc: 'سيتم إضافة الكتب قريباً',
+                readBtn: 'قراءة', downloadBtn: 'تحميل', shareBtn: 'مشاركة',
+                downloadTitle: 'اختر صيغة التحميل',
+                bookLinkCopied: '✅ تم نسخ رابط الكتاب!',
+                bookNotFound: 'هذا الملف غير متوفر',
                 pageAbout: 'عن المنصة', pageAboutDesc: 'تعرّف على منصة مشكاة ورؤيتها ورسالتها',
                 aboutIntro: 'التعريف', aboutIntroText: 'مشكاة منصة إلكترونية ثقافية توعوية، تُعنى بنشر الأفكار والرؤى والمقالات الهادفة التي تساهم في توعية المجتمع، وتقديم حلول عملية للمشكلات المعاصرة، وإحياء ذكر أهل البيت عليهم السلام وسيرتهم، وترسيخ القيم الأخلاقية والإنسانية.',
                 aboutVision: 'الرؤية', aboutVisionText: 'أن تكون مشكاة منارة رقمية موثوقة، يلجأ إليها الباحث عن المعرفة الصافية، والفكر النير، والرؤية المتوازنة، بعيداً عن الضجيج والتشويش.',
@@ -789,6 +862,7 @@
                 title: 'Mishkat Platform | For Light & Awareness', brandName: 'MISHKAT', brandSub: 'For Light & Awareness',
                 topBarText: 'Mishkat Platform | For Light & Awareness',
                 navHome: 'Home', navAbout: 'About', navSections: 'Sections', navCats: 'Categories',
+                navLibrary: 'Library',
                 navParticipation: 'How to Participate', navInvitation: 'Invitation', navContact: 'Contact Us',
                 searchPh: 'Search...', searchPhFull: 'Search the site...', searchBtn: 'Search',
                 heroTitle: 'Mishkat <span class="gold-text">of Light</span>',
@@ -804,8 +878,13 @@
                 cat4: 'Insights & Solutions', cat5: 'Contemporary Issues', cat6: 'Dialogues & Interviews', cat7: 'Doubts & Responses', cat8: 'Ethical Guidance',
                 featured: 'Featured Article', backToArticles: 'Back to Articles',
                 shareTitle: 'Share Article', commentsTitle: 'Comments', copyBtn: 'Copy Text',
-                copySuccess: '✅ Article copied successfully!',
-                copyFail: '❌ Copy failed',
+                copySuccess: '✅ Article copied successfully!', copyFail: '❌ Copy failed',
+                pageLibrary: 'Library', pageLibraryDesc: 'Books and files for download and reading',
+                noBooks: 'No books in the library yet', noBooksDesc: 'Books will be added soon',
+                readBtn: 'Read', downloadBtn: 'Download', shareBtn: 'Share',
+                downloadTitle: 'Choose download format',
+                bookLinkCopied: '✅ Book link copied!',
+                bookNotFound: 'File not available',
                 pageAbout: 'About the Platform', pageAboutDesc: 'Learn about Mishkat, its vision and mission',
                 aboutIntro: 'Introduction', aboutIntroText: 'Mishkat is an electronic cultural and awareness platform, dedicated to publishing ideas, insights, and purposeful articles that contribute to raising community awareness, offering practical solutions to contemporary problems, reviving the memory of Ahl al-Bayt (peace be upon them) and their biography, and consolidating ethical and human values.',
                 aboutVision: 'Vision', aboutVisionText: 'To be a trusted digital beacon that seekers of pure knowledge, bright intellect, and balanced vision turn to — away from noise and confusion.',
@@ -851,6 +930,7 @@
                 title: 'پلتفرم مشکاه | برای نور و آگاهی', brandName: 'مشکاه', brandSub: 'برای نور و آگاهی',
                 topBarText: 'پلتفرم مشکاه | برای نور و آگاهی',
                 navHome: 'صفحه اصلی', navAbout: 'درباره پلتفرم', navSections: 'بخش‌ها', navCats: 'دسته‌بندی‌ها',
+                navLibrary: 'کتابخانه',
                 navParticipation: 'نحوه مشارکت', navInvitation: 'دعوت به مشارکت', navContact: 'تماس با ما',
                 searchPh: 'جستجو...', searchPhFull: 'جستجو در سایت...', searchBtn: 'جستجو',
                 heroTitle: 'مشکاه <span class="gold-text">نور</span>',
@@ -866,8 +946,13 @@
                 cat4: 'دیدگاه‌ها و راه‌حل‌ها', cat5: 'مسائل معاصر', cat6: 'گفتگوها و مصاحبه‌ها', cat7: 'شبهات و پاسخ‌ها', cat8: 'رهنمودهای اخلاقی',
                 featured: 'مقاله ویژه', backToArticles: 'بازگشت به مقالات',
                 shareTitle: 'اشتراک‌گذاری مقاله', commentsTitle: 'نظرات', copyBtn: 'کپی متن',
-                copySuccess: '✅ مقاله با موفقیت کپی شد!',
-                copyFail: '❌ کپی نشد',
+                copySuccess: '✅ مقاله با موفقیت کپی شد!', copyFail: '❌ کپی نشد',
+                pageLibrary: 'کتابخانه', pageLibraryDesc: 'کتاب‌ها و فایل‌ها برای دانلود و مطالعه',
+                noBooks: 'هنوز کتابی در کتابخانه نیست', noBooksDesc: 'به‌زودی کتاب‌ها اضافه می‌شوند',
+                readBtn: 'مطالعه', downloadBtn: 'دانلود', shareBtn: 'اشتراک‌گذاری',
+                downloadTitle: 'فرمت دانلود را انتخاب کنید',
+                bookLinkCopied: '✅ لینک کتاب کپی شد!',
+                bookNotFound: 'فایل موجود نیست',
                 pageAbout: 'درباره پلتفرم', pageAboutDesc: 'با پلتفرم مشکاه، چشم‌انداز و رسالت آن آشنا شوید',
                 aboutIntro: 'معرفی', aboutIntroText: 'مشکاه یک پلتفرم فرهنگی و آگاهی‌بخش الکترونیکی است که به انتشار اندیشه‌ها، دیدگاه‌ها و مقالات هدفمندی می‌پردازد که در جهت آگاهی جامعه، ارائه راه‌حل‌های عملی برای مشکلات معاصر، احیای یاد اهل بیت (علیهم‌السلام) و سیره آنان و تثبیت ارزش‌های اخلاقی و انسانی گام برمی‌دارد.',
                 aboutVision: 'چشم‌انداز', aboutVisionText: 'مشکاه به‌عنوان یک مناره دیجیتال مورد اعتماد باشد که پژوهشگران برای یافتن دانش ناب، اندیشه روشن و دیدگاه متوازن به آن مراجعه کنند.',
@@ -913,13 +998,11 @@
 
         let currentLang = 'ar';
 
+        // ============ تحميل المقالات ============
         async function loadArticlesFromJSON() {
             try {
                 const response = await fetch('articles.json?t=' + Date.now());
-                if (!response.ok) {
-                    console.warn('articles.json not found');
-                    return;
-                }
+                if (!response.ok) { console.warn('articles.json not found'); return; }
                 const data = await response.json();
                 const items = data.items || [];
 
@@ -956,9 +1039,51 @@
                 mishkatArticles.ar = articlesAr;
                 mishkatArticles.en = articlesEn;
                 mishkatArticles.fa = articlesFa;
-            } catch (error) {
-                console.error('Error loading articles:', error);
-            }
+            } catch (error) { console.error('Error loading articles:', error); }
+        }
+
+        // ============ تحميل الكتب ============
+        async function loadBooksFromJSON() {
+            try {
+                const response = await fetch('books.json?t=' + Date.now());
+                if (!response.ok) { console.warn('books.json not found'); return; }
+                const data = await response.json();
+                const items = data.items || [];
+
+                const booksAr = items.map(item => ({
+                    title: item.title_ar || '',
+                    author: item.author_ar || '',
+                    date: item.date || '',
+                    description: item.description_ar || '',
+                    cover: item.cover || '',
+                    pdf_url: item.pdf_url || '',
+                    word_url: item.word_url || ''
+                }));
+
+                const booksEn = items.map((item, i) => ({
+                    title: item.title_en || booksAr[i].title,
+                    author: item.author_en || booksAr[i].author,
+                    date: item.date || '',
+                    description: item.description_en || booksAr[i].description,
+                    cover: item.cover || '',
+                    pdf_url: item.pdf_url || '',
+                    word_url: item.word_url || ''
+                }));
+
+                const booksFa = items.map((item, i) => ({
+                    title: item.title_fa || booksAr[i].title,
+                    author: item.author_fa || booksAr[i].author,
+                    date: item.date || '',
+                    description: item.description_fa || booksAr[i].description,
+                    cover: item.cover || '',
+                    pdf_url: item.pdf_url || '',
+                    word_url: item.word_url || ''
+                }));
+
+                mishkatBooks.ar = booksAr;
+                mishkatBooks.en = booksEn;
+                mishkatBooks.fa = booksFa;
+            } catch (error) { console.error('Error loading books:', error); }
         }
 
         function updateDateTime() {
@@ -969,9 +1094,7 @@
 
             let days;
             try {
-                days = Array.from({length:7}, (_, i) => 
-                    new Intl.DateTimeFormat(locale, { weekday: 'long' }).format(new Date(2024, 0, 7 + i))
-                );
+                days = Array.from({length:7}, (_, i) => new Intl.DateTimeFormat(locale, { weekday: 'long' }).format(new Date(2024, 0, 7 + i)));
             } catch(e) {
                 days = ['الأحد','الإثنين','الثلاثاء','الأربعاء','الخميس','الجمعة','السبت'];
             }
@@ -1013,6 +1136,7 @@
             if (mobilePeriodEl) mobilePeriodEl.textContent = period;
         }
 
+        // ============ عرض المقالات ============
         function renderArticles(filterCat, searchQuery) {
             const grid = document.getElementById('articlesGrid');
             const empty = document.getElementById('articlesEmpty');
@@ -1031,11 +1155,7 @@
                     (a.title||'').toLowerCase().includes(q) || (a.excerpt||'').toLowerCase().includes(q) || (a.author||'').toLowerCase().includes(q)
                 );
             }
-            if (filtered.length === 0) {
-                grid.innerHTML = '';
-                empty.style.display = 'block';
-                return;
-            }
+            if (filtered.length === 0) { grid.innerHTML = ''; empty.style.display = 'block'; return; }
             empty.style.display = 'none';
 
             let html = '';
@@ -1080,6 +1200,123 @@
             grid.innerHTML = html;
         }
 
+        // ============ عرض الكتب ============
+        function renderBooks() {
+            const grid = document.getElementById('libraryGrid');
+            const empty = document.getElementById('libraryEmpty');
+            const t = translations[currentLang];
+            const books = mishkatBooks[currentLang] || mishkatBooks.ar;
+
+            if (!books || books.length === 0) {
+                grid.innerHTML = '';
+                empty.classList.remove('hidden-section');
+                return;
+            }
+            empty.classList.add('hidden-section');
+
+            grid.innerHTML = books.map((b, i) => {
+                const coverHtml = b.cover ? `<img src="${b.cover}" alt="${b.title}">` : `<i class="fa-solid fa-book"></i>`;
+                return `
+                <div class="book-card">
+                    <div class="book-cover">${coverHtml}</div>
+                    <div class="book-body">
+                        <h3>${b.title}</h3>
+                        <div class="book-author"><i class="fa-solid fa-user-pen"></i> ${b.author}</div>
+                        <p class="book-desc">${b.description}</p>
+                        <div class="book-actions">
+                            <button class="book-btn read" onclick="readBook(${i})"><i class="fa-solid fa-book-open"></i> ${t.readBtn}</button>
+                            <button class="book-btn download" onclick="showDownloadModal(${i})"><i class="fa-solid fa-download"></i> ${t.downloadBtn}</button>
+                            <button class="book-btn share" onclick="shareBook(${i})"><i class="fa-solid fa-share-nodes"></i> ${t.shareBtn}</button>
+                        </div>
+                    </div>
+                </div>
+                `;
+            }).join('');
+        }
+
+        // ============ عمليات الكتاب ============
+        function readBook(index) {
+            const t = translations[currentLang];
+            const books = mishkatBooks[currentLang] || mishkatBooks.ar;
+            const book = books[index];
+            if (!book) return;
+            if (book.pdf_url) {
+                window.open(book.pdf_url, '_blank');
+            } else if (book.word_url) {
+                window.open(book.word_url, '_blank');
+            } else {
+                alert(t.bookNotFound);
+            }
+        }
+
+        function showDownloadModal(index) {
+            const books = mishkatBooks[currentLang] || mishkatBooks.ar;
+            const book = books[index];
+            if (!book) return;
+
+            const pdfBtn = document.getElementById('downloadPDF');
+            const wordBtn = document.getElementById('downloadWord');
+            const t = translations[currentLang];
+
+            if (book.pdf_url) {
+                pdfBtn.href = book.pdf_url;
+                pdfBtn.classList.remove('unavailable');
+                pdfBtn.onclick = null;
+            } else {
+                pdfBtn.href = '#';
+                pdfBtn.classList.add('unavailable');
+                pdfBtn.onclick = (e) => { e.preventDefault(); alert(t.bookNotFound); };
+            }
+
+            if (book.word_url) {
+                wordBtn.href = book.word_url;
+                wordBtn.classList.remove('unavailable');
+                wordBtn.onclick = null;
+            } else {
+                wordBtn.href = '#';
+                wordBtn.classList.add('unavailable');
+                wordBtn.onclick = (e) => { e.preventDefault(); alert(t.bookNotFound); };
+            }
+
+            document.getElementById('downloadModal').classList.add('show');
+        }
+
+        function closeDownloadModal() {
+            document.getElementById('downloadModal').classList.remove('show');
+        }
+
+        async function shareBook(index) {
+            const t = translations[currentLang];
+            const books = mishkatBooks[currentLang] || mishkatBooks.ar;
+            const book = books[index];
+            if (!book) return;
+
+            const siteUrl = 'https://al-mishkat1.netlify.app';
+            const shareUrl = siteUrl + '/#book-' + index;
+            const text = '📚 ' + book.title + '\n👤 ' + book.author + '\n\n📖 ' + book.description + '\n\n🔗 ' + shareUrl + '\n\nتم المشاركة من منصة مشكاة';
+
+            if (navigator.share) {
+                try {
+                    await navigator.share({ title: book.title, text: text, url: shareUrl });
+                    return;
+                } catch(e) {}
+            }
+
+            try {
+                await navigator.clipboard.writeText(text);
+                alert(t.bookLinkCopied);
+            } catch (err) {
+                const textarea = document.createElement('textarea');
+                textarea.value = text;
+                textarea.style.position = 'fixed';
+                textarea.style.opacity = '0';
+                document.body.appendChild(textarea);
+                textarea.select();
+                try { document.execCommand('copy'); alert(t.bookLinkCopied); } catch(e) { alert(t.copyFail); }
+                document.body.removeChild(textarea);
+            }
+        }
+
         function openArticle(index) {
             const articles = mishkatArticles[currentLang] || mishkatArticles.ar;
             const article = articles[index];
@@ -1087,7 +1324,6 @@
 
             const t = translations[currentLang];
             const container = document.getElementById('articleFullContent');
-            
             const bodyHtml = article.body ? article.body.replace(/\n/g, '<br>') : '<p>' + (article.excerpt || '') + '</p>';
             
             container.innerHTML = `
@@ -1100,14 +1336,10 @@
                 <div class="article-body">${bodyHtml}</div>
             `;
 
-            // تحديث URL hash لتمييز كل مقال في التعليقات
             window.history.replaceState(null, '', '#article-' + index);
-
             document.querySelectorAll('.page-view').forEach(v => v.classList.remove('active'));
             document.getElementById('view-article').classList.add('active');
             window.scrollTo({ top: 0, behavior: 'smooth' });
-
-            // تحميل التعليقات بعد تأخير بسيط لضمان تحديث الـ URL
             setTimeout(loadGiscus, 200);
         }
 
@@ -1135,7 +1367,6 @@
             container.appendChild(script);
         }
 
-        // ============ المشاركة ============
         function getCurrentArticle() {
             const hash = window.location.hash;
             const match = hash.match(/#article-(\d+)/);
@@ -1156,39 +1387,28 @@
             text += '📚 المصدر: مشكاة | للنور والوعي\n';
             text += '🔗 ' + articleUrl + '\n\n';
             text += '━━━━━━━━━━━━━━━\n\n';
-            if (a.body) {
-                text += a.body + '\n\n';
-            } else if (a.excerpt) {
-                text += a.excerpt + '\n\n';
-            }
+            if (a.body) text += a.body + '\n\n';
+            else if (a.excerpt) text += a.excerpt + '\n\n';
             text += '━━━━━━━━━━━━━━━\n';
             text += 'تم النسخ من منصة مشكاة\n';
             text += siteUrl;
             return text;
         }
 
-        function getShareUrl() {
-            return window.location.href;
-        }
-
         function shareWhatsApp() {
-            const a = getCurrentArticle();
-            if (!a) return;
-            const siteUrl = 'https://al-mishkat1.netlify.app';
+            const a = getCurrentArticle(); if (!a) return;
             const text = '📄 ' + a.title + '\n\n👤 ' + a.author + '\n📅 ' + a.date + '\n\n' + a.excerpt + '\n\n' + window.location.href;
             window.open('https://wa.me/?text=' + encodeURIComponent(text), '_blank');
         }
 
         function shareTelegram() {
-            const a = getCurrentArticle();
-            if (!a) return;
+            const a = getCurrentArticle(); if (!a) return;
             const text = '📄 ' + a.title + '\n\n👤 ' + a.author + '\n📅 ' + a.date + '\n\n' + a.excerpt;
             window.open('https://t.me/share/url?url=' + encodeURIComponent(window.location.href) + '&text=' + encodeURIComponent(text), '_blank');
         }
 
         function shareTwitter() {
-            const a = getCurrentArticle();
-            if (!a) return;
+            const a = getCurrentArticle(); if (!a) return;
             const text = '📄 ' + a.title + '\n\n' + a.excerpt;
             window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(text) + '&url=' + encodeURIComponent(window.location.href), '_blank');
         }
@@ -1204,19 +1424,13 @@
                 await navigator.clipboard.writeText(text);
                 alert(t.copySuccess);
             } catch (err) {
-                // البديل للمتصفحات القديمة
                 const textarea = document.createElement('textarea');
                 textarea.value = text;
                 textarea.style.position = 'fixed';
                 textarea.style.opacity = '0';
                 document.body.appendChild(textarea);
                 textarea.select();
-                try {
-                    document.execCommand('copy');
-                    alert(t.copySuccess);
-                } catch (e) {
-                    alert(t.copyFail);
-                }
+                try { document.execCommand('copy'); alert(t.copySuccess); } catch (e) { alert(t.copyFail); }
                 document.body.removeChild(textarea);
             }
         }
@@ -1283,13 +1497,8 @@
             });
 
             const html = document.documentElement;
-            if (lang === 'ar' || lang === 'fa') {
-                html.dir = 'rtl';
-                document.body.style.direction = 'rtl';
-            } else {
-                html.dir = 'ltr';
-                document.body.style.direction = 'ltr';
-            }
+            if (lang === 'ar' || lang === 'fa') { html.dir = 'rtl'; document.body.style.direction = 'rtl'; }
+            else { html.dir = 'ltr'; document.body.style.direction = 'ltr'; }
             document.title = t.title;
 
             document.querySelectorAll('.lang-btn').forEach(btn => {
@@ -1298,13 +1507,11 @@
 
             const activeCat = document.querySelector('#mishkatCategories .cat-btn.active');
             renderArticles(activeCat ? activeCat.dataset.cat : 'all', '');
+            renderBooks();
             renderSidebar();
             updateDateTime();
 
-            // إعادة تحميل التعليقات باللغة الجديدة
-            if (document.getElementById('view-article').classList.contains('active')) {
-                loadGiscus();
-            }
+            if (document.getElementById('view-article').classList.contains('active')) loadGiscus();
 
             localStorage.setItem('mishkat_lang', lang);
         }
@@ -1318,9 +1525,10 @@
                 a.classList.toggle('active', a.dataset.view === viewId);
             });
             
-            // تحديث URL
-            if (viewId === 'home') {
-                window.history.replaceState(null, '', window.location.pathname);
+            if (viewId === 'home') window.history.replaceState(null, '', window.location.pathname);
+            if (viewId === 'library') {
+                window.history.replaceState(null, '', '#library');
+                renderBooks();
             }
             
             window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -1332,6 +1540,7 @@
 
         document.addEventListener('DOMContentLoaded', async function() {
             await loadArticlesFromJSON();
+            await loadBooksFromJSON();
 
             document.querySelectorAll('.lang-btn').forEach(btn => {
                 btn.addEventListener('click', function() { setLanguage(this.dataset.lang); });
@@ -1398,18 +1607,8 @@
                 const activeCat = document.querySelector('#mishkatCategories .cat-btn.active');
                 renderArticles(activeCat ? activeCat.dataset.cat : 'all', value);
             }
-            if (desktopSearch) {
-                desktopSearch.addEventListener('input', function() {
-                    if (mobileSearch) mobileSearch.value = this.value;
-                    doSearch(this.value);
-                });
-            }
-            if (mobileSearch) {
-                mobileSearch.addEventListener('input', function() {
-                    if (desktopSearch) desktopSearch.value = this.value;
-                    doSearch(this.value);
-                });
-            }
+            if (desktopSearch) desktopSearch.addEventListener('input', function() { if (mobileSearch) mobileSearch.value = this.value; doSearch(this.value); });
+            if (mobileSearch) mobileSearch.addEventListener('input', function() { if (desktopSearch) desktopSearch.value = this.value; doSearch(this.value); });
 
             document.querySelectorAll('.search-mini button, .mobile-search-bar button').forEach(function(btn) {
                 btn.addEventListener('click', function(e) {
@@ -1422,10 +1621,11 @@
             updateDateTime();
             setInterval(updateDateTime, 1000);
 
-            // فتح مقال مباشرة إذا كان الرابط يحتوي على hash
             if (window.location.hash && window.location.hash.match(/#article-\d+/)) {
                 const match = window.location.hash.match(/#article-(\d+)/);
                 if (match) openArticle(parseInt(match[1]));
+            } else if (window.location.hash === '#library') {
+                showView('library');
             }
 
             const mobileBtn = document.getElementById('mobileMenuBtn');
