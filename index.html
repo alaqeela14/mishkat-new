@@ -113,7 +113,7 @@
         .category-tabs .cat-btn{background:#fff;border:1px solid var(--border-color);color:var(--primary-navy);padding:6px 16px;border-radius:3px;font-size:12px;font-weight:600;cursor:pointer;white-space:nowrap;transition:.3s;font-family:'Tajawal',sans-serif}
         .category-tabs .cat-btn.active{background:var(--primary-navy);color:#fff;border-color:var(--primary-navy)}
         .articles-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:18px}
-        .article-card{background:#fff;border-radius:6px;overflow:hidden;box-shadow:0 2px 8px rgba(26,43,74,.06);transition:.3s;display:flex;flex-direction:column;border:1px solid var(--border-color)}
+        .article-card{background:#fff;border-radius:6px;overflow:hidden;box-shadow:0 2px 8px rgba(26,43,74,.06);transition:.3s;display:flex;flex-direction:column;border:1px solid var(--border-color);cursor:pointer}
         .article-card:hover{transform:translateY(-4px);box-shadow:0 10px 25px rgba(26,43,74,.15);border-color:var(--gold-accent)}
         .article-card .card-top{height:4px;background:var(--primary-navy)}
         .article-card:hover .card-top{background:var(--gold-accent)}
@@ -123,7 +123,8 @@
         .article-card .excerpt{color:var(--text-muted);font-size:13px;flex-grow:1;margin-bottom:12px}
         .article-card .meta{border-top:1px solid var(--border-color);padding-top:8px;display:flex;justify-content:space-between;font-size:11px;color:var(--text-muted)}
         .article-card .meta i{color:var(--secondary-blue)}
-        .featured-card{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;background:#fff;border-radius:6px;overflow:hidden;box-shadow:0 4px 15px rgba(26,43,74,.08);border:1px solid var(--border-color)}
+        .featured-card{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;background:#fff;border-radius:6px;overflow:hidden;box-shadow:0 4px 15px rgba(26,43,74,.08);border:1px solid var(--border-color);cursor:pointer}
+        .featured-card:hover{border-color:var(--gold-accent);box-shadow:0 8px 25px rgba(26,43,74,.12)}
         .featured-card .featured-image{background:linear-gradient(135deg,var(--primary-navy),var(--secondary-blue));min-height:250px;display:flex;align-items:center;justify-content:center;color:var(--gold-accent);font-size:60px;position:relative}
         .featured-card .featured-image::after{content:attr(data-label);position:absolute;top:15px;right:15px;background:var(--gold-accent);color:var(--primary-navy);padding:4px 12px;font-size:11px;font-weight:800;border-radius:3px}
         .featured-card .featured-body{padding:30px;display:flex;flex-direction:column;justify-content:center}
@@ -185,6 +186,12 @@
         .footer-socials .admin-link:hover{color:var(--gold-accent);border-color:var(--gold-accent)}
         footer .footer-bottom{background:var(--primary-navy-dark);padding:13px 0;text-align:center}
         footer .footer-bottom p{margin:0;font-size:12px;color:#8896b0}
+        .article-full{background:#fff;border-radius:6px;padding:30px;box-shadow:0 4px 15px rgba(26,43,74,.08);border:1px solid var(--border-color);margin-bottom:20px;border-top:5px solid var(--gold-accent)}
+        .article-full h1{color:var(--primary-navy);font-size:1.8rem;font-weight:800;margin-bottom:15px;line-height:1.4}
+        .article-full .article-meta{display:flex;gap:20px;flex-wrap:wrap;font-size:13px;color:var(--text-muted);border-bottom:2px solid var(--gold-light);padding-bottom:15px;margin-bottom:20px}
+        .article-full .article-meta i{color:var(--gold-accent);margin-left:5px}
+        .article-full .article-body{font-size:15.5px;line-height:2;color:var(--text-dark);white-space:pre-wrap}
+        .article-full .article-body p{margin-bottom:15px}
         @media (max-width:1024px){.news-grid{grid-template-columns:1fr 280px;gap:18px}}
         @media (max-width:900px){.news-grid{grid-template-columns:1fr}.sidebar{flex-direction:row;flex-wrap:wrap}.sidebar-box{flex:1;min-width:250px}.featured-card{grid-template-columns:1fr}.featured-card .featured-image{min-height:180px;font-size:45px}.contact-grid{grid-template-columns:1fr}}
         @media (max-width:768px){
@@ -232,6 +239,9 @@
             .footer-contact-item{font-size:12.5px}
             .footer-socials{padding:15px 0;gap:8px}
             .footer-socials a{width:38px;height:38px;font-size:15px}
+            .article-full{padding:20px}
+            .article-full h1{font-size:1.4rem}
+            .article-full .article-body{font-size:14.5px}
         }
         @media (max-width:480px){
             .top-bar .contact-info{display:none}
@@ -422,6 +432,16 @@
                         </div>
                     </div>
                 </aside>
+            </div>
+        </div>
+
+        <!-- صفحة: عرض المقال الكامل -->
+        <div class="page-view" id="view-article">
+            <div class="container" style="max-width:900px;margin:0 auto;">
+                <button onclick="showView('home')" style="background:var(--primary-navy);color:white;border:none;padding:10px 25px;border-radius:4px;font-family:'Tajawal',sans-serif;font-weight:700;cursor:pointer;margin-bottom:20px;display:flex;align-items:center;gap:8px;">
+                    <i class="fa-solid fa-arrow-right"></i> <span data-i18n="backToArticles">رجوع للمقالات</span>
+                </button>
+                <div class="article-full" id="articleFullContent"></div>
             </div>
         </div>
 
@@ -650,42 +670,23 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
     <script>
-        const mishkatArticles = {
-            ar: [
-                { catKey: 'cat2', title: 'مقام العدالة عند الإمام علي (ع)', author: 'د. أحمد الفقيه', date: '2026-09-01', excerpt: 'نظرة في سيرته كحاكم عادل ومكافح للظلم، وكيف يمكن تطبيق مبادئه اليوم.' },
-                { catKey: 'cat3', title: 'أثر التربية الأخلاقية في تماسك الأسرة', author: 'أ. سعاد الموسوي', date: '2026-08-28', excerpt: 'كيف نعيد القيم النبوية والعلوية إلى بيوتنا؟' },
-                { catKey: 'cat4', title: 'مشكلة البطالة المقنعة .. رؤية اقتصادية', author: 'د. علي الحسني', date: '2026-08-20', excerpt: 'قراءة في الحلول المستدامة من منظور إسلامي.' },
-                { catKey: 'cat2', title: 'السيدة زينب (ع) نموذج الصبر والحكمة', author: 'الشيخ محمد الصادق', date: '2026-08-15', excerpt: 'دروس في الثبات والفصاحة من موقف الطف.' },
-                { catKey: 'cat7', title: 'شبهة حول عصمة الأنبياء - رد علمي', author: 'السيد مهدي الحسيني', date: '2026-08-10', excerpt: 'رد مفصل على الشبهات المثارة حول عصمة الأنبياء.' },
-                { catKey: 'cat6', title: 'حوار مع الأستاذ حول الثقافة', author: 'فريق التحرير', date: '2026-08-05', excerpt: 'حوار حول واقع الثقافة وسبل النهوض بها.' },
-                { catKey: 'cat8', title: 'التواضع في سيرة أهل البيت (ع)', author: 'الشيخ محمد الصادق', date: '2026-08-01', excerpt: 'دروس عملية في التواضع من سيرة العترة الطاهرة.' },
-                { catKey: 'cat5', title: 'الذكاء الاصطناعي - قراءة إسلامية', author: 'د. أحمد الفقيه', date: '2026-07-28', excerpt: 'كيف نتعامل مع تقنيات الذكاء الاصطناعي من منظور إسلامي؟' },
-                { catKey: 'cat1', title: 'دور الشباب في نهضة المجتمع', author: 'أ. سعاد الموسوي', date: '2026-07-20', excerpt: 'قراءة في طاقات الشباب وكيفية استثمارها في بناء المجتمع.' }
-            ],
-            en: [
-                { catKey: 'cat2', title: 'The Position of Justice with Imam Ali (as)', author: 'Dr. Ahmed Al-Faqih', date: '2026-09-01', excerpt: 'A look at his biography as a just ruler who fought oppression, and how his principles can be applied today.' },
-                { catKey: 'cat3', title: 'The Impact of Moral Education on Family Cohesion', author: 'Ms. Suad Al-Musawi', date: '2026-08-28', excerpt: 'How do we restore prophetic and Alawite values to our homes?' },
-                { catKey: 'cat4', title: 'Disguised Unemployment — An Economic View', author: 'Dr. Ali Al-Hasani', date: '2026-08-20', excerpt: 'A reading of sustainable solutions from an Islamic perspective.' },
-                { catKey: 'cat2', title: 'Lady Zaynab (as): A Model of Patience and Wisdom', author: 'Sheikh Muhammad Al-Sadiq', date: '2026-08-15', excerpt: 'Lessons in steadfastness and eloquence from the events of Karbala.' },
-                { catKey: 'cat7', title: 'A Doubt About the Infallibility of Prophets — A Scholarly Response', author: 'Sayyid Mahdi Al-Husseini', date: '2026-08-10', excerpt: 'A detailed response to the doubts raised about the infallibility of the prophets.' },
-                { catKey: 'cat6', title: 'A Dialogue with the Professor on Culture', author: 'Editorial Team', date: '2026-08-05', excerpt: 'A dialogue on the state of culture and ways to advance it.' },
-                { catKey: 'cat8', title: 'Humility in the Biography of Ahl al-Bayt (as)', author: 'Sheikh Muhammad Al-Sadiq', date: '2026-08-01', excerpt: 'Practical lessons in humility from the biography of the pure household.' },
-                { catKey: 'cat5', title: 'Artificial Intelligence — An Islamic Reading', author: 'Dr. Ahmed Al-Faqih', date: '2026-07-28', excerpt: 'How do we deal with AI technologies from an Islamic perspective?' },
-                { catKey: 'cat1', title: 'The Role of Youth in the Renaissance of Society', author: 'Ms. Suad Al-Musawi', date: '2026-07-20', excerpt: 'A reading of the energies of youth and how to invest them in building society.' }
-            ],
-            fa: [
-                { catKey: 'cat2', title: 'جایگاه عدالت نزد امام علی (ع)', author: 'دکتر احمد فقیه', date: '2026-09-01', excerpt: 'نگاهی به سیره او به‌عنوان حاکم عادل و مبارز با ظلم، و اینکه چگونه می‌توان اصولش را امروز پیاده کرد.' },
-                { catKey: 'cat3', title: 'تأثیر تربیت اخلاقی بر انسجام خانواده', author: 'خانم سعاد موسوی', date: '2026-08-28', excerpt: 'چگونه ارزش‌های نبوی و علوی را به خانه‌هایمان برگردانیم؟' },
-                { catKey: 'cat4', title: 'بیکاری پنهان — نگاهی اقتصادی', author: 'دکتر علی حسنی', date: '2026-08-20', excerpt: 'خوانشی از راه‌حل‌های پایدار از منظر اسلامی.' },
-                { catKey: 'cat2', title: 'حضرت زینب (س): الگوی صبر و حکمت', author: 'شیخ محمد صادق', date: '2026-08-15', excerpt: 'درس‌هایی از استقامت و فصاحت از واقعه عاشورا.' },
-                { catKey: 'cat7', title: 'شبهه‌ای درباره عصمت انبیا — پاسخی علمی', author: 'سید مهدی حسینی', date: '2026-08-10', excerpt: 'پاسخی مفصل به شبهات مطرح‌شده درباره عصمت انبیا.' },
-                { catKey: 'cat6', title: 'گفتگو با استاد درباره فرهنگ', author: 'تیم تحریریه', date: '2026-08-05', excerpt: 'گفتگویی درباره وضعیت فرهنگ و راه‌های پیشرفت آن.' },
-                { catKey: 'cat8', title: 'تواضع در سیره اهل بیت (ع)', author: 'شیخ محمد صادق', date: '2026-08-01', excerpt: 'درس‌های عملی در تواضع از سیره عترت پاک.' },
-                { catKey: 'cat5', title: 'هوش مصنوعی — خوانش اسلامی', author: 'دکتر احمد فقیه', date: '2026-07-28', excerpt: 'چگونه با فناوری‌های هوش مصنوعی از منظر اسلامی مواجه شویم؟' },
-                { catKey: 'cat1', title: 'نقش جوانان در شکوفایی جامعه', author: 'خانم سعاد موسوی', date: '2026-07-20', excerpt: 'خوانشی از توانمندی‌های جوانان و چگونگی سرمایه‌گذاری در ساخت جامعه.' }
-            ]
+        // ==================== متغيرات عامة ====================
+        let mishkatArticles = { ar: [], en: [], fa: [] };
+
+        // خريطة تحويل التصنيف العربي إلى مفتاح
+        const categoryToKey = {
+            'مقالات ورؤى': 'cat1',
+            'أهل البيت': 'cat2',
+            'وعي مجتمعي': 'cat3',
+            'رؤى وحلول': 'cat4',
+            'قضايا معاصرة': 'cat5',
+            'حوارات ومقابلات': 'cat6',
+            'شبهات ووردود': 'cat7',
+            'شبهات وردود': 'cat7',
+            'التوجيهات الأخلاقية': 'cat8'
         };
 
+        // ==================== قاموس الترجمة ====================
         const translations = {
             ar: {
                 title: 'منصة مشكاة | للنور والوعي', brandName: 'مِشْكَاة', brandSub: 'للنور والوعي',
@@ -703,7 +704,7 @@
                 mostRead: 'الأكثر قراءة', categoriesLabel: 'التصنيفات', followUs: 'تابعنا',
                 catAll: 'الكل', cat1: 'مقالات ورؤى', cat2: 'أهل البيت (ع)', cat3: 'وعي مجتمعي',
                 cat4: 'رؤى وحلول', cat5: 'قضايا معاصرة', cat6: 'حوارات ومقابلات', cat7: 'شبهات وردود', cat8: 'التوجيهات الأخلاقية',
-                featured: 'مقال مميز',
+                featured: 'مقال مميز', backToArticles: 'رجوع للمقالات',
                 pageAbout: 'عن المنصة', pageAboutDesc: 'تعرّف على منصة مشكاة ورؤيتها ورسالتها',
                 aboutIntro: 'التعريف', aboutIntroText: 'مشكاة منصة إلكترونية ثقافية توعوية، تُعنى بنشر الأفكار والرؤى والمقالات الهادفة التي تساهم في توعية المجتمع، وتقديم حلول عملية للمشكلات المعاصرة، وإحياء ذكر أهل البيت عليهم السلام وسيرتهم، وترسيخ القيم الأخلاقية والإنسانية.',
                 aboutVision: 'الرؤية', aboutVisionText: 'أن تكون مشكاة منارة رقمية موثوقة، يلجأ إليها الباحث عن المعرفة الصافية، والفكر النير، والرؤية المتوازنة، بعيداً عن الضجيج والتشويش.',
@@ -761,7 +762,7 @@
                 mostRead: 'Most Read', categoriesLabel: 'Categories', followUs: 'Follow Us',
                 catAll: 'All', cat1: 'Articles & Insights', cat2: 'Ahl al-Bayt (as)', cat3: 'Social Awareness',
                 cat4: 'Insights & Solutions', cat5: 'Contemporary Issues', cat6: 'Dialogues & Interviews', cat7: 'Doubts & Responses', cat8: 'Ethical Guidance',
-                featured: 'Featured Article',
+                featured: 'Featured Article', backToArticles: 'Back to Articles',
                 pageAbout: 'About the Platform', pageAboutDesc: 'Learn about Mishkat, its vision and mission',
                 aboutIntro: 'Introduction', aboutIntroText: 'Mishkat is an electronic cultural and awareness platform, dedicated to publishing ideas, insights, and purposeful articles that contribute to raising community awareness, offering practical solutions to contemporary problems, reviving the memory of Ahl al-Bayt (peace be upon them) and their biography, and consolidating ethical and human values.',
                 aboutVision: 'Vision', aboutVisionText: 'To be a trusted digital beacon that seekers of pure knowledge, bright intellect, and balanced vision turn to — away from noise and confusion.',
@@ -819,11 +820,11 @@
                 mostRead: 'پربازدیدترین', categoriesLabel: 'دسته‌بندی‌ها', followUs: 'ما را دنبال کنید',
                 catAll: 'همه', cat1: 'مقالات و دیدگاه‌ها', cat2: 'اهل بیت (ع)', cat3: 'آگاهی اجتماعی',
                 cat4: 'دیدگاه‌ها و راه‌حل‌ها', cat5: 'مسائل معاصر', cat6: 'گفتگوها و مصاحبه‌ها', cat7: 'شبهات و پاسخ‌ها', cat8: 'رهنمودهای اخلاقی',
-                featured: 'مقاله ویژه',
+                featured: 'مقاله ویژه', backToArticles: 'بازگشت به مقالات',
                 pageAbout: 'درباره پلتفرم', pageAboutDesc: 'با پلتفرم مشکاه، چشم‌انداز و رسالت آن آشنا شوید',
                 aboutIntro: 'معرفی', aboutIntroText: 'مشکاه یک پلتفرم فرهنگی و آگاهی‌بخش الکترونیکی است که به انتشار اندیشه‌ها، دیدگاه‌ها و مقالات هدفمندی می‌پردازد که در جهت آگاهی جامعه، ارائه راه‌حل‌های عملی برای مشکلات معاصر، احیای یاد اهل بیت (علیهم‌السلام) و سیره آنان و تثبیت ارزش‌های اخلاقی و انسانی گام برمی‌دارد.',
-                aboutVision: 'چشم‌انداز', aboutVisionText: 'مشکاه به‌عنوان یک مناره دیجیتال مورد اعتماد باشد که پژوهشگران برای یافتن دانش ناب، اندیشه روشن و دیدگاه متوازن به آن مراجعه کنند — به‌دور از هیاهو و آشفتگی.',
-                aboutMission: 'رسالت', aboutMissionText: 'ارائه محتوای فکری و فرهنگی استوار، که با دقت گزینش و پس از بررسی دقیق منتشر می‌شود تا خالص و بدون ناخالصی به خواننده برسد و به ساخت جامعه‌ای آگاه متصل به کتاب خدا و عترت رسول کمک کند.',
+                aboutVision: 'چشم‌انداز', aboutVisionText: 'مشکاه به‌عنوان یک مناره دیجیتال مورد اعتماد باشد که پژوهشگران برای یافتن دانش ناب، اندیشه روشن و دیدگاه متوازن به آن مراجعه کنند.',
+                aboutMission: 'رسالت', aboutMissionText: 'ارائه محتوای فکری و فرهنگی استوار، که با دقت گزینش و پس از بررسی دقیق منتشر می‌شود تا خالص و بدون ناخالصی به خواننده برسد.',
                 aboutFeatures: 'ویژگی‌های مشکاه', feat1: 'محتوای گزیده: جایی برای هرج‌ومرج یا محتوای تجاری نیست.',
                 feat2: 'هویت بصری شیک: منعکس‌کننده ماهیت معنوی.', feat3: 'مدیریت آسان: داشبورد اختصاصی برای انتشار مقالات.',
                 feat4: 'پشتیبانی چندزبانه: عربی، انگلیسی، فارسی.', feat5: 'کاملاً رایگان: بدون هزینه برای انتشار یا خواندن.',
@@ -850,7 +851,7 @@
                 formLink: 'لینک فایل مقاله (اختیاری)', formExcerpt: 'چکیده (خلاصه کوتاه)', formSubmit: 'ارسال مقاله',
                 formSubject: 'موضوع', formMessage: 'پیام', formSend: 'ارسال',
                 pageInvitation: 'دعوت به مشارکت', pageInvitationDesc: 'راه‌های مشارکت در مشکاه',
-                inviteTitle: 'چگونه مشارکت می‌کنید؟', inviteDesc: 'ما از هر کسی که توانایی مشارکت در این پروژه مبارک را در خود می‌بیند استقبال می‌کنیم، از راه‌های زیر:',
+                inviteTitle: 'چگونه مشارکت می‌کنید؟', inviteDesc: 'ما از هر کسی که توانایی مشارکت در این پروژه مبارک را در خود می‌بیند استقبال می‌کنیم:',
                 invite1: 'نویسندگی', invite1Desc: 'مقالات، دیدگاه‌ها، تحلیل‌ها در زمینه‌های مختلف.',
                 invite2: 'ترجمه', invite2Desc: 'ترجمه مقالات به زبان‌های دیگر.', invite3: 'بازبینی', invite3Desc: 'ویرایش زبانی یا علمی مقالات.',
                 invite4: 'پشتیبانی فنی', invite4Desc: 'توسعه پلتفرم و بهبود عملکرد.', invite5: 'اشتراک‌گذاری', invite5Desc: 'اشتراک‌گذاری مقالات در شبکه‌های اجتماعی.',
@@ -865,6 +866,37 @@
 
         let currentLang = 'ar';
 
+        // ==================== تحميل المقالات من articles.json ====================
+        async function loadArticlesFromJSON() {
+            try {
+                const response = await fetch('articles.json?t=' + Date.now());
+                if (!response.ok) {
+                    console.warn('articles.json not found');
+                    return;
+                }
+                const data = await response.json();
+                const items = data.items || [];
+
+                const articles = items.map(item => ({
+                    catKey: categoryToKey[item.category] || 'cat1',
+                    title: item.title || '',
+                    author: item.author || '',
+                    date: item.date || '',
+                    excerpt: item.excerpt || '',
+                    body: item.body || '',
+                    category: item.category || ''
+                }));
+
+                mishkatArticles.ar = articles;
+                mishkatArticles.en = articles;
+                mishkatArticles.fa = articles;
+                console.log('✅ Loaded ' + articles.length + ' articles');
+            } catch (error) {
+                console.error('Error loading articles:', error);
+            }
+        }
+
+        // ==================== الساعة والتاريخ ====================
         function updateDateTime() {
             const now = new Date();
             const lang = currentLang || 'ar';
@@ -879,22 +911,27 @@
             } catch(e) {
                 days = ['الأحد','الإثنين','الثلاثاء','الأربعاء','الخميس','الجمعة','السبت'];
             }
-            document.getElementById('dayName').textContent = days[now.getDay()];
+            const dayNameEl = document.getElementById('dayName');
+            if (dayNameEl) dayNameEl.textContent = days[now.getDay()];
 
             try {
                 const hijriFmt = lang === 'ar' ? 'ar-SA-u-ca-islamic' : (lang === 'fa' ? 'fa-IR-u-ca-islamic' : 'en-US-u-ca-islamic');
                 const hijriText = new Intl.DateTimeFormat(hijriFmt, { day:'numeric', month:'long', year:'numeric' }).format(now);
                 const hijriShort = new Intl.DateTimeFormat(hijriFmt, { day:'numeric', month:'short' }).format(now);
-                document.getElementById('hijriDate').textContent = hijriText;
-                document.getElementById('mobileHijri').textContent = hijriShort;
+                const hijriDateEl = document.getElementById('hijriDate');
+                const mobileHijriEl = document.getElementById('mobileHijri');
+                if (hijriDateEl) hijriDateEl.textContent = hijriText;
+                if (mobileHijriEl) mobileHijriEl.textContent = hijriShort;
             } catch(e) {}
 
             const day = String(now.getDate()).padStart(2,'0');
             const month = String(now.getMonth()+1).padStart(2,'0');
             const year = now.getFullYear();
             const dateStr = `${day}/${month}/${year}`;
-            document.getElementById('gregorianDate').textContent = dateStr;
-            document.getElementById('mobileDate').textContent = dateStr;
+            const gregorianDateEl = document.getElementById('gregorianDate');
+            const mobileDateEl = document.getElementById('mobileDate');
+            if (gregorianDateEl) gregorianDateEl.textContent = dateStr;
+            if (mobileDateEl) mobileDateEl.textContent = dateStr;
 
             let h = now.getHours();
             const t = translations[lang];
@@ -902,12 +939,17 @@
             h = h % 12; h = h ? h : 12;
             const m = String(now.getMinutes()).padStart(2,'0');
             const s = String(now.getSeconds()).padStart(2,'0');
-            document.getElementById('liveClock').textContent = `${h}:${m}:${s}`;
-            document.getElementById('clockPeriod').textContent = period;
-            document.getElementById('mobileClock').textContent = `${h}:${m}`;
-            document.getElementById('mobilePeriod').textContent = period;
+            const liveClockEl = document.getElementById('liveClock');
+            const clockPeriodEl = document.getElementById('clockPeriod');
+            const mobileClockEl = document.getElementById('mobileClock');
+            const mobilePeriodEl = document.getElementById('mobilePeriod');
+            if (liveClockEl) liveClockEl.textContent = `${h}:${m}:${s}`;
+            if (clockPeriodEl) clockPeriodEl.textContent = period;
+            if (mobileClockEl) mobileClockEl.textContent = `${h}:${m}`;
+            if (mobilePeriodEl) mobilePeriodEl.textContent = period;
         }
 
+        // ==================== عرض المقالات ====================
         function renderArticles(filterCat, searchQuery) {
             const grid = document.getElementById('articlesGrid');
             const empty = document.getElementById('articlesEmpty');
@@ -923,7 +965,7 @@
             if (searchQuery) {
                 const q = searchQuery.toLowerCase();
                 filtered = filtered.filter(a =>
-                    a.title.toLowerCase().includes(q) || a.excerpt.toLowerCase().includes(q) || a.author.toLowerCase().includes(q)
+                    (a.title||'').toLowerCase().includes(q) || (a.excerpt||'').toLowerCase().includes(q) || (a.author||'').toLowerCase().includes(q)
                 );
             }
             if (filtered.length === 0) {
@@ -937,7 +979,7 @@
             if (!isFiltered && filtered.length > 0) {
                 const first = filtered[0];
                 html += `
-                    <div class="featured-card">
+                    <div class="featured-card" onclick="openArticle(${articles.indexOf(first)})">
                         <div class="featured-image" data-label="${t.featured}"><i class="fa-solid fa-lightbulb"></i></div>
                         <div class="featured-body">
                             <span class="category-badge">${t[first.catKey]}</span>
@@ -954,7 +996,7 @@
             }
 
             html += filtered.map(a => `
-                <div class="article-card">
+                <div class="article-card" onclick="openArticle(${articles.indexOf(a)})">
                     <div class="card-top"></div>
                     <div class="card-body">
                         <span class="category-badge">${t[a.catKey]}</span>
@@ -971,46 +1013,78 @@
             grid.innerHTML = html;
         }
 
+        // ==================== فتح مقال كامل ====================
+        function openArticle(index) {
+            const articles = mishkatArticles[currentLang] || mishkatArticles.ar;
+            const article = articles[index];
+            if (!article) return;
+
+            const t = translations[currentLang];
+            const container = document.getElementById('articleFullContent');
+            
+            const bodyHtml = article.body ? article.body.replace(/\n/g, '<br>') : '<p>' + (article.excerpt || '') + '</p>';
+            
+            container.innerHTML = `
+                <span class="category-badge" style="display:inline-block;background:var(--gold-light);color:var(--primary-navy);padding:5px 14px;border-radius:4px;font-size:12px;font-weight:700;margin-bottom:15px;">${t[article.catKey]}</span>
+                <h1>${article.title}</h1>
+                <div class="article-meta">
+                    <span><i class="fa-regular fa-user"></i> ${article.author}</span>
+                    <span><i class="fa-regular fa-calendar"></i> ${article.date}</span>
+                </div>
+                <div class="article-body">${bodyHtml}</div>
+            `;
+
+            document.querySelectorAll('.page-view').forEach(v => v.classList.remove('active'));
+            document.getElementById('view-article').classList.add('active');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // ==================== الشريط الجانبي ====================
         function renderSidebar() {
             const t = translations[currentLang];
             const articles = mishkatArticles[currentLang] || mishkatArticles.ar;
             
             const mostReadBox = document.getElementById('mostReadBox');
-            mostReadBox.innerHTML = articles.slice(0, 5).map((a, i) => `
-                <div class="most-read-item">
-                    <div class="number">${i + 1}</div>
-                    <div class="text">
-                        <p>${a.title}</p>
-                        <small>${t[a.catKey]}</small>
+            if (mostReadBox) {
+                mostReadBox.innerHTML = articles.slice(0, 5).map((a, i) => `
+                    <div class="most-read-item" onclick="openArticle(${i})">
+                        <div class="number">${i + 1}</div>
+                        <div class="text">
+                            <p>${a.title}</p>
+                            <small>${t[a.catKey]}</small>
+                        </div>
                     </div>
-                </div>
-            `).join('');
+                `).join('');
+            }
 
             const catsBox = document.getElementById('sidebarCatsBox');
-            const catsCount = {};
-            articles.forEach(a => { catsCount[a.catKey] = (catsCount[a.catKey] || 0) + 1; });
-            catsBox.innerHTML = Object.keys(catsCount).map(catKey => `
-                <div class="sidebar-cat-item" data-cat="${catKey}">
-                    <span>${t[catKey]}</span>
-                    <span class="count">${catsCount[catKey]}</span>
-                </div>
-            `).join('');
-            
-            catsBox.querySelectorAll('.sidebar-cat-item').forEach(item => {
-                item.addEventListener('click', function() {
-                    const cat = this.dataset.cat;
-                    showView('home');
-                    setTimeout(() => {
-                        document.querySelectorAll('#mishkatCategories .cat-btn').forEach(b => {
-                            b.classList.toggle('active', b.dataset.cat === cat);
-                        });
-                        renderArticles(cat, '');
-                        document.getElementById('articles').scrollIntoView({behavior: 'smooth'});
-                    }, 100);
+            if (catsBox) {
+                const catsCount = {};
+                articles.forEach(a => { catsCount[a.catKey] = (catsCount[a.catKey] || 0) + 1; });
+                catsBox.innerHTML = Object.keys(catsCount).map(catKey => `
+                    <div class="sidebar-cat-item" data-cat="${catKey}">
+                        <span>${t[catKey]}</span>
+                        <span class="count">${catsCount[catKey]}</span>
+                    </div>
+                `).join('');
+                
+                catsBox.querySelectorAll('.sidebar-cat-item').forEach(item => {
+                    item.addEventListener('click', function() {
+                        const cat = this.dataset.cat;
+                        showView('home');
+                        setTimeout(() => {
+                            document.querySelectorAll('#mishkatCategories .cat-btn').forEach(b => {
+                                b.classList.toggle('active', b.dataset.cat === cat);
+                            });
+                            renderArticles(cat, '');
+                            document.getElementById('articles').scrollIntoView({behavior: 'smooth'});
+                        }, 100);
+                    });
                 });
-            });
+            }
         }
 
+        // ==================== تبديل اللغة ====================
         function setLanguage(lang) {
             currentLang = lang;
             const t = translations[lang] || translations.ar;
@@ -1050,6 +1124,7 @@
             localStorage.setItem('mishkat_lang', lang);
         }
 
+        // ==================== التنقل ====================
         function showView(viewId) {
             document.body.classList.remove('extras-hidden');
             document.querySelectorAll('.page-view').forEach(v => v.classList.remove('active'));
@@ -1065,7 +1140,11 @@
             }
         }
 
-        document.addEventListener('DOMContentLoaded', function() {
+        // ==================== التهيئة ====================
+        document.addEventListener('DOMContentLoaded', async function() {
+            // تحميل المقالات أولاً
+            await loadArticlesFromJSON();
+
             document.querySelectorAll('.lang-btn').forEach(btn => {
                 btn.addEventListener('click', function() { setLanguage(this.dataset.lang); });
             });
@@ -1174,14 +1253,6 @@
                 });
             }
         });
-    </script>
-
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-    <script>
-        if (window.location.search.includes('invite_token=') || window.location.hash.includes('invite_token=')) {
-            window.location.href = '/admin/';
-        }
-        if (window.netlifyIdentity) { window.netlifyIdentity.init(); }
     </script>
 
 </body>
