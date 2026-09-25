@@ -192,6 +192,24 @@
         .article-full .article-body{font-size:15.5px;line-height:2;color:var(--text-dark)}
         .article-full .article-body p{margin-bottom:15px}
         .back-btn{background:var(--primary-navy);color:white;border:none;padding:10px 25px;border-radius:4px;font-family:'Tajawal',sans-serif;font-weight:700;cursor:pointer;margin-bottom:20px;display:inline-flex;align-items:center;gap:8px}
+        /* أزرار المشاركة */
+        .share-section{background:#fff;border-radius:6px;padding:20px 25px;box-shadow:0 2px 10px rgba(26,43,74,.06);border:1px solid var(--border-color);border-top:4px solid var(--gold-accent);margin-bottom:20px}
+        .share-section h3{color:var(--primary-navy);font-size:1.1rem;font-weight:800;margin-bottom:15px;display:flex;align-items:center;gap:8px}
+        .share-section h3 i{color:var(--gold-accent)}
+        .share-buttons{display:flex;flex-wrap:wrap;gap:8px}
+        .share-btn{border:none;padding:10px 18px;border-radius:5px;color:#fff;font-family:'Tajawal',sans-serif;font-weight:700;font-size:13.5px;cursor:pointer;display:inline-flex;align-items:center;gap:6px;transition:.3s}
+        .share-btn:hover{transform:translateY(-2px);box-shadow:0 5px 15px rgba(0,0,0,.15)}
+        .share-btn.whatsapp{background:#25d366}
+        .share-btn.telegram{background:#0088cc}
+        .share-btn.twitter{background:#000}
+        .share-btn.facebook{background:#1877f2}
+        .share-btn.copy{background:var(--primary-navy)}
+        .share-btn.copy:hover{background:var(--gold-accent);color:var(--primary-navy)}
+        /* قسم التعليقات */
+        .comments-section{background:#fff;border-radius:6px;padding:20px 25px;box-shadow:0 2px 10px rgba(26,43,74,.06);border:1px solid var(--border-color);border-top:4px solid var(--primary-navy);margin-bottom:20px}
+        .comments-section h3{color:var(--primary-navy);font-size:1.2rem;font-weight:800;margin-bottom:15px;display:flex;align-items:center;gap:8px}
+        .comments-section h3 i{color:var(--gold-accent)}
+        #giscusContainer{min-height:100px}
         @media (max-width:1024px){.news-grid{grid-template-columns:1fr 280px;gap:18px}}
         @media (max-width:900px){.news-grid{grid-template-columns:1fr}.sidebar{flex-direction:row;flex-wrap:wrap}.sidebar-box{flex:1;min-width:250px}.featured-card{grid-template-columns:1fr}.featured-card .featured-image{min-height:180px;font-size:45px}.contact-grid{grid-template-columns:1fr}}
         @media (max-width:768px){
@@ -242,6 +260,9 @@
             .article-full{padding:20px}
             .article-full h1{font-size:1.4rem}
             .article-full .article-body{font-size:14.5px}
+            .share-section{padding:16px 18px}
+            .share-btn{padding:8px 14px;font-size:12.5px}
+            .comments-section{padding:16px 18px}
         }
         @media (max-width:480px){
             .top-bar .contact-info{display:none}
@@ -442,6 +463,24 @@
                     <i class="fa-solid fa-arrow-right"></i> <span data-i18n="backToArticles">رجوع للمقالات</span>
                 </button>
                 <div class="article-full" id="articleFullContent"></div>
+
+                <!-- أزرار المشاركة -->
+                <div class="share-section">
+                    <h3><i class="fa-solid fa-share-nodes"></i> <span data-i18n="shareTitle">شارك المقال</span></h3>
+                    <div class="share-buttons">
+                        <button class="share-btn whatsapp" onclick="shareWhatsApp()"><i class="fab fa-whatsapp"></i> واتساب</button>
+                        <button class="share-btn telegram" onclick="shareTelegram()"><i class="fab fa-telegram"></i> تيليجرام</button>
+                        <button class="share-btn twitter" onclick="shareTwitter()"><i class="fab fa-twitter"></i> X</button>
+                        <button class="share-btn facebook" onclick="shareFacebook()"><i class="fab fa-facebook-f"></i> فيسبوك</button>
+                        <button class="share-btn copy" onclick="copyArticleText()"><i class="fa-solid fa-copy"></i> <span data-i18n="copyBtn">نسخ النص</span></button>
+                    </div>
+                </div>
+
+                <!-- التعليقات -->
+                <div class="comments-section">
+                    <h3><i class="fa-regular fa-comments"></i> <span data-i18n="commentsTitle">التعليقات</span></h3>
+                    <div id="giscusContainer"></div>
+                </div>
             </div>
         </div>
 
@@ -678,6 +717,7 @@
             'رؤى وحلول': 'cat4',
             'قضايا معاصرة': 'cat5',
             'حوارات ومقابلات': 'cat6',
+            'شبهات ووردود': 'cat7',
             'شبهات وردود': 'cat7',
             'التوجيهات الأخلاقية': 'cat8'
         };
@@ -701,6 +741,9 @@
                 catAll: 'الكل', cat1: 'مقالات ورؤى', cat2: 'أهل البيت (ع)', cat3: 'وعي مجتمعي',
                 cat4: 'رؤى وحلول', cat5: 'قضايا معاصرة', cat6: 'حوارات ومقابلات', cat7: 'شبهات وردود', cat8: 'التوجيهات الأخلاقية',
                 featured: 'مقال مميز', backToArticles: 'رجوع للمقالات',
+                shareTitle: 'شارك المقال', commentsTitle: 'التعليقات', copyBtn: 'نسخ النص',
+                copySuccess: '✅ تم نسخ المقال كاملاً!',
+                copyFail: '❌ فشل النسخ',
                 pageAbout: 'عن المنصة', pageAboutDesc: 'تعرّف على منصة مشكاة ورؤيتها ورسالتها',
                 aboutIntro: 'التعريف', aboutIntroText: 'مشكاة منصة إلكترونية ثقافية توعوية، تُعنى بنشر الأفكار والرؤى والمقالات الهادفة التي تساهم في توعية المجتمع، وتقديم حلول عملية للمشكلات المعاصرة، وإحياء ذكر أهل البيت عليهم السلام وسيرتهم، وترسيخ القيم الأخلاقية والإنسانية.',
                 aboutVision: 'الرؤية', aboutVisionText: 'أن تكون مشكاة منارة رقمية موثوقة، يلجأ إليها الباحث عن المعرفة الصافية، والفكر النير، والرؤية المتوازنة، بعيداً عن الضجيج والتشويش.',
@@ -760,6 +803,9 @@
                 catAll: 'All', cat1: 'Articles & Insights', cat2: 'Ahl al-Bayt (as)', cat3: 'Social Awareness',
                 cat4: 'Insights & Solutions', cat5: 'Contemporary Issues', cat6: 'Dialogues & Interviews', cat7: 'Doubts & Responses', cat8: 'Ethical Guidance',
                 featured: 'Featured Article', backToArticles: 'Back to Articles',
+                shareTitle: 'Share Article', commentsTitle: 'Comments', copyBtn: 'Copy Text',
+                copySuccess: '✅ Article copied successfully!',
+                copyFail: '❌ Copy failed',
                 pageAbout: 'About the Platform', pageAboutDesc: 'Learn about Mishkat, its vision and mission',
                 aboutIntro: 'Introduction', aboutIntroText: 'Mishkat is an electronic cultural and awareness platform, dedicated to publishing ideas, insights, and purposeful articles that contribute to raising community awareness, offering practical solutions to contemporary problems, reviving the memory of Ahl al-Bayt (peace be upon them) and their biography, and consolidating ethical and human values.',
                 aboutVision: 'Vision', aboutVisionText: 'To be a trusted digital beacon that seekers of pure knowledge, bright intellect, and balanced vision turn to — away from noise and confusion.',
@@ -819,6 +865,9 @@
                 catAll: 'همه', cat1: 'مقالات و دیدگاه‌ها', cat2: 'اهل بیت (ع)', cat3: 'آگاهی اجتماعی',
                 cat4: 'دیدگاه‌ها و راه‌حل‌ها', cat5: 'مسائل معاصر', cat6: 'گفتگوها و مصاحبه‌ها', cat7: 'شبهات و پاسخ‌ها', cat8: 'رهنمودهای اخلاقی',
                 featured: 'مقاله ویژه', backToArticles: 'بازگشت به مقالات',
+                shareTitle: 'اشتراک‌گذاری مقاله', commentsTitle: 'نظرات', copyBtn: 'کپی متن',
+                copySuccess: '✅ مقاله با موفقیت کپی شد!',
+                copyFail: '❌ کپی نشد',
                 pageAbout: 'درباره پلتفرم', pageAboutDesc: 'با پلتفرم مشکاه، چشم‌انداز و رسالت آن آشنا شوید',
                 aboutIntro: 'معرفی', aboutIntroText: 'مشکاه یک پلتفرم فرهنگی و آگاهی‌بخش الکترونیکی است که به انتشار اندیشه‌ها، دیدگاه‌ها و مقالات هدفمندی می‌پردازد که در جهت آگاهی جامعه، ارائه راه‌حل‌های عملی برای مشکلات معاصر، احیای یاد اهل بیت (علیهم‌السلام) و سیره آنان و تثبیت ارزش‌های اخلاقی و انسانی گام برمی‌دارد.',
                 aboutVision: 'چشم‌انداز', aboutVisionText: 'مشکاه به‌عنوان یک مناره دیجیتال مورد اعتماد باشد که پژوهشگران برای یافتن دانش ناب، اندیشه روشن و دیدگاه متوازن به آن مراجعه کنند.',
@@ -1051,9 +1100,125 @@
                 <div class="article-body">${bodyHtml}</div>
             `;
 
+            // تحديث URL hash لتمييز كل مقال في التعليقات
+            window.history.replaceState(null, '', '#article-' + index);
+
             document.querySelectorAll('.page-view').forEach(v => v.classList.remove('active'));
             document.getElementById('view-article').classList.add('active');
             window.scrollTo({ top: 0, behavior: 'smooth' });
+
+            // تحميل التعليقات بعد تأخير بسيط لضمان تحديث الـ URL
+            setTimeout(loadGiscus, 200);
+        }
+
+        function loadGiscus() {
+            const container = document.getElementById('giscusContainer');
+            if (!container) return;
+            container.innerHTML = '';
+            
+            const script = document.createElement('script');
+            script.src = 'https://giscus.app/client.js';
+            script.setAttribute('data-repo', 'alaqeela14/mishkat-new');
+            script.setAttribute('data-repo-id', 'R_kgDOUqF2Ug');
+            script.setAttribute('data-category', 'Announcements');
+            script.setAttribute('data-category-id', 'DIC_kwDOUqF2Us4DGV2u');
+            script.setAttribute('data-mapping', 'pathname');
+            script.setAttribute('data-strict', '0');
+            script.setAttribute('data-reactions-enabled', '1');
+            script.setAttribute('data-emit-metadata', '0');
+            script.setAttribute('data-input-position', 'bottom');
+            script.setAttribute('data-theme', 'preferred_color_scheme');
+            script.setAttribute('data-lang', currentLang);
+            script.setAttribute('crossorigin', 'anonymous');
+            script.async = true;
+            
+            container.appendChild(script);
+        }
+
+        // ============ المشاركة ============
+        function getCurrentArticle() {
+            const hash = window.location.hash;
+            const match = hash.match(/#article-(\d+)/);
+            const index = match ? parseInt(match[1]) : 0;
+            const articles = mishkatArticles[currentLang] || mishkatArticles.ar;
+            return articles[index] || null;
+        }
+
+        function getShareText() {
+            const a = getCurrentArticle();
+            if (!a) return '';
+            const siteUrl = 'https://al-mishkat1.netlify.app';
+            const articleUrl = siteUrl + '/#article-' + (mishkatArticles[currentLang].indexOf(a));
+            
+            let text = '📄 ' + a.title + '\n\n';
+            text += '👤 الكاتب: ' + a.author + '\n';
+            text += '📅 التاريخ: ' + a.date + '\n';
+            text += '📚 المصدر: مشكاة | للنور والوعي\n';
+            text += '🔗 ' + articleUrl + '\n\n';
+            text += '━━━━━━━━━━━━━━━\n\n';
+            if (a.body) {
+                text += a.body + '\n\n';
+            } else if (a.excerpt) {
+                text += a.excerpt + '\n\n';
+            }
+            text += '━━━━━━━━━━━━━━━\n';
+            text += 'تم النسخ من منصة مشكاة\n';
+            text += siteUrl;
+            return text;
+        }
+
+        function getShareUrl() {
+            return window.location.href;
+        }
+
+        function shareWhatsApp() {
+            const a = getCurrentArticle();
+            if (!a) return;
+            const siteUrl = 'https://al-mishkat1.netlify.app';
+            const text = '📄 ' + a.title + '\n\n👤 ' + a.author + '\n📅 ' + a.date + '\n\n' + a.excerpt + '\n\n' + window.location.href;
+            window.open('https://wa.me/?text=' + encodeURIComponent(text), '_blank');
+        }
+
+        function shareTelegram() {
+            const a = getCurrentArticle();
+            if (!a) return;
+            const text = '📄 ' + a.title + '\n\n👤 ' + a.author + '\n📅 ' + a.date + '\n\n' + a.excerpt;
+            window.open('https://t.me/share/url?url=' + encodeURIComponent(window.location.href) + '&text=' + encodeURIComponent(text), '_blank');
+        }
+
+        function shareTwitter() {
+            const a = getCurrentArticle();
+            if (!a) return;
+            const text = '📄 ' + a.title + '\n\n' + a.excerpt;
+            window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(text) + '&url=' + encodeURIComponent(window.location.href), '_blank');
+        }
+
+        function shareFacebook() {
+            window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(window.location.href), '_blank');
+        }
+
+        async function copyArticleText() {
+            const text = getShareText();
+            const t = translations[currentLang];
+            try {
+                await navigator.clipboard.writeText(text);
+                alert(t.copySuccess);
+            } catch (err) {
+                // البديل للمتصفحات القديمة
+                const textarea = document.createElement('textarea');
+                textarea.value = text;
+                textarea.style.position = 'fixed';
+                textarea.style.opacity = '0';
+                document.body.appendChild(textarea);
+                textarea.select();
+                try {
+                    document.execCommand('copy');
+                    alert(t.copySuccess);
+                } catch (e) {
+                    alert(t.copyFail);
+                }
+                document.body.removeChild(textarea);
+            }
         }
 
         function renderSidebar() {
@@ -1136,6 +1301,11 @@
             renderSidebar();
             updateDateTime();
 
+            // إعادة تحميل التعليقات باللغة الجديدة
+            if (document.getElementById('view-article').classList.contains('active')) {
+                loadGiscus();
+            }
+
             localStorage.setItem('mishkat_lang', lang);
         }
 
@@ -1147,6 +1317,12 @@
             document.querySelectorAll('.main-nav .nav-list li a[data-view]').forEach(a => {
                 a.classList.toggle('active', a.dataset.view === viewId);
             });
+            
+            // تحديث URL
+            if (viewId === 'home') {
+                window.history.replaceState(null, '', window.location.pathname);
+            }
+            
             window.scrollTo({ top: 0, behavior: 'smooth' });
             if (viewId === 'home') {
                 const activeCat = document.querySelector('#mishkatCategories .cat-btn.active');
@@ -1245,6 +1421,12 @@
 
             updateDateTime();
             setInterval(updateDateTime, 1000);
+
+            // فتح مقال مباشرة إذا كان الرابط يحتوي على hash
+            if (window.location.hash && window.location.hash.match(/#article-\d+/)) {
+                const match = window.location.hash.match(/#article-(\d+)/);
+                if (match) openArticle(parseInt(match[1]));
+            }
 
             const mobileBtn = document.getElementById('mobileMenuBtn');
             const mainNav = document.getElementById('mainNav');
