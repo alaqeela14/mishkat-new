@@ -244,18 +244,13 @@
         .download-option.word{background:#2563eb}
         .download-option.unavailable{background:#9ca3af;cursor:not-allowed;opacity:.6}
         .download-option.unavailable:hover{transform:none;box-shadow:none}
-        /* أسرة المنصة */
         .team-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:20px;margin-top:20px}
         .team-card{background:#fff;border-radius:10px;padding:25px 20px;text-align:center;box-shadow:0 4px 15px rgba(26,43,74,.06);border:1px solid var(--border-color);border-top:4px solid var(--gold-accent);transition:.3s}
         .team-card:hover{transform:translateY(-5px);box-shadow:0 12px 30px rgba(26,43,74,.15)}
         .team-avatar{width:90px;height:90px;margin:0 auto 15px;border-radius:50%;background:linear-gradient(135deg,var(--primary-navy),var(--secondary-blue));display:flex;align-items:center;justify-content:center;color:var(--gold-accent);font-size:40px;border:3px solid var(--gold-accent)}
-        .team-avatar img{width:100%;height:100%;object-fit:cover;border-radius:50%}
         .team-card h3{color:var(--primary-navy);font-size:1.1rem;font-weight:800;margin-bottom:5px}
         .team-role{color:var(--gold-accent);font-size:12.5px;font-weight:700;margin-bottom:12px}
         .team-desc{color:var(--text-muted);font-size:13px;line-height:1.7}
-        .team-social{display:flex;justify-content:center;gap:8px;margin-top:15px}
-        .team-social a{width:34px;height:34px;border-radius:50%;background:var(--very-light-blue);color:var(--primary-navy);display:flex;align-items:center;justify-content:center;font-size:14px;transition:.3s}
-        .team-social a:hover{background:var(--gold-accent);color:#fff}
         .lang-articles-empty{text-align:center;padding:60px 20px;color:var(--text-muted)}
         .lang-articles-empty i{font-size:60px;color:var(--gold-accent);margin-bottom:15px;display:block}
         @media (max-width:1024px){.news-grid{grid-template-columns:1fr 280px;gap:18px}.main-nav .nav-list li a{padding:13px 10px;font-size:12px}}
@@ -386,16 +381,12 @@
         </div>
     </header>
 
-    <!-- شريط التنقل -->
+    <!-- شريط التنقل - الترتيب الصحيح -->
     <nav class="main-nav" id="mainNav">
         <div class="container">
             <ul class="nav-list">
                 <li><a data-view="home" class="active" data-i18n="navHome">الرئيسية</a></li>
                 <li><a data-view="library" data-i18n="navLibrary">المكتبة</a></li>
-                <li><a data-view="articles-en" data-i18n="navArticlesEn">مقالات بالإنجليزية</a></li>
-                <li><a data-view="articles-fa" data-i18n="navArticlesFa">مقالات بالفارسية</a></li>
-                <li><a data-view="articles-tr" data-i18n="navArticlesTr">مقالات بالتركية</a></li>
-                <li><a data-view="family" data-i18n="navFamily">أسرة المنصة</a></li>
                 <li><a data-view="about" data-i18n="navAbout">عن المنصة</a></li>
                 <li><a data-view="sections" data-i18n="navSections">الأقسام</a></li>
                 <li class="dropdown">
@@ -411,6 +402,10 @@
                         <li><a class="dropdown-item" data-cat="cat8" data-i18n="cat8">التوجيهات الأخلاقية</a></li>
                     </ul>
                 </li>
+                <li><a data-view="family" data-i18n="navFamily">أسرة المنصة</a></li>
+                <li><a data-view="articles-en" data-i18n="navArticlesEn">مقالات بالإنجليزية</a></li>
+                <li><a data-view="articles-fa" data-i18n="navArticlesFa">مقالات بالفارسية</a></li>
+                <li><a data-view="articles-tr" data-i18n="navArticlesTr">مقالات بالتركية</a></li>
                 <li><a data-view="contact" data-i18n="navContact">تواصل معنا</a></li>
             </ul>
             <div class="search-mini">
@@ -529,6 +524,19 @@
             </div>
         </div>
 
+        <!-- صفحة: أسرة المنصة -->
+        <div class="page-view" id="view-family">
+            <div class="page-title-bar">
+                <h1><i class="fa-solid fa-users"></i> <span data-i18n="pageFamily">أسرة المنصة</span></h1>
+                <p data-i18n="pageFamilyDesc">تعرف على فريق العمل الذي يساهم في إثراء المحتوى</p>
+            </div>
+            <div class="content-card">
+                <h2><i class="fa-solid fa-user-group"></i> <span data-i18n="familyIntroTitle">فريق مشكاة</span></h2>
+                <p data-i18n="familyIntroText">نعمل بروح الفريق الواحد، مؤمنين بأن العمل الجماعي هو أساس النجاح. تضم أسرة مشكاة نخبة من الكتّاب والمراجعين والمترجمين والداعمين، الذين يساهمون جميعاً في تقديم محتوى هادف ومتميز.</p>
+                <div class="team-grid" id="teamGrid"></div>
+            </div>
+        </div>
+
         <!-- صفحة: مقالات بالإنجليزية -->
         <div class="page-view" id="view-articles-en">
             <div class="page-title-bar">
@@ -568,19 +576,6 @@
                 <i class="fa-solid fa-language"></i>
                 <h3 data-i18n="noArticlesTr">لا توجد مقالات بالتركية حالياً</h3>
                 <p data-i18n="noArticlesTrDesc">Henüz Türkçe makale yok</p>
-            </div>
-        </div>
-
-        <!-- صفحة: أسرة المنصة -->
-        <div class="page-view" id="view-family">
-            <div class="page-title-bar">
-                <h1><i class="fa-solid fa-users"></i> <span data-i18n="pageFamily">أسرة المنصة</span></h1>
-                <p data-i18n="pageFamilyDesc">تعرف على فريق العمل الذي يساهم في إثراء المحتوى</p>
-            </div>
-            <div class="content-card">
-                <h2><i class="fa-solid fa-user-group"></i> <span data-i18n="familyIntroTitle">فريق مشكاة</span></h2>
-                <p data-i18n="familyIntroText">نعمل بروح الفريق الواحد، مؤمنين بأن العمل الجماعي هو أساس النجاح. تضم أسرة مشكاة نخبة من الكتّاب والمراجعين والمترجمين والداعمين، الذين يساهمون جميعاً في تقديم محتوى هادف ومتميز.</p>
-                <div class="team-grid" id="teamGrid"></div>
             </div>
         </div>
 
@@ -659,24 +654,6 @@
                     <div class="section-tile" data-cat="cat7"><div class="icon"><i class="fa-solid fa-shield-halved"></i></div><h4 data-i18n="cat7">شبهات وردود</h4><p data-i18n="tile7">الرد العلمي على الشبهات الفكرية والعقائدية.</p></div>
                     <div class="section-tile" data-cat="cat8"><div class="icon"><i class="fa-solid fa-heart"></i></div><h4 data-i18n="cat8">التوجيهات الأخلاقية</h4><p data-i18n="tile8">دروس تربوية وأخلاقية مأثورة عن أهل البيت.</p></div>
                 </div>
-            </div>
-        </div>
-
-        <!-- صفحة: سياسة النشر -->
-        <div class="page-view" id="view-policy">
-            <div class="page-title-bar">
-                <h1><i class="fa-solid fa-circle-check"></i> <span data-i18n="pagePolicy">سياسة النشر</span></h1>
-                <p data-i18n="pagePolicyDesc">شروط وقواعد نشر المقالات في منصة مشكاة</p>
-            </div>
-            <div class="content-card">
-                <h2><i class="fa-solid fa-scale-balanced"></i> <span data-i18n="policyTerms">شروط النشر</span></h2>
-                <ul>
-                    <li data-i18n="pol1">الانتقاء: لا يُنشر أي مقال إلا بعد مراجعته من فريق التحرير.</li>
-                    <li data-i18n="pol2">الأصالة: يُشترط أن يكون المقال جديداً ولم يُنشر سابقاً.</li>
-                    <li data-i18n="pol3">الموضوعية: الالتزام بالطرح العلمي الرصين بعيداً عن التعصب.</li>
-                    <li data-i18n="pol4">اللغة: سلامة اللغة العربية، وحسن العرض.</li>
-                    <li data-i18n="pol5">الحقوق: تُحفظ حقوق الكاتب، ويُذكر اسمه في كل مقال.</li>
-                </ul>
             </div>
         </div>
 
@@ -785,6 +762,7 @@
             'رؤى وحلول': 'cat4',
             'قضايا معاصرة': 'cat5',
             'حوارات ومقابلات': 'cat6',
+            'شبهات ووردود': 'cat7',
             'شبهات وردود': 'cat7',
             'التوجيهات الأخلاقية': 'cat8'
         };
@@ -797,7 +775,7 @@
                 navHome: 'الرئيسية', navLibrary: 'المكتبة', navAbout: 'عن المنصة', navSections: 'الأقسام', navCats: 'التصنيفات',
                 navArticlesEn: 'مقالات بالإنجليزية', navArticlesFa: 'مقالات بالفارسية', navArticlesTr: 'مقالات بالتركية',
                 navFamily: 'أسرة المنصة',
-                navParticipation: 'كيفية المشاركة', navInvitation: 'دعوة للمشاركة', navContact: 'تواصل معنا',
+                navContact: 'تواصل معنا',
                 searchPh: 'ابحث...', searchPhFull: 'ابحث في الموقع...', searchBtn: 'بحث',
                 heroTitle: 'مِشْكَاةُ <span class="gold-text">النُّورِ</span>',
                 heroDesc: 'منصة فكرية توعوية لنشر المقالات والرؤى في بناء وعي مجتمعي متصل بكتاب الله وعترة رسوله',
@@ -817,47 +795,43 @@
                 noBooks: 'لا توجد كتب في المكتبة حالياً', noBooksDesc: 'سيتم إضافة الكتب قريباً',
                 readBtn: 'قراءة', downloadBtn: 'تحميل', shareBtn: 'مشاركة',
                 downloadTitle: 'اختر صيغة التحميل',
-                bookLinkCopied: '✅ تم نسخ رابط الكتاب!',
-                bookNotFound: 'هذا الملف غير متوفر',
+                bookLinkCopied: '✅ تم نسخ رابط الكتاب!', bookNotFound: 'هذا الملف غير متوفر',
                 pageArticlesEn: 'مقالات باللغة الإنجليزية', pageArticlesEnDesc: 'Articles in English',
                 pageArticlesFa: 'مقالات باللغة الفارسية', pageArticlesFaDesc: 'مقالات به زبان فارسی',
                 pageArticlesTr: 'مقالات باللغة التركية', pageArticlesTrDesc: 'Türkçe Makaleler',
                 noArticlesEn: 'لا توجد مقالات بالإنجليزية حالياً', noArticlesEnDesc: 'No English articles yet',
                 noArticlesFa: 'لا توجد مقالات بالفارسية حالياً', noArticlesFaDesc: 'هنوز مقاله‌ای به فارسی نیست',
                 noArticlesTr: 'لا توجد مقالات بالتركية حالياً', noArticlesTrDesc: 'Henüz Türkçe makale yok',
-                pageFamily: 'أسرة المنصة', pageFamilyDesc: 'تعرف على فريق العمل الذي يساهم في إثراء المحتوى',
-                familyIntroTitle: 'فريق مشكاة', familyIntroText: 'نعمل بروح الفريق الواحد، مؤمنين بأن العمل الجماعي هو أساس النجاح. تضم أسرة مشكاة نخبة من الكتّاب والمراجعين والمترجمين والداعمين، الذين يساهمون جميعاً في تقديم محتوى هادف ومتميز.',
+                pageFamily: 'أسرة المنصة', pageFamilyDesc: 'تعرف على فريق العمل',
+                familyIntroTitle: 'فريق مشكاة', familyIntroText: 'نعمل بروح الفريق الواحد، مؤمنين بأن العمل الجماعي هو أساس النجاح. تضم أسرة مشكاة نخبة من الكتّاب والمراجعين والمترجمين والداعمين.',
                 pageAbout: 'عن المنصة', pageAboutDesc: 'تعرّف على منصة مشكاة ورؤيتها ورسالتها',
-                aboutIntro: 'التعريف', aboutIntroText: 'مشكاة منصة إلكترونية ثقافية توعوية، تُعنى بنشر الأفكار والرؤى والمقالات الهادفة التي تساهم في توعية المجتمع، وتقديم حلول عملية للمشكلات المعاصرة، وإحياء ذكر أهل البيت عليهم السلام وسيرتهم، وترسيخ القيم الأخلاقية والإنسانية.',
-                aboutVision: 'الرؤية', aboutVisionText: 'أن تكون مشكاة منارة رقمية موثوقة، يلجأ إليها الباحث عن المعرفة الصافية، والفكر النير، والرؤية المتوازنة، بعيداً عن الضجيج والتشويش.',
-                aboutMission: 'الرسالة', aboutMissionText: 'تقديم محتوى فكري وثقافي رصين، يُنتقى بعناية، ويُنشر بعد مراجعة دقيقة، ليصل إلى القارئ نقياً خالياً من الشوائب، ويُساهم في بناء وعي مجتمعي متصل بكتاب الله وعترة رسوله ﷺ.',
-                aboutFeatures: 'ما يميز مشكاة', feat1: 'محتوى منتقى: لا مكان للفوضى أو المحتوى التجاري.',
-                feat2: 'هوية بصرية أنيقة: تعكس الطابع الروحي.', feat3: 'إدارة سهلة: لوحة تحكم خاصة للمشرفين لنشر المقالات.',
-                feat4: 'دعم متعدد اللغات: العربية، الإنجليزية، الفارسية.', feat5: 'مجانية بالكامل: لا رسوم على النشر أو القراءة.',
-                aboutGoals: 'الأهداف', goal1: 'إثراء المحتوى العربي الرصين على الإنترنت.',
-                goal2: 'توعية المجتمع بالقضايا المعاصرة.', goal3: 'إحياء تراث أهل البيت عليهم السلام.',
-                goal4: 'فتح المجال أمام الكتّاب الجدد للنشر.', goal5: 'بناء جيل واعٍ مرتبط بكتاب الله وعترة رسوله.',
-                pageSections: 'الأقسام', pageSectionsDesc: 'تصفح الأقسام الثمانية لمنصة مشكاة',
-                sectionsContent: 'أقسام المحتوى', sectionsContentText: 'تضم منصة مشكاة ثمانية أقسام رئيسية تغطي مختلف المجالات الفكرية والثقافية والاجتماعية:',
-                tile1: 'مقالات فكرية عامة تعالج قضايا معاصرة برؤية متوازنة.', tile2: 'مقالات متخصصة في سيرة وسلوك أهل البيت ودروس من مدرستهم.',
-                tile3: 'قضايا اجتماعية معاصرة: الأسرة، التربية، الشباب.', tile4: 'قراءة تحليلية للمشكلات الواقعية مع حلول عملية.',
-                tile5: 'قراءة إسلامية للأحداث الجارية والظواهر الحديثة.', tile6: 'حوارات مع شخصيات فكرية وثقافية وأكاديمية.',
-                tile7: 'الرد العلمي على الشبهات الفكرية والعقائدية.', tile8: 'دروس تربوية وأخلاقية مأثورة عن أهل البيت.',
-                pagePolicy: 'سياسة النشر', pagePolicyDesc: 'شروط وقواعد نشر المقالات في منصة مشكاة',
-                policyTerms: 'شروط النشر', pol1: 'الانتقاء: لا يُنشر أي مقال إلا بعد مراجعته من فريق التحرير.',
-                pol2: 'الأصالة: يُشترط أن يكون المقال جديداً ولم يُنشر سابقاً.', pol3: 'الموضوعية: الالتزام بالطرح العلمي الرصين بعيداً عن التعصب.',
-                pol4: 'اللغة: سلامة اللغة العربية، وحسن العرض.', pol5: 'الحقوق: تُحفظ حقوق الكاتب، ويُذكر اسمه في كل مقال.',
-                partForm: 'نموذج التواصل المبدئي', formName: 'الاسم الكامل', formNameOnly: 'الاسم', formEmail: 'البريد الإلكتروني',
+                aboutIntro: 'التعريف', aboutIntroText: 'مشكاة منصة إلكترونية ثقافية توعوية، تُعنى بنشر الأفكار والرؤى والمقالات الهادفة.',
+                aboutVision: 'الرؤية', aboutVisionText: 'أن تكون مشكاة منارة رقمية موثوقة، يلجأ إليها الباحث عن المعرفة الصافية.',
+                aboutMission: 'الرسالة', aboutMissionText: 'تقديم محتوى فكري وثقافي رصين، يُنتقى بعناية، ويُنشر بعد مراجعة دقيقة.',
+                aboutFeatures: 'ما يميز مشكاة', feat1: 'محتوى منتقى.',
+                feat2: 'هوية بصرية أنيقة.', feat3: 'إدارة سهلة.',
+                feat4: 'دعم متعدد اللغات.', feat5: 'مجانية بالكامل.',
+                pageSections: 'الأقسام', pageSectionsDesc: 'تصفح الأقسام الثمانية',
+                sectionsContent: 'أقسام المحتوى', sectionsContentText: 'تضم منصة مشكاة ثمانية أقسام رئيسية:',
+                tile1: 'مقالات فكرية عامة.', tile2: 'مقالات أهل البيت.',
+                tile3: 'قضايا اجتماعية.', tile4: 'رؤى وحلول.',
+                tile5: 'قضايا معاصرة.', tile6: 'حوارات ومقابلات.',
+                tile7: 'شبهات وردود.', tile8: 'توجيهات أخلاقية.',
+                pagePolicy: 'سياسة النشر', pagePolicyDesc: 'شروط نشر المقالات',
+                policyTerms: 'شروط النشر', pol1: 'الانتقاء.',
+                pol2: 'الأصالة.', pol3: 'الموضوعية.',
+                pol4: 'اللغة.', pol5: 'الحقوق.',
+                partForm: 'نموذج التواصل', formName: 'الاسم الكامل', formNameOnly: 'الاسم', formEmail: 'البريد الإلكتروني',
                 formArticleTitle: 'عنوان المقال', formCategory: 'التصنيف المقترح', formChoose: 'اختر التصنيف',
-                formLink: 'رابط ملف المقال (اختياري)', formExcerpt: 'المقتطف (نبذة قصيرة)', formSubmit: 'إرسال المقال',
+                formLink: 'رابط الملف (اختياري)', formExcerpt: 'المقتطف', formSubmit: 'إرسال',
                 formSubject: 'الموضوع', formMessage: 'الرسالة', formSend: 'إرسال',
                 pageContact: 'تواصل معنا', pageContactDesc: 'نحن هنا للإجابة على استفساراتكم',
                 contactInfo: 'معلومات التواصل', contactEmailLabel: 'البريد الإلكتروني', contactPhoneLabel: 'الهاتف', contactSendTitle: 'أرسل رسالة',
                 comingSoon: 'سيتم الإعلان عنه قريباً',
                 footerRights: 'جميع الحقوق محفوظة © 2026 منصة مشكاة | للنور والوعي',
                 am: 'ص', pm: 'م',
-                submitAlert: 'تم استلام مقالك بنجاح! سيتم مراجعه وإبلاغك قريباً.',
-                messageAlert: 'تم استلام رسالتك بنجاح! شكراً لتواصلك.'
+                submitAlert: 'تم الاستلام بنجاح!',
+                messageAlert: 'تم استلام رسالتك بنجاح!'
             },
             en: {
                 title: 'Mishkat Platform | For Light & Awareness', brandName: 'MISHKAT', brandSub: 'For Light & Awareness',
@@ -866,14 +840,14 @@
                 navHome: 'Home', navLibrary: 'Library', navAbout: 'About', navSections: 'Sections', navCats: 'Categories',
                 navArticlesEn: 'English Articles', navArticlesFa: 'Farsi Articles', navArticlesTr: 'Turkish Articles',
                 navFamily: 'Platform Family',
-                navParticipation: 'How to Participate', navInvitation: 'Invitation', navContact: 'Contact Us',
+                navContact: 'Contact Us',
                 searchPh: 'Search...', searchPhFull: 'Search the site...', searchBtn: 'Search',
                 heroTitle: 'Mishkat <span class="gold-text">of Light</span>',
-                heroDesc: 'An intellectual awareness platform for publishing articles and insights to build a conscious society connected to the Book of God and the Prophet\'s Household',
+                heroDesc: 'An intellectual awareness platform for publishing articles and insights',
                 breakingLabel: 'Latest News',
                 news1: 'Welcome to Mishkat Platform',
-                news2: 'Follow the latest articles and insights',
-                news3: 'An intellectual awareness platform',
+                news2: 'Follow the latest articles',
+                news3: 'An intellectual platform',
                 news4: 'For Light and Awareness',
                 articlesTitle: 'Articles & Insights', noArticles: 'No articles in this category yet',
                 mostRead: 'Most Read', categoriesLabel: 'Categories', followUs: 'Follow Us',
@@ -881,125 +855,118 @@
                 cat4: 'Insights & Solutions', cat5: 'Contemporary Issues', cat6: 'Dialogues & Interviews', cat7: 'Doubts & Responses', cat8: 'Ethical Guidance',
                 featured: 'Featured Article', backToArticles: 'Back to Articles',
                 shareTitle: 'Share Article', commentsTitle: 'Comments', copyBtn: 'Copy Text',
-                copySuccess: '✅ Article copied successfully!', copyFail: '❌ Copy failed',
-                pageLibrary: 'Library', pageLibraryDesc: 'Books and files for download and reading',
-                noBooks: 'No books in the library yet', noBooksDesc: 'Books will be added soon',
+                copySuccess: '✅ Article copied!', copyFail: '❌ Copy failed',
+                pageLibrary: 'Library', pageLibraryDesc: 'Books for download and reading',
+                noBooks: 'No books yet', noBooksDesc: 'Books coming soon',
                 readBtn: 'Read', downloadBtn: 'Download', shareBtn: 'Share',
-                downloadTitle: 'Choose download format',
-                bookLinkCopied: '✅ Book link copied!', bookNotFound: 'File not available',
+                downloadTitle: 'Choose format',
+                bookLinkCopied: '✅ Link copied!', bookNotFound: 'File not available',
                 pageArticlesEn: 'English Articles', pageArticlesEnDesc: 'Articles in English',
                 pageArticlesFa: 'Farsi Articles', pageArticlesFaDesc: 'مقالات به زبان فارسی',
                 pageArticlesTr: 'Turkish Articles', pageArticlesTrDesc: 'Türkçe Makaleler',
                 noArticlesEn: 'No English articles yet', noArticlesEnDesc: 'No English articles yet',
                 noArticlesFa: 'No Farsi articles yet', noArticlesFaDesc: 'هنوز مقاله‌ای به فارسی نیست',
                 noArticlesTr: 'No Turkish articles yet', noArticlesTrDesc: 'Henüz Türkçe makale yok',
-                pageFamily: 'Platform Family', pageFamilyDesc: 'Meet the team working to enrich the content',
-                familyIntroTitle: 'Mishkat Team', familyIntroText: 'We work as one team, believing that teamwork is the foundation of success. Mishkat family includes a select group of writers, reviewers, translators, and supporters who all contribute to providing purposeful and distinguished content.',
-                pageAbout: 'About the Platform', pageAboutDesc: 'Learn about Mishkat, its vision and mission',
+                pageFamily: 'Platform Family', pageFamilyDesc: 'Meet the team',
+                familyIntroTitle: 'Mishkat Team', familyIntroText: 'We work as one team, believing that teamwork is the foundation of success.',
+                pageAbout: 'About', pageAboutDesc: 'Learn about Mishkat',
                 aboutIntro: 'Introduction', aboutIntroText: 'Mishkat is an electronic cultural and awareness platform.',
                 aboutVision: 'Vision', aboutVisionText: 'To be a trusted digital beacon.',
-                aboutMission: 'Mission', aboutMissionText: 'To provide solid intellectual and cultural content.',
+                aboutMission: 'Mission', aboutMissionText: 'To provide solid intellectual content.',
                 aboutFeatures: 'What Distinguishes Mishkat', feat1: 'Selected content.',
-                feat2: 'Elegant visual identity.', feat3: 'Easy management.',
-                feat4: 'Multi-language support.', feat5: 'Completely free.',
-                aboutGoals: 'Objectives', goal1: 'Enriching solid Arabic content.',
-                goal2: 'Raising awareness.', goal3: 'Reviving heritage.',
-                goal4: 'Opening the door for writers.', goal5: 'Building a conscious generation.',
-                pageSections: 'Sections', pageSectionsDesc: 'Browse the eight sections of Mishkat',
+                feat2: 'Elegant identity.', feat3: 'Easy management.',
+                feat4: 'Multi-language.', feat5: 'Completely free.',
+                pageSections: 'Sections', pageSectionsDesc: 'Browse the eight sections',
                 sectionsContent: 'Content Sections', sectionsContentText: 'Mishkat includes eight main sections:',
                 tile1: 'General articles.', tile2: 'Ahl al-Bayt.',
-                tile3: 'Social issues.', tile4: 'Insights & solutions.',
+                tile3: 'Social issues.', tile4: 'Insights.',
                 tile5: 'Current events.', tile6: 'Dialogues.',
                 tile7: 'Doubts & responses.', tile8: 'Ethical lessons.',
-                pagePolicy: 'Publishing Policy', pagePolicyDesc: 'Terms and rules for publishing',
+                pagePolicy: 'Publishing Policy', pagePolicyDesc: 'Terms and rules',
                 policyTerms: 'Publishing Terms', pol1: 'Selection.',
                 pol2: 'Originality.', pol3: 'Objectivity.',
                 pol4: 'Language.', pol5: 'Rights.',
-                partForm: 'Initial Contact Form', formName: 'Full Name', formNameOnly: 'Name', formEmail: 'Email Address',
+                partForm: 'Contact Form', formName: 'Full Name', formNameOnly: 'Name', formEmail: 'Email',
                 formArticleTitle: 'Article Title', formCategory: 'Suggested Category', formChoose: 'Choose category',
-                formLink: 'Article file link (optional)', formExcerpt: 'Excerpt', formSubmit: 'Submit Article',
+                formLink: 'File link (optional)', formExcerpt: 'Excerpt', formSubmit: 'Submit',
                 formSubject: 'Subject', formMessage: 'Message', formSend: 'Send',
                 pageContact: 'Contact Us', pageContactDesc: 'We are here to answer your inquiries',
-                contactInfo: 'Contact Information', contactEmailLabel: 'Email Address', contactPhoneLabel: 'Phone', contactSendTitle: 'Send a Message',
+                contactInfo: 'Contact Information', contactEmailLabel: 'Email', contactPhoneLabel: 'Phone', contactSendTitle: 'Send a Message',
                 comingSoon: 'Will be announced soon',
-                footerRights: 'All rights reserved © 2026 Mishkat Platform | For Light & Awareness',
+                footerRights: 'All rights reserved © 2026 Mishkat Platform',
                 am: 'AM', pm: 'PM',
-                submitAlert: 'Your article has been received successfully!',
-                messageAlert: 'Your message has been received successfully!'
+                submitAlert: 'Received successfully!',
+                messageAlert: 'Your message has been received!'
             },
             fa: {
                 title: 'پلتفرم مشکاه | برای نور و آگاهی', brandName: 'مشکاه', brandSub: 'برای نور و آگاهی',
                 topBarText: 'پلتفرم مشکاه | برای نور و آگاهی',
                 langNote: 'قابلیت ترجمه مقالات به‌زودی',
-                navHome: 'صفحه اصلی', navLibrary: 'کتابخانه', navAbout: 'درباره پلتفرم', navSections: 'بخش‌ها', navCats: 'دسته‌بندی‌ها',
+                navHome: 'صفحه اصلی', navLibrary: 'کتابخانه', navAbout: 'درباره', navSections: 'بخش‌ها', navCats: 'دسته‌بندی‌ها',
                 navArticlesEn: 'مقالات انگلیسی', navArticlesFa: 'مقالات فارسی', navArticlesTr: 'مقالات ترکی',
                 navFamily: 'خانواده پلتفرم',
-                navParticipation: 'نحوه مشارکت', navInvitation: 'دعوت به مشارکت', navContact: 'تماس با ما',
+                navContact: 'تماس با ما',
                 searchPh: 'جستجو...', searchPhFull: 'جستجو در سایت...', searchBtn: 'جستجو',
                 heroTitle: 'مشکاه <span class="gold-text">نور</span>',
-                heroDesc: 'پلتفرم فکری و آگاهی‌بخش برای انتشار مقالات و دیدگاه‌ها',
+                heroDesc: 'پلتفرم فکری و آگاهی‌بخش برای انتشار مقالات',
                 breakingLabel: 'آخرین اخبار',
                 news1: 'به پلتفرم مشکاه خوش آمدید',
                 news2: 'جدیدترین مقالات را دنبال کنید',
-                news3: 'پلتفرم فکری و آگاهی‌بخش',
+                news3: 'پلتفرم فکری',
                 news4: 'برای نور و آگاهی',
-                articlesTitle: 'مقالات و دیدگاه‌ها', noArticles: 'در این دسته هنوز مقاله‌ای نیست',
+                articlesTitle: 'مقالات و دیدگاه‌ها', noArticles: 'هنوز مقاله‌ای نیست',
                 mostRead: 'پربازدیدترین', categoriesLabel: 'دسته‌بندی‌ها', followUs: 'ما را دنبال کنید',
-                catAll: 'همه', cat1: 'مقالات و دیدگاه‌ها', cat2: 'اهل بیت (ع)', cat3: 'آگاهی اجتماعی',
-                cat4: 'دیدگاه‌ها و راه‌حل‌ها', cat5: 'مسائل معاصر', cat6: 'گفتگوها و مصاحبه‌ها', cat7: 'شبهات و پاسخ‌ها', cat8: 'رهنمودهای اخلاقی',
-                featured: 'مقاله ویژه', backToArticles: 'بازگشت به مقالات',
-                shareTitle: 'اشتراک‌گذاری مقاله', commentsTitle: 'نظرات', copyBtn: 'کپی متن',
-                copySuccess: '✅ مقاله کپی شد!', copyFail: '❌ کپی نشد',
-                pageLibrary: 'کتابخانه', pageLibraryDesc: 'کتاب‌ها و فایل‌ها برای دانلود و مطالعه',
-                noBooks: 'هنوز کتابی نیست', noBooksDesc: 'به‌زودی کتاب‌ها اضافه می‌شوند',
-                readBtn: 'مطالعه', downloadBtn: 'دانلود', shareBtn: 'اشتراک‌گذاری',
-                downloadTitle: 'فرمت دانلود را انتخاب کنید',
-                bookLinkCopied: '✅ لینک کتاب کپی شد!', bookNotFound: 'فایل موجود نیست',
+                catAll: 'همه', cat1: 'مقالات', cat2: 'اهل بیت (ع)', cat3: 'آگاهی اجتماعی',
+                cat4: 'راه‌حل‌ها', cat5: 'مسائل معاصر', cat6: 'گفتگوها', cat7: 'پاسخ‌ها', cat8: 'رهنمودها',
+                featured: 'مقاله ویژه', backToArticles: 'بازگشت',
+                shareTitle: 'اشتراک‌گذاری', commentsTitle: 'نظرات', copyBtn: 'کپی',
+                copySuccess: '✅ کپی شد!', copyFail: '❌ نشد',
+                pageLibrary: 'کتابخانه', pageLibraryDesc: 'کتاب‌ها برای دانلود',
+                noBooks: 'هنوز کتابی نیست', noBooksDesc: 'به‌زودی',
+                readBtn: 'مطالعه', downloadBtn: 'دانلود', shareBtn: 'اشتراک',
+                downloadTitle: 'انتخاب فرمت',
+                bookLinkCopied: '✅ کپی شد!', bookNotFound: 'موجود نیست',
                 pageArticlesEn: 'مقالات انگلیسی', pageArticlesEnDesc: 'Articles in English',
                 pageArticlesFa: 'مقالات فارسی', pageArticlesFaDesc: 'مقالات به زبان فارسی',
                 pageArticlesTr: 'مقالات ترکی', pageArticlesTrDesc: 'Türkçe Makaleler',
-                noArticlesEn: 'هنوز مقاله انگلیسی نیست', noArticlesEnDesc: 'No English articles yet',
-                noArticlesFa: 'هنوز مقاله فارسی نیست', noArticlesFaDesc: 'هنوز مقاله‌ای به فارسی نیست',
-                noArticlesTr: 'هنوز مقاله ترکی نیست', noArticlesTrDesc: 'Henüz Türkçe makale yok',
-                pageFamily: 'خانواده پلتفرم', pageFamilyDesc: 'با تیمی که در غنی‌سازی محتوا کمک می‌کند آشنا شوید',
-                familyIntroTitle: 'تیم مشکاه', familyIntroText: 'ما به‌عنوان یک تیم کار می‌کنیم و معتقدیم کار گروهی اساس موفقیت است.',
-                pageAbout: 'درباره پلتفرم', pageAboutDesc: 'با پلتفرم مشکاه آشنا شوید',
-                aboutIntro: 'معرفی', aboutIntroText: 'مشکاه یک پلتفرم فرهنگی و آگاهی‌بخش الکترونیکی است.',
-                aboutVision: 'چشم‌انداز', aboutVisionText: 'مشکاه به‌عنوان یک مناره دیجیتال مورد اعتماد باشد.',
-                aboutMission: 'رسالت', aboutMissionText: 'ارائه محتوای فکری و فرهنگی استوار.',
-                aboutFeatures: 'ویژگی‌های مشکاه', feat1: 'محتوای گزیده.',
-                feat2: 'هویت بصری شیک.', feat3: 'مدیریت آسان.',
-                feat4: 'پشتیبانی چندزبانه.', feat5: 'کاملاً رایگان.',
-                aboutGoals: 'اهداف', goal1: 'غنی‌سازی محتوا.',
-                goal2: 'آگاهی‌بخشی.', goal3: 'احیای میراث.',
-                goal4: 'بازکردن راه برای نویسندگان.', goal5: 'ساختن نسلی آگاه.',
-                pageSections: 'بخش‌ها', pageSectionsDesc: 'هشت بخش مشکاه را مرور کنید',
-                sectionsContent: 'بخش‌های محتوا', sectionsContentText: 'مشکاه شامل هشت بخش اصلی است:',
+                noArticlesEn: 'هنوز نیست', noArticlesEnDesc: 'No English articles yet',
+                noArticlesFa: 'هنوز نیست', noArticlesFaDesc: 'هنوز مقاله‌ای به فارسی نیست',
+                noArticlesTr: 'هنوز نیست', noArticlesTrDesc: 'Henüz Türkçe makale yok',
+                pageFamily: 'خانواده پلتفرم', pageFamilyDesc: 'با تیم آشنا شوید',
+                familyIntroTitle: 'تیم مشکاه', familyIntroText: 'ما به‌عنوان یک تیم کار می‌کنیم.',
+                pageAbout: 'درباره', pageAboutDesc: 'با پلتفرم آشنا شوید',
+                aboutIntro: 'معرفی', aboutIntroText: 'مشکاه یک پلتفرم فرهنگی است.',
+                aboutVision: 'چشم‌انداز', aboutVisionText: 'مناره دیجیتال مورد اعتماد.',
+                aboutMission: 'رسالت', aboutMissionText: 'ارائه محتوای استوار.',
+                aboutFeatures: 'ویژگی‌ها', feat1: 'محتوای گزیده.',
+                feat2: 'هویت شیک.', feat3: 'مدیریت آسان.',
+                feat4: 'چندزبانه.', feat5: 'رایگان.',
+                pageSections: 'بخش‌ها', pageSectionsDesc: 'هشت بخش',
+                sectionsContent: 'بخش‌ها', sectionsContentText: 'شامل هشت بخش است:',
                 tile1: 'مقالات عمومی.', tile2: 'اهل بیت.',
-                tile3: 'مسائل اجتماعی.', tile4: 'دیدگاه‌ها و راه‌حل‌ها.',
-                tile5: 'رویدادهای جاری.', tile6: 'گفتگوها.',
-                tile7: 'پاسخ به شبهات.', tile8: 'درس‌های اخلاقی.',
-                pagePolicy: 'سیاست انتشار', pagePolicyDesc: 'شرایط و قواعد انتشار',
-                policyTerms: 'شرایط انتشار', pol1: 'گزینش.',
+                tile3: 'مسائل اجتماعی.', tile4: 'راه‌حل‌ها.',
+                tile5: 'رویدادها.', tile6: 'گفتگوها.',
+                tile7: 'پاسخ‌ها.', tile8: 'اخلاقی.',
+                pagePolicy: 'سیاست انتشار', pagePolicyDesc: 'قواعد انتشار',
+                policyTerms: 'شرایط', pol1: 'گزینش.',
                 pol2: 'اصالت.', pol3: 'عینیت.',
                 pol4: 'زبان.', pol5: 'حقوق.',
-                partForm: 'فرم تماس اولیه', formName: 'نام کامل', formNameOnly: 'نام', formEmail: 'ایمیل',
-                formArticleTitle: 'عنوان مقاله', formCategory: 'دسته پیشنهادی', formChoose: 'انتخاب دسته',
-                formLink: 'لینک فایل (اختیاری)', formExcerpt: 'چکیده', formSubmit: 'ارسال مقاله',
+                partForm: 'فرم تماس', formName: 'نام کامل', formNameOnly: 'نام', formEmail: 'ایمیل',
+                formArticleTitle: 'عنوان', formCategory: 'دسته', formChoose: 'انتخاب',
+                formLink: 'لینک', formExcerpt: 'چکیده', formSubmit: 'ارسال',
                 formSubject: 'موضوع', formMessage: 'پیام', formSend: 'ارسال',
-                pageContact: 'تماس با ما', pageContactDesc: 'ما برای پاسخ به پرسش‌ها اینجاییم',
+                pageContact: 'تماس', pageContactDesc: 'اینجاییم',
                 contactInfo: 'اطلاعات تماس', contactEmailLabel: 'ایمیل', contactPhoneLabel: 'تلفن', contactSendTitle: 'ارسال پیام',
-                comingSoon: 'به‌زودی اعلام می‌شود',
-                footerRights: 'تمامی حقوق محفوظ است © ۲۰۲۶ پلتفرم مشکاه',
+                comingSoon: 'به‌زودی',
+                footerRights: '© ۲۰۲۶ پلتفرم مشکاه',
                 am: 'ق.ظ', pm: 'ب.ظ',
-                submitAlert: 'مقاله شما دریافت شد!',
-                messageAlert: 'پیام شما دریافت شد!'
+                submitAlert: 'دریافت شد!',
+                messageAlert: 'پیام دریافت شد!'
             }
         };
 
         let currentLang = 'ar';
 
-        // ============ تحميل المقالات ============
         async function loadArticlesFromJSON() {
             try {
                 const response = await fetch('articles.json?t=' + Date.now());
@@ -1007,7 +974,7 @@
                 const data = await response.json();
                 const items = data.items || [];
 
-                // القائمة العربية (كل المقالات)
+                // القائمة العربية (كل المقالات) - تدعم الحقول القديمة والجديدة
                 const articlesAr = items.map(item => ({
                     catKey: categoryToKey[item.category] || 'cat1',
                     title: item.title_ar || item.title || '',
@@ -1042,7 +1009,7 @@
                 mishkatArticles.en = articlesEnFallback;
                 mishkatArticles.fa = articlesFaFallback;
 
-                // قوائم اللغة المستقلة (فقط ما له ترجمة)
+                // قوائم اللغة المستقلة
                 articlesByLang.ar = articlesAr;
 
                 articlesByLang.en = items
@@ -1050,7 +1017,7 @@
                     .map(item => ({
                         catKey: categoryToKey[item.category] || 'cat1',
                         title: item.title_en,
-                        author: item.author_en || item.author_ar || '',
+                        author: item.author_en || item.author_ar || item.author || '',
                         date: item.date || '',
                         excerpt: item.excerpt_en || '',
                         body: item.body_en || ''
@@ -1061,7 +1028,7 @@
                     .map(item => ({
                         catKey: categoryToKey[item.category] || 'cat1',
                         title: item.title_fa,
-                        author: item.author_fa || item.author_ar || '',
+                        author: item.author_fa || item.author_ar || item.author || '',
                         date: item.date || '',
                         excerpt: item.excerpt_fa || '',
                         body: item.body_fa || ''
@@ -1072,7 +1039,7 @@
                     .map(item => ({
                         catKey: categoryToKey[item.category] || 'cat1',
                         title: item.title_tr,
-                        author: item.author_tr || item.author_ar || '',
+                        author: item.author_tr || item.author_ar || item.author || '',
                         date: item.date || '',
                         excerpt: item.excerpt_tr || '',
                         body: item.body_tr || ''
@@ -1089,10 +1056,10 @@
                 const items = data.items || [];
 
                 const booksAr = items.map(item => ({
-                    title: item.title_ar || '',
-                    author: item.author_ar || '',
+                    title: item.title_ar || item.title || '',
+                    author: item.author_ar || item.author || '',
                     date: item.date || '',
-                    description: item.description_ar || '',
+                    description: item.description_ar || item.description || '',
                     cover: item.cover || '',
                     pdf_url: item.pdf_url || '',
                     word_url: item.word_url || ''
@@ -1182,7 +1149,7 @@
                     <div class="featured-card" onclick="openArticle(${idx})">
                         <div class="featured-image" data-label="${t.featured}"><i class="fa-solid fa-lightbulb"></i></div>
                         <div class="featured-body">
-                            <span class="category-badge">${t[first.catKey]}</span>
+                            <span class="category-badge">${t[first.catKey] || ''}</span>
                             <h2>${first.title}</h2>
                             <p class="excerpt">${first.excerpt}</p>
                             <div class="meta">
@@ -1216,7 +1183,6 @@
             grid.innerHTML = html;
         }
 
-        // ============ عرض مقالات اللغات الأخرى ============
         function renderLangArticles(lang) {
             const gridId = lang === 'en' ? 'articlesEnGrid' : (lang === 'fa' ? 'articlesFaGrid' : 'articlesTrGrid');
             const emptyId = lang === 'en' ? 'articlesEnEmpty' : (lang === 'fa' ? 'articlesFaEmpty' : 'articlesTrEmpty');
@@ -1250,7 +1216,6 @@
         function openLangArticle(lang, idx) {
             const article = articlesByLang[lang][idx];
             if (!article) return;
-            const t = translations[currentLang];
             const container = document.getElementById('articleFullContent');
             const bodyHtml = article.body ? article.body.replace(/\n/g, '<br>') : '<p>' + (article.excerpt || '') + '</p>';
 
@@ -1268,7 +1233,6 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        // ============ أسرة المنصة ============
         function renderTeam() {
             const grid = document.getElementById('teamGrid');
             if (!grid) return;
@@ -1451,12 +1415,11 @@
             const a = getCurrentArticle();
             if (!a) return '';
             const siteUrl = 'https://al-mishkat1.netlify.app';
-            const articleUrl = window.location.href;
             let text = '📄 ' + a.title + '\n\n';
             text += '👤 الكاتب: ' + a.author + '\n';
             text += '📅 التاريخ: ' + a.date + '\n';
             text += '📚 المصدر: مشكاة | للنور والوعي\n';
-            text += '🔗 ' + articleUrl + '\n\n';
+            text += '🔗 ' + window.location.href + '\n\n';
             text += '━━━━━━━━━━━━━━━\n\n';
             if (a.body) text += a.body + '\n\n';
             else if (a.excerpt) text += a.excerpt + '\n\n';
@@ -1637,10 +1600,6 @@
                 a.addEventListener('click', function(e) {
                     e.preventDefault();
                     showView(this.dataset.view);
-                    if (window.innerWidth <= 768) {
-                        document.getElementById('mainNav').classList.remove('mobile-open');
-                        document.getElementById('mobileOverlay').classList.remove('show');
-                    }
                 });
             });
 
