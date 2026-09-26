@@ -419,28 +419,21 @@
         <div class="container">
             <ul class="nav-list">
                 <li><a data-view="home" class="active" data-i18n="navHome">الرئيسية</a></li>
-                <li><a data-view="audios" data-i18n="navAudios">صوتيات</a></li>
-                <li><a data-view="videos" data-i18n="navVideos">مرئيات</a></li>
+                <li><a data-view="videos" data-i18n="navVideos">المرئيات</a></li>
+                <li><a data-view="audios" data-i18n="navAudios">الصوتيات</a></li>
                 <li><a data-view="library" data-i18n="navLibrary">المكتبة</a></li>
-                <li><a data-view="about" data-i18n="navAbout">عن المنصة</a></li>
-                <li><a data-view="sections" data-i18n="navSections">الأقسام</a></li>
                 <li class="dropdown">
-                    <a class="dropdown-toggle" data-bs-toggle="dropdown"><span data-i18n="navCats">التصنيفات</span> <i class="fa-solid fa-chevron-down" style="font-size:10px;"></i></a>
-                    <ul class="dropdown-menu" id="catsDropdownMenu">
-                        <li><a class="dropdown-item" data-cat="cat1" data-i18n="cat1">مقالات ورؤى</a></li>
-                        <li><a class="dropdown-item" data-cat="cat2" data-i18n="cat2">أهل البيت (ع)</a></li>
-                        <li><a class="dropdown-item" data-cat="cat3" data-i18n="cat3">وعي مجتمعي</a></li>
-                        <li><a class="dropdown-item" data-cat="cat4" data-i18n="cat4">رؤى وحلول</a></li>
-                        <li><a class="dropdown-item" data-cat="cat5" data-i18n="cat5">قضايا معاصرة</a></li>
-                        <li><a class="dropdown-item" data-cat="cat6" data-i18n="cat6">حوارات ومقابلات</a></li>
-                        <li><a class="dropdown-item" data-cat="cat7" data-i18n="cat7">شبهات وردود</a></li>
-                        <li><a class="dropdown-item" data-cat="cat8" data-i18n="cat8">التوجيهات الأخلاقية</a></li>
+                    <a class="dropdown-toggle" data-bs-toggle="dropdown"><span data-i18n="navArticles">المقالات</span> <i class="fa-solid fa-chevron-down" style="font-size:10px;"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" onclick="showView('home')" data-i18n="navArticlesAr">المقالات بالعربية</a></li>
+                        <li><a class="dropdown-item" onclick="showView('articles-en')" data-i18n="navArticlesEn">المقالات بالإنجليزية</a></li>
+                        <li><a class="dropdown-item" onclick="showView('articles-fa')" data-i18n="navArticlesFa">المقالات بالفارسية</a></li>
+                        <li><a class="dropdown-item" onclick="showView('articles-tr')" data-i18n="navArticlesTr">المقالات بالتركية</a></li>
                     </ul>
                 </li>
+                <li><a data-view="sections" data-i18n="navSections">الأقسام</a></li>
                 <li><a data-view="family" data-i18n="navFamily">أسرة المنصة</a></li>
-                <li><a data-view="articles-en" data-i18n="navArticlesEn">مقالات بالإنجليزية</a></li>
-                <li><a data-view="articles-fa" data-i18n="navArticlesFa">مقالات بالفارسية</a></li>
-                <li><a data-view="articles-tr" data-i18n="navArticlesTr">مقالات بالتركية</a></li>
+                <li><a data-view="about" data-i18n="navAbout">عن المنصة</a></li>
                 <li><a data-view="contact" data-i18n="navContact">تواصل معنا</a></li>
             </ul>
             <div class="search-mini">
@@ -542,7 +535,7 @@
 
         <div class="page-view" id="view-audios">
             <div class="page-title-bar">
-                <h1><i class="fa-solid fa-headphones"></i> <span data-i18n="pageAudios">صوتيات</span></h1>
+                <h1><i class="fa-solid fa-headphones"></i> <span data-i18n="pageAudios">الصوتيات</span></h1>
                 <p data-i18n="pageAudiosDesc">مقاطع صوتية: دروس، محاضرات، ونصائح</p>
             </div>
             <div id="audiosList"></div>
@@ -555,7 +548,7 @@
 
         <div class="page-view" id="view-videos">
             <div class="page-title-bar">
-                <h1><i class="fa-solid fa-video"></i> <span data-i18n="pageVideos">مرئيات</span></h1>
+                <h1><i class="fa-solid fa-video"></i> <span data-i18n="pageVideos">المرئيات</span></h1>
                 <p data-i18n="pageVideosDesc">مقاطع فيديو من قناتنا على يوتيوب</p>
             </div>
             <div class="videos-grid" id="videosList"></div>
@@ -850,8 +843,9 @@
                 topBarText: 'منصة مشكاة | للنور والوعي',
                 langNote: 'ستتوفر ميزة ترجمة المقال قريباً',
                 navHome: 'الرئيسية', navLibrary: 'المكتبة', navAbout: 'عن المنصة', navSections: 'الأقسام', navCats: 'التصنيفات',
-                navAudios: 'صوتيات', navVideos: 'مرئيات',
-                navArticlesEn: 'مقالات بالإنجليزية', navArticlesFa: 'مقالات بالفارسية', navArticlesTr: 'مقالات بالتركية',
+                navAudios: 'الصوتيات', navVideos: 'المرئيات',
+                navArticles: 'المقالات', navArticlesAr: 'المقالات بالعربية',
+                navArticlesEn: 'المقالات بالإنجليزية', navArticlesFa: 'المقالات بالفارسية', navArticlesTr: 'المقالات بالتركية',
                 navFamily: 'أسرة المنصة', navContact: 'تواصل معنا',
                 searchPh: 'ابحث...', searchPhFull: 'ابحث في الموقع...', searchBtn: 'بحث',
                 heroTitle: 'مِشْكَاةُ <span class="gold-text">النُّورِ</span>',
@@ -872,9 +866,9 @@
                 readBtn: 'قراءة', downloadBtn: 'تحميل', shareBtn: 'مشاركة',
                 downloadTitle: 'اختر صيغة التحميل',
                 bookLinkCopied: '✅ تم نسخ رابط الكتاب!', bookNotFound: 'هذا الملف غير متوفر',
-                pageAudios: 'صوتيات', pageAudiosDesc: 'مقاطع صوتية: دروس، محاضرات، ونصائح',
+                pageAudios: 'الصوتيات', pageAudiosDesc: 'مقاطع صوتية: دروس، محاضرات، ونصائح',
                 noAudios: 'لا توجد مقاطع صوتية حالياً', noAudiosDesc: 'سيتم إضافة المقاطع قريباً',
-                pageVideos: 'مرئيات', pageVideosDesc: 'مقاطع فيديو من قناتنا على يوتيوب',
+                pageVideos: 'المرئيات', pageVideosDesc: 'مقاطع فيديو من قناتنا على يوتيوب',
                 noVideos: 'لا توجد مقاطع مرئية حالياً', noVideosDesc: 'سيتم إضافة المقاطع قريباً',
                 audioDownload: 'تحميل', audioShare: 'مشاركة', audioLinkCopied: '✅ تم نسخ الرابط!',
                 pageArticlesEn: 'مقالات باللغة الإنجليزية', pageArticlesEnDesc: 'Articles in English',
@@ -908,6 +902,7 @@
                 langNote: 'Article translation feature coming soon',
                 navHome: 'Home', navLibrary: 'Library', navAbout: 'About', navSections: 'Sections', navCats: 'Categories',
                 navAudios: 'Audios', navVideos: 'Videos',
+                navArticles: 'Articles', navArticlesAr: 'Articles in Arabic',
                 navArticlesEn: 'English Articles', navArticlesFa: 'Farsi Articles', navArticlesTr: 'Turkish Articles',
                 navFamily: 'Platform Family', navContact: 'Contact Us',
                 searchPh: 'Search...', searchPhFull: 'Search the site...', searchBtn: 'Search',
@@ -964,6 +959,7 @@
                 langNote: 'قابلیت ترجمه مقالات به‌زودی',
                 navHome: 'صفحه اصلی', navLibrary: 'کتابخانه', navAbout: 'درباره', navSections: 'بخش‌ها', navCats: 'دسته‌بندی‌ها',
                 navAudios: 'صوتی', navVideos: 'ویدیو',
+                navArticles: 'مقالات', navArticlesAr: 'مقالات به عربی',
                 navArticlesEn: 'مقالات انگلیسی', navArticlesFa: 'مقالات فارسی', navArticlesTr: 'مقالات ترکی',
                 navFamily: 'خانواده پلتفرم', navContact: 'تماس با ما',
                 searchPh: 'جستجو...', searchPhFull: 'جستجو در سایت...', searchBtn: 'جستجو',
@@ -1480,7 +1476,7 @@
             document.querySelectorAll('.page-view').forEach(v => v.classList.remove('active'));
             const target = document.getElementById('view-' + viewId);
             if (target) target.classList.add('active');
-            document.querySelectorAll('.main-nav .nav-list li a[data-view]').forEach(a => a.classList.toggle('active', a.dataset.view === viewId));
+            document.querySelectorAll('.main-nav .nav-list li > a[data-view]').forEach(a => a.classList.toggle('active', a.dataset.view === viewId));
             if (viewId === 'home') window.history.replaceState(null, '', window.location.pathname);
             else window.history.replaceState(null, '', '#' + viewId);
             window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -1722,25 +1718,12 @@
             document.querySelectorAll('.lang-btn').forEach(btn => btn.addEventListener('click', function() { setLanguage(this.dataset.lang); }));
             setLanguage(localStorage.getItem('mishkat_lang') || 'ar');
 
-            document.querySelectorAll('.main-nav .nav-list li a[data-view]').forEach(a => {
+            document.querySelectorAll('.main-nav .nav-list li > a[data-view]').forEach(a => {
                 a.addEventListener('click', function(e) { e.preventDefault(); showView(this.dataset.view); });
             });
 
             document.querySelectorAll('.section-tile').forEach(tile => {
                 tile.addEventListener('click', function() {
-                    const cat = this.dataset.cat;
-                    showView('home');
-                    setTimeout(() => {
-                        document.querySelectorAll('#mishkatCategories .cat-btn').forEach(b => b.classList.toggle('active', b.dataset.cat === cat));
-                        renderArticles(cat);
-                        document.getElementById('articles').scrollIntoView({behavior: 'smooth'});
-                    }, 100);
-                });
-            });
-
-            document.querySelectorAll('#catsDropdownMenu .dropdown-item').forEach(item => {
-                item.addEventListener('click', function(e) {
-                    e.preventDefault();
                     const cat = this.dataset.cat;
                     showView('home');
                     setTimeout(() => {
